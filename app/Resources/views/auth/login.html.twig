@@ -1,0 +1,56 @@
+{% extends ':layout:simple.html.twig' %}
+
+{% block title %}MT:login{% endblock %}
+
+{% block stylesheets %}
+
+    <style type="text/css" media="screen">
+        .widget-item{
+            padding: 15px;
+        }
+        .widget-item b {
+            display: block;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content%}
+
+
+        <!--script type="javascript" >
+            $( document ).ready(function() {
+                Materialize.toast(' ', 4000);
+            });
+        </script-->
+
+
+
+    <div class="col" style="width: 300px;margin: 50px auto;" >
+        <div class="widget-item z-depth-1">
+            <b>Login In</b>
+            <div>
+                <div class="row">
+                    <form action=" " class="col s12" method="post" >
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="mdi-action-account-circle prefix"></i>
+                                <input name="_username" id="login" value="" type="text" class="validate " required="required">
+                                <label for="login" class="">Login</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="mdi-action-https prefix"></i>
+                                <input name="_password" id="password" type="text" class="validate" required="required">
+                                <label for="password" class="">Password</label>
+                            </div>
+                            <button style="width: 100%;" class="btn waves-effect waves-light red darken-3" type="submit">Login<i class="mdi-action-lock-open right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
