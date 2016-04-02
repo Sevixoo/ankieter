@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: pl
 
 framework:
     #esi:             ~
@@ -39,11 +39,11 @@ twig:
 doctrine:
     dbal:
         driver:   pdo_mysql
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
+        host:     "%database_host%" radasp34.ayz.pl
+        port:     "%database_port%" 3306
+        dbname:   "%database_name%" radasp34_ankiety
+        user:     "%database_user%" radasp34_ankiety
+        password: "%database_password%" zaq1@WSX
         charset:  UTF8
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
