@@ -5,6 +5,8 @@
 
 {% block stylesheets %}
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style type="text/css" media="screen">
         .widget-item{
             padding: 15px;
@@ -13,6 +15,15 @@
             display: block;
             margin-bottom: 15px;
             line-height: 1.5;
+        }
+
+        .group {
+            min-width:10vw;
+            min-height:10vw;
+            width:150px;
+            height:150px;
+            color:#fff;
+            margin:3px;
         }
     </style>
 
@@ -27,7 +38,42 @@
         });
     </script-->
 
+<div class="center">
 
-    <div style="text-align: center; margin-top: 50px;" ><h5>Lista istniejących grup</h5></div>
+    <div style="margin-top: 30px; margin-bottom: 20px;" ><h5>Grupy</h5></div>
+
+    <table class="bordered striped centered">
+        <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Wyświetl</th>
+            <th>Edytuj</th>
+            <th>Wgraj CSV</th>
+            <th>Generuj CSV</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for group in groups %}
+        <tr>
+            <td>{{ group.name }}</td>
+            <td><i class="material-icons">search</i></td>
+            <td><i class="material-icons">mode_edit</i></td>
+            <td><i class="material-icons">call_received</i></td>
+            <td><i class="material-icons">call_made</i></td>
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+</div>
 
 {% endblock %}
