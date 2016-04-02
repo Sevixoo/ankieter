@@ -14,6 +14,11 @@ class GroupController extends Controller
 
     public function indexAction(Request $request)
     {
+
+        $conn = $this->get('database_connection');
+        $users = $conn->fetchAll('SELECT * FROM Groups');
+
+        print_r($users);
         // replace this example code with whatever you need
         return $this->render(':group:index.html.twig', array(
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
