@@ -2,23 +2,45 @@
 # http://symfony.com/doc/current/book/security.html
 security:
 
-    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+
+    encoders:
+        AppDataBundle\Entity\Users:
+            algorithm: bcrypt
+            cost: 12
+
+
     providers:
         in_memory:
             memory: ~
+        our_db_provider:
+            entity:
+                class: AppDataBundle\Entity\Users
+                property: login
 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        login_firewall:
+                pattern:   ^/login$
+                anonymous: ~
+
         main:
-            anonymous: ~
-            # activate different ways to authenticate
+            pattern:    ^/
+            provider: our_db_provider
+            form_login:
+                login_path: /login
+                check_path: /login_check
 
-            # http_basic: ~
-            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+            logout:
+                path:   /logout
+                invalidate_session: false
+                target: /
 
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    # http_basic: ~
+    # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+    # form_login: ~
+    # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers

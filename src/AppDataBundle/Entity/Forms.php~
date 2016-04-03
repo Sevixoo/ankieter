@@ -1,0 +1,70 @@
+<?php
+
+namespace AppDataBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Forms
+ *
+ * @ORM\Table(name="Forms", indexes={@ORM\Index(name="FK_Forms_Templates_id", columns={"template_id"})})
+ * @ORM\Entity
+ */
+class Forms
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="datetime", nullable=false)
+     */
+    private $createDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="datetime", nullable=true)
+     */
+    private $endDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="deadline", type="datetime", nullable=true)
+     */
+    private $deadline;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="template_version", type="integer", nullable=true)
+     */
+    private $templateVersion;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_active", type="boolean", nullable=false)
+     */
+    private $isActive;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppDataBundle\Entity\Templates
+     *
+     * @ORM\ManyToOne(targetEntity="AppDataBundle\Entity\Templates")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="template_id", referencedColumnName="id")
+     * })
+     */
+    private $template;
+
+
+}

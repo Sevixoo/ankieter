@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppDataBundle\Entity\Formoutputs" table="FormOutputs">
+    <indexes>
+      <index name="FK_FormOutputs_Forms_id" columns="form_id"/>
+      <index name="FK_FormOutputs_Subscribers_id" columns="subscriber_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="token" type="string" column="token" length="64" nullable="false"/>
+    <field name="answer" type="text" column="answer" length="65535" nullable="true"/>
+    <field name="preOutput" type="string" column="pre_output" length="255" nullable="true"/>
+    <many-to-one field="subscriber" target-entity="Subscribers">
+      <join-columns>
+        <join-column name="subscriber_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="form" target-entity="Forms">
+      <join-columns>
+        <join-column name="form_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

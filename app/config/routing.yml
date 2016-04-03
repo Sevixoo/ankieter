@@ -1,3 +1,10 @@
+app_data:
+    resource: "@AppDataBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+logout:
+    path:   /logout

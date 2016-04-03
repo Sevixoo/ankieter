@@ -1,0 +1,66 @@
+<?php
+
+namespace AppDataBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Formoutputs
+ *
+ * @ORM\Table(name="FormOutputs", indexes={@ORM\Index(name="FK_FormOutputs_Forms_id", columns={"form_id"}), @ORM\Index(name="FK_FormOutputs_Subscribers_id", columns={"subscriber_id"})})
+ * @ORM\Entity
+ */
+class Formoutputs
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=64, nullable=false)
+     */
+    private $token;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="answer", type="text", length=65535, nullable=true)
+     */
+    private $answer;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pre_output", type="string", length=255, nullable=true)
+     */
+    private $preOutput;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppDataBundle\Entity\Subscribers
+     *
+     * @ORM\ManyToOne(targetEntity="AppDataBundle\Entity\Subscribers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="subscriber_id", referencedColumnName="id")
+     * })
+     */
+    private $subscriber;
+
+    /**
+     * @var \AppDataBundle\Entity\Forms
+     *
+     * @ORM\ManyToOne(targetEntity="AppDataBundle\Entity\Forms")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="form_id", referencedColumnName="id")
+     * })
+     */
+    private $form;
+
+
+}

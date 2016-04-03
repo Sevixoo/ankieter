@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppDataBundle\Entity\Forms" table="Forms">
+    <indexes>
+      <index name="FK_Forms_Templates_id" columns="template_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="createDate" type="datetime" column="create_date" nullable="false"/>
+    <field name="endDate" type="datetime" column="end_date" nullable="true"/>
+    <field name="deadline" type="datetime" column="deadline" nullable="true"/>
+    <field name="templateVersion" type="integer" column="template_version" nullable="true"/>
+    <field name="isActive" type="boolean" column="is_active" nullable="false"/>
+    <many-to-one field="template" target-entity="Templates">
+      <join-columns>
+        <join-column name="template_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

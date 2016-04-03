@@ -21,11 +21,14 @@
 {% block content%}
 
 
-        <!--script type="javascript" >
+    {% if error %}
+        <script type="javascript" >
             $( document ).ready(function() {
-                Materialize.toast(' ', 4000);
+                Materialize.toast('{{ error.messageKey|trans(error.messageData, 'security') }}', 4000);
             });
-        </script-->
+        </script>
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+    {% endif %}
 
 
 
@@ -34,11 +37,11 @@
             <b>Login In</b>
             <div>
                 <div class="row">
-                    <form action=" " class="col s12" method="post" >
+                    <form action="{{ path('login_check') }}" class="col s12" method="post" >
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="mdi-action-account-circle prefix"></i>
-                                <input name="_username" id="login" value="" type="text" class="validate " required="required">
+                                <input name="_username" id="login" value="{{ last_username }}" type="text" class="validate " required="required">
                                 <label for="login" class="">Login</label>
                             </div>
                             <div class="input-field col s12">
