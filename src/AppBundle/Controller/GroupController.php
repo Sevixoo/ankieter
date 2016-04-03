@@ -84,7 +84,7 @@ class GroupController extends BasicController
         $groups = $conn->fetchAll('SELECT * FROM Groups');
 
         // replace this example code with whatever you need
-        return $this->render(':group:index.html.twig', array(
+        return $this->render(':group:indexAdd.html.twig', array(
             'groups' => $groups
         ));
     }

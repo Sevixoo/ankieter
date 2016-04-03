@@ -1,7 +1,7 @@
 
 {% extends ':layout:simple.html.twig' %}
 
-{% block title %}MT:login{% endblock %}
+{% block title %}Grupy{% endblock %}
 
 {% block stylesheets %}
 
@@ -17,6 +17,16 @@
             color:black;
         }
 
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
     </style>
 
 {% endblock %}
@@ -24,22 +34,17 @@
 {% block content%}
 
 
-    <!--script type="javascript" >
-        $( document ).ready(function() {
-            Materialize.toast(' ', 4000);
-        });
-    </script-->
-
-<div class="center" style="clear:both">
+<div class="center" style="clear:both;">
 
     <div style="margin-top: 30px; margin-bottom: 20px;" ><h5>Grupy</h5></div>
 
-    <table class="bordered  centered responsive-table" style="margin: 0% auto; width:55%; height:70vh">
+    <table class="bordered  centered responsive-table" style="margin: 0% auto; width:50%;">
         <thead>
         <tr>
             <th>Nazwa</th>
             <th>Wgraj CSV</th>
             <th>Generuj CSV</th>
+            <th>Usuń</th>
         </tr>
         </thead>
 
@@ -50,6 +55,8 @@
             <td><a href="{{ path('groupIndex', {'id': group.id}) }}">{{ group.name }}</a></td>
             <td><a href="{{ path('groupPushCSV', {'id': group.id}) }}"><i class="material-icons">call_received</i></a></td>
             <td><a href="{{ path('groupPullCSV', {'id': group.id}) }}"><i class="material-icons">call_made</i></a></td>
+            <td><a href="{{ path('groupDelete', {'id': group.id}) }}"><i class="material-icons">delete</i></a></td>
+
         </tr>
 
         {% endfor %}
@@ -62,6 +69,11 @@
             <span style="font-size:180%;">+</span> Dodaj</a></h6>
 
 
+    {% block modal %}
+
+    {% endblock %}
+
+
 
 
 
@@ -72,7 +84,7 @@
 {% endblock %}
 
 {% block footer %}
-<footer class="page-footer blue darken-2" style="height:10vh">
+<footer class="page-footer blue darken-2" style="height:10vh;">
     <!--  include 'parts/footer_small.html' -->
 </footer>
 {% endblock %}
