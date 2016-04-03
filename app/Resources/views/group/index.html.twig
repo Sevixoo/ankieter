@@ -8,23 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style type="text/css" media="screen">
-        .widget-item{
-            padding: 15px;
-        }
-        .widget-item b {
-            display: block;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
 
-        .group {
-            min-width:10vw;
-            min-height:10vw;
-            width:150px;
-            height:150px;
-            color:#fff;
-            margin:3px;
-        }
     </style>
 
 {% endblock %}
@@ -38,16 +22,14 @@
         });
     </script-->
 
-<div class="center">
+<div class="center" style="clear:both">
 
     <div style="margin-top: 30px; margin-bottom: 20px;" ><h5>Grupy</h5></div>
 
-    <table class="bordered striped centered">
+    <table class="bordered  centered responsive-table" style="margin: 0% auto; width:55%; height:70vh">
         <thead>
         <tr>
             <th>Nazwa</th>
-            <th>Wyświetl</th>
-            <th>Edytuj</th>
             <th>Wgraj CSV</th>
             <th>Generuj CSV</th>
         </tr>
@@ -58,22 +40,27 @@
         {% for group in groups %}
         <tr>
             <td>{{ group.name }}</td>
-            <td><i class="material-icons">search</i></td>
-            <td><i class="material-icons">mode_edit</i></td>
             <td><i class="material-icons">call_received</i></td>
             <td><i class="material-icons">call_made</i></td>
         </tr>
 
         {% endfor %}
-
         </tbody>
+
+
     </table>
 
-
+    <p><h6><span style="font-size:180%;">+</span> Dodaj</h6></p>
 
 
 
 
 </div>
 
+{% endblock %}
+
+{% block footer %}
+<footer class="page-footer blue darken-2" style="height:10vh">
+    <!--  include 'parts/footer_small.html' -->
+</footer>
 {% endblock %}
