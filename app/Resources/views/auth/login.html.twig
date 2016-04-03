@@ -1,7 +1,7 @@
 
 {% extends ':layout:simple.html.twig' %}
 
-{% block title %}MT:login{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block stylesheets %}
 
@@ -20,22 +20,19 @@
 
 {% block content%}
 
-
-    {% if error %}
-        <script type="javascript" >
-            $( document ).ready(function() {
-                Materialize.toast('{{ error.messageKey|trans(error.messageData, 'security') }}', 4000);
-            });
-        </script>
-        {{ error.messageKey|trans(error.messageData, 'security') }}
-    {% endif %}
+    <div class="col" style="width: 360px;margin: 50px auto;" >
 
 
+        {% if error %}
+            <p style="background-color: #F44336;border: 1px #B71C1C;padding: 8px;color: #FFFFFF;border-radius: 2px;"  >
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </p>
+        {% endif %}
 
-    <div class="col" style="width: 300px;margin: 50px auto;" >
+
         <div class="widget-item z-depth-1">
             <b>Login In</b>
-            <div>
+            <div class="col s12">
                 <div class="row">
                     <form action="{{ path('login_check') }}" class="col s12" method="post" >
                         <div class="row">
@@ -46,7 +43,7 @@
                             </div>
                             <div class="input-field col s12">
                                 <i class="mdi-action-https prefix"></i>
-                                <input name="_password" id="password" type="text" class="validate" required="required">
+                                <input type="password" name="_password" id="password" type="text"  class="validate" required="required">
                                 <label for="password" class="">Password</label>
                             </div>
                             <button style="width: 100%;" class="btn waves-effect waves-light red darken-3" type="submit">Login<i class="mdi-action-lock-open right"></i></button>
@@ -55,6 +52,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 {% endblock %}

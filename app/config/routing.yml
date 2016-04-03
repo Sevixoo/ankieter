@@ -1,6 +1,6 @@
 app_data:
     resource: "@AppDataBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /app_data
 
 app:
     resource: "@AppBundle/Controller/"

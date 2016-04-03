@@ -1,3 +1,1 @@
-app_data_homepage:
-    path:     /
-    defaults: { _controller: AppDataBundle:Default:index }
+

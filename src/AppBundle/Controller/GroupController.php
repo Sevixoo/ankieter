@@ -73,10 +73,9 @@ class GroupController extends BasicController
         ));
     }
 
-    /**
-     * @Route("/group/add", name="groupAdd")
-     */
-
+    /* *
+     *  Route("/group/add", name="groupAdd")
+    niepotrzebne
     public function groupAddAction(Request $request)
     {
 
@@ -88,6 +87,8 @@ class GroupController extends BasicController
             'groups' => $groups
         ));
     }
+     */
+
 
     /**
      * @Route("/group/{id}/delete", name="groupDelete")

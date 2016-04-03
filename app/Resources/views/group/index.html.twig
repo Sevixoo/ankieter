@@ -1,5 +1,5 @@
 
-{% extends ':layout:simple.html.twig' %}
+{% extends ':layout:base.html.twig' %}
 
 {% block title %}Grupy{% endblock %}
 
@@ -34,57 +34,59 @@
 {% block content%}
 
 
-<div class="center" style="clear:both;">
+<div class="row" style="clear:both;">
 
-    <div style="margin-top: 30px; margin-bottom: 20px;" ><h5>Grupy</h5></div>
+    <div style="margin-top: 30px; margin-bottom: 20px;" class="centered" ><h5 >Grupy</h5></div>
 
-    <table class="bordered  centered responsive-table" style="margin: 0% auto; width:50%;">
-        <thead>
-        <tr>
-            <th>Nazwa</th>
-            <th>Wgraj CSV</th>
-            <th>Generuj CSV</th>
-            <th>Usuń</th>
-        </tr>
-        </thead>
+    <div class="col s8 offset-s2" >
+        <table class="row bordered  centered responsive-table">
+            <thead>
+                <tr>
 
-        <tbody>
+                    <th >Nazwa</th>
 
-        {% for group in groups %}
-        <tr>
-            <td><a href="{{ path('groupIndex', {'id': group.id}) }}">{{ group.name }}</a></td>
-            <td><a href="{{ path('groupPushCSV', {'id': group.id}) }}"><i class="material-icons">call_received</i></a></td>
-            <td><a href="{{ path('groupPullCSV', {'id': group.id}) }}"><i class="material-icons">call_made</i></a></td>
-            <td><a href="{{ path('groupDelete', {'id': group.id}) }}"><i class="material-icons">delete</i></a></td>
+                    <th>Wgraj CSV</th>
+                    <th>Generuj CSV</th>
+                    <th>Usuń</th>
+                </tr>
+            </thead>
 
-        </tr>
+            <tbody>
+                {% for group in groups %}
+                    <tr>
+                        <td  ><a href="{{ path('groupIndex', {'id': group.id}) }}">{{ group.name }}</a></td>
+                        <td><a href="{{ path('groupPushCSV', {'id': group.id}) }}"><i class="material-icons">call_received</i></a></td>
+                        <td><a href="{{ path('groupPullCSV', {'id': group.id}) }}"><i class="material-icons">call_made</i></a></td>
+                        <td><a href="{{ path('groupDelete', {'id': group.id}) }}"> <i class="material-icons">delete</i></a></td>
 
-        {% endfor %}
-        </tbody>
-
-
-    </table>
-
-    <h6><a href="{{ path('groupAdd') }}">
-            <span style="font-size:180%;">+</span> Dodaj</a></h6>
+                    </tr>
+                {% endfor %}
+            </tbody>
 
 
-    {% block modal %}
+        </table>
+    </div>
 
-    {% endblock %}
-
-
-
+    {% include ':dialogs:modal_add_group.html.twig' %}
 
 
-
+    <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
+        <a href="#modal_add_group" class="modal-trigger btn-floating btn-large red">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
 
 </div>
 
 {% endblock %}
 
-{% block footer %}
-<footer class="page-footer blue darken-2" style="height:10vh;">
-    <!--  include 'parts/footer_small.html' -->
-</footer>
+
+{% block javascripts %}
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+        });
+    </script>
 {% endblock %}
+
