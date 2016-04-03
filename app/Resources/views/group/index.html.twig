@@ -65,17 +65,39 @@
 
     </table>
 
-    <h6><a href="{{ path('groupAdd') }}">
-            <span style="font-size:180%;">+</span> Dodaj</a></h6>
-
 
     {% block modal %}
 
+    <div class="row center">
+
+        <a style="color:black" data-target="modal1" class="modal-trigger"><h6>+ Dodaj</h6></a>
+
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Dodaj grupę</h4>
+
+            <div class="input-field col s6">
+                <input id="name" type="text" class="validate">
+                <label for="first_name">Nazwa grupy</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">OK</a>
+        </div>
+    </div>
+    <br><br>
+
+</div>
+    <script>
+        $(document).ready(function() {
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
+        });
+    </script>
+
     {% endblock %}
-
-
-
-
 
 
 
@@ -88,3 +110,4 @@
     <!--  include 'parts/footer_small.html' -->
 </footer>
 {% endblock %}
+

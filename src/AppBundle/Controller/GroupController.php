@@ -74,12 +74,11 @@ class GroupController extends BasicController
     }
 
     /**
-     * @Route("/group/add", name="groupAdd")
+     * @Route("/groupAdd", name="groupAdd")
      */
 
     public function groupAddAction(Request $request)
     {
-
         $conn = $this->get('database_connection');
         $groups = $conn->fetchAll('SELECT * FROM Groups');
 
