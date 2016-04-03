@@ -9,6 +9,14 @@
 
     <style type="text/css" media="screen">
 
+        a:link {
+            color:black;
+        }
+
+        a:visited {
+            color:black;
+        }
+
     </style>
 
 {% endblock %}
@@ -39,9 +47,9 @@
 
         {% for group in groups %}
         <tr>
-            <td>{{ group.name }}</td>
-            <td><i class="material-icons">call_received</i></td>
-            <td><i class="material-icons">call_made</i></td>
+            <td><a href="{{ path('groupIndex', {'id': group.id}) }}">{{ group.name }}</a></td>
+            <td><a href="{{ path('groupPushCSV', {'id': group.id}) }}"><i class="material-icons">call_received</i></a></td>
+            <td><a href="{{ path('groupPullCSV', {'id': group.id}) }}"><i class="material-icons">call_made</i></a></td>
         </tr>
 
         {% endfor %}
@@ -50,7 +58,11 @@
 
     </table>
 
-    <p><h6><span style="font-size:180%;">+</span> Dodaj</h6></p>
+    <h6><a href="{{ path('groupAdd') }}">
+            <span style="font-size:180%;">+</span> Dodaj</a></h6>
+
+
+
 
 
 
