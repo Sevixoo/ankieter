@@ -3,6 +3,7 @@
 namespace AppDataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Groups
@@ -17,6 +18,11 @@ class Groups
      *
      * @ORM\Column(name="name", type="string", length=50, nullable=false)
      */
+
+    /**
+     * @Assert\NotBlank()
+     */
+
     private $name;
 
     /**

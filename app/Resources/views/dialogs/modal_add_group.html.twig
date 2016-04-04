@@ -1,10 +1,18 @@
 <!-- Modal Structure -->
 <div id="modal_add_group" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
+        <h4>Dodaj grupę</h4>
+
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+        {{ form_errors(form) }}
+
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+
+        {{ form_widget(form.save) }}
+        {{ form_end(form) }}
+
     </div>
 </div>

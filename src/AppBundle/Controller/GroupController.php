@@ -2,10 +2,15 @@
 
 namespace AppBundle\Controller;
 
+use AppDataBundle\Entity\Groups;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Controller\Basic\BasicController;
+use Symfony\Component\Form\FormError;
+
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class GroupController extends BasicController
 {
@@ -19,9 +24,59 @@ class GroupController extends BasicController
         $conn = $this->get('database_connection');
         $groups = $conn->fetchAll('SELECT * FROM Groups');
 
-        // replace this example code with whatever you need
+        $groupFromForm = new Groups();
+
+        $form = $this->createFormBuilder($groupFromForm)
+            ->add('name', TextType::class, array('label' => 'Nazwa'))
+            ->add('save', SubmitType::class, array('label' => 'ok', 'attr' => array('class' => 'modal-action modal-close waves-effect waves-green btn-flat')))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted()) {
+
+            if (empty($groupFromForm->getName()))
+            {
+                $form->addError(new FormError('Nie podano nazwy'));
+
+                return $this->render(':group:index.html.twig', array(
+                    'groups' => $groups,
+                    'form' => $form->createView(),
+                    'isInvalid' => true,
+                ));
+
+            }
+            if (!empty($this->getDoctrine()
+                ->getRepository('AppDataBundle:Groups')->findOneBy(array('name' => $groupFromForm->getName()))))
+            {
+                $form->addError(new FormError('Grupa o podanej nazwie już isnieje'));
+
+                return $this->render(':group:index.html.twig', array(
+                    'groups' => $groups,
+                    'form' => $form->createView(),
+                    'isInvalid' => true,
+                ));
+
+            }
+
+            else {
+
+                $em = $this->getDoctrine();
+                $em->persist($groupFromForm);
+                $em->flush();
+
+                return $this->redirectToRoute('group', array('isInvalid' => false));
+            }
+
+
+
+        }
+
         return $this->render(':group:index.html.twig', array(
-            'groups' => $groups
+            'groups' => $groups,
+            'form' => $form->createView(),
+            'isInvalid' => false,
         ));
     }
 
@@ -73,9 +128,6 @@ class GroupController extends BasicController
         ));
     }
 
-    /* *
-     *  Route("/group/add", name="groupAdd")
-    niepotrzebne
     public function groupAddAction(Request $request)
     {
 
@@ -87,8 +139,6 @@ class GroupController extends BasicController
             'groups' => $groups
         ));
     }
-     */
-
 
     /**
      * @Route("/group/{id}/delete", name="groupDelete")
@@ -103,11 +153,7 @@ class GroupController extends BasicController
 
         $groups = $conn->fetchAll('SELECT * FROM Groups');
 
-
-        // replace this example code with whatever you need
-        return $this->render(':group:index.html.twig', array(
-            'groups' => $groups
-        ));
+        return $this->redirectToRoute('group');
     }
 
 
