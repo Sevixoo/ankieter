@@ -76,6 +76,48 @@
         </a>
     </div>
 
+
+
+    <form id="picture_edit_form" data-user_id="" class="row" style="margin: 0 auto;width: 100%;min-height: 150px;" >
+
+        <div class="col s6" >
+
+            <div class="row" style="margin: 0 auto;" >
+                <div class="col s6" >
+                    <p style="text-align: center; font-size: 11px;" >skan zdjęcia typu paszportowe</p>
+                </div>
+                <div class="col s6" >
+                    <p class="center">
+                        <img onclick="$('#fileupload_profile').click()" id="profile_img"
+                             style="width:70px;height: 70px;cursor: pointer; margin: 0 auto; "
+                             src="{{ asset('bundles/images/avatar-def.png') }}" alt="" class="center tooltipped"
+                        >
+                    </p>
+                </div>
+
+            </div>
+            <div class="row"  >
+
+
+                <div class="file-field input-field" style="display: none;" >
+                    <div class="btn">
+                        <span>File</span>
+                        <input id="fileupload_profile" type="file" name="files[]" data-url="{{ path( "upload_tmp_file" ) }}" /> <!-- page.url( 'FileUpload' , 'uploadUserAvatar' ) -->
+                    </div>
+                </div>
+
+                <div style="clear:both;" > </div>
+
+                <div id="progress_profile" class="progress" style="display: none;" >
+                    <div class="determinate" style="width: 0%"> </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
 </div>
 
 {% endblock %}
@@ -92,6 +134,71 @@
             {% endif %}
         });
 
+        var picture_box_onfileuploaded = null;
+
+        function notyfiError(  err ){
+            Materialize.toast( err , 4000 , 'red darken-3' );
+        }
+
+        $(function () {
+
+            $('#fileupload_profile').fileupload({
+                dataType: 'json',
+                add: function (e, data) {
+
+                    data.formData = {user_id: $("#picture_edit_form").attr("data-user_id") };
+
+                    $(this).attr( "data-url" , "" );
+
+                    data.submit();
+                    $('#progress_profile').css( "display" , "block" );
+                },
+                done: function (e, data) {
+                    console.log( data.result );
+                    if( data.result.success == 1 ){
+                        src = "{{ asset('bundles/tmp/images/thumbnail/') }}" + data.result.file.name;
+                        $("#profile_img").attr( "src" , src );
+                        if( picture_box_onfileuploaded )
+                            picture_box_onfileuploaded(src);
+                    }else{
+                        notyfiError(data.result.file.error);
+                    }
+
+                    $('#progress_profile').delay( 500 ).fadeOut( 800 , function() {
+                        $('#progress_profile .determinate').css('width','0%' );
+                    });
+
+                },
+                progressall: function (e, data) {
+
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#progress_profile .determinate').css(
+                            'width',
+                            progress + '%'
+                    );
+                },
+                acceptFileTypes : "/(\.|\/)(gif|jpe?g|png)$/i",
+                maxFileSize : 1500000
+            });
+        });
+
+        var avatarsUrl = "{{ asset('bundles/tmp/images/') }}";
+        var imagesUrl = "{{ asset('bundles/tmp/images/') }}";
+        //------------------------------------------------------------------------------------
+        function picture_upload_clear(){
+            $("#profile_img").attr( "src" , "{{ asset('bundles/images/avatar-def.png') }}" );
+        }
+        //------------------------------------------------------------------------------------
+        function picture_upload_setData( data ){
+            if( data.avatar ){
+                $("#profile_img").attr( "src" , avatarsUrl + data.avatar );
+                console.log(avatarsUrl + data.avatar);
+            }
+            if(data.id_image ){
+                $("#identy_img").attr( "src" , imagesUrl + data.id_image );
+            }
+        }
+        //------------------------------------------------------------------------------------
 
 
     </script>
