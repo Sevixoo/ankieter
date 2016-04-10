@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppDataBundle\Entity\Groups;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Controller\Basic\BasicController;
@@ -156,7 +157,38 @@ class GroupController extends BasicController
         return $this->redirectToRoute('group');
     }
 
+    /**
+     * @Route("/api/group/test1", name="test1")
+     * @Method({"GET"})
+     */
+    public function test1Action()
+    {
+        $data = array(
+            "success" => 1,
+            "data" => array(
+                "aaaa",
+                "bbbb"
+            )
+        );
 
+        return $this->getJSONResponse($data);
+    }
+
+    /**
+     * @Route("/api/group/test2/{id}", name="test2")
+     * @Method({"POST"})
+     */
+    public function test2Action($id)
+    {
+        $data = array(
+            "success" => 1,
+            "data" => array(
+                "twoje id" => $id
+            )
+        );
+
+        return $this->getJSONResponse($data);
+    }
 
     /*
      * Przykładowo:

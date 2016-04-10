@@ -6,5 +6,8 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+api_host:
+    path:   /api
+
 logout:
     path:   /logout

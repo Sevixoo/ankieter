@@ -18,6 +18,10 @@
 
     <script type="text/javascript" src="{{ asset('bundles/materialize/js/materialize.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/underscore/underscore.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/jQueryFileUpload/js/vendor/jquery.ui.widget.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/jQueryFileUpload/js/jquery.iframe-transport.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/jQueryFileUpload/js/jquery.fileupload.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/ankieter_api/AnkieterApi.js') }}"></script>
 
 
     <style>
@@ -62,24 +66,37 @@
 
     <script type="text/javascript" >
 
-        var BaseApp = {
-            showLoader : function(){
-                $( "#progressLoader" ).show();
-            },
-            hideLoader : function(){
-                $( "#progressLoader" ).hide( "slow" );
-            },
-            parametrizeUrl : function( data , url ){
-                var str = url;
-                for( x in data ){
-                    str = str.replace( "{"+x+"}" , data[x] );
-                }
-                if( str.search(/{*}/i) >= 0 ){
-                    throw "Invalid arg in "+str;
-                }
-                return str;
+        var API_HOST = "{{ url('api_host') }}";
+        var SERVER = {
+            ROUTER : {
+                TEST1 : API_HOST + "/group/test1",
+                TEST2 : API_HOST + "/group/test2/{id}",
+                TMP_FILE_UPLOAD : API_HOST + "/upload_tmp_file"
             }
         };
+
+        /*
+         AnkieterApi.REST.get({
+         url : SERVER.ROUTER.TEST1
+         });*/
+
+        AnkieterApi.REST.post({
+            url : SERVER.ROUTER.TEST2,
+            url_data:{
+                id:1
+            },
+            data:{
+                aaa : "aaa",
+                bbb : "bbb"
+            },
+            onResult : function(data){
+                //alert(data);
+            },
+            onError : function(msg){
+                alert(msg);
+            },
+            loaderView : "#progressLoader"
+        });
 
     </script>
 
