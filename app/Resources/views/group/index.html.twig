@@ -36,7 +36,109 @@
 
 <div class="row" style="clear:both;">
 
-    <div style="margin-top: 30px; margin-bottom: 20px;" class="centered" ><h5 >Grupy</h5></div>
+    <div class="row" style="clear:both;">
+
+        <div class="col s6" >
+            <ul id="groupList" class="collection" style="height: 300px;" >
+                <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
+                    <h6 style="padding: 5px;padding-left:10px; display: block;float: left">Grupy</h6>
+                    <button data-target="modal_add_group" style="float: right;padding-left: 10px;padding-right: 10px;" class="modal-trigger waves-effect waves-teal btn-flat"  >dodaj<i class="material-icons right">add</i></button>
+                    <div style="clear: both" />
+                </li>
+                {% for group in groups %}
+                    <a class="collection-item" data-id="{{ group.id }}" data-name="{{ group.name }}" style="padding: 5px;cursor: pointer;" >
+                        <span >{{ group.name }}</span>
+                        <span class="badge">1</span>
+                    </a>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col s6" >
+            <ul id="subscriberList" class="collection" style="height: 300px;" >
+                <!-- BEGIN: Underscore Template Definition. -->
+                <script type="text/template" id="subscriber_list_template">
+                    <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
+                        <h6 style="padding: 5px;padding-left:10px; display: block;float: left">Subskrybenci</h6>
+                        <div style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  >dodaj<i class="material-icons right">add</i></div>
+                        <div style="clear: both" />
+                    </li>
+                    <% _.each( rc.listItems, function( listItem ){ %>
+                        <% if ( listItem.viewType == "item") { %>
+                        <a class="collection-item" data-id="<%- listItem.id %>" data-name="<%- listItem.data %>" style="padding: 5px;cursor: pointer;" >
+                            <span ><%- listItem.data %></span>
+                            <span class="badge"><%- listItem.id %></span>
+                        </a>
+                        <% }else if( listItem.viewType == "loader" ){ %>
+                        <% } %>
+                    <% }); %>
+                    <div class="collection-item" style="width: 30px;margin: auto" >
+                        <div class="preloader-wrapper small active">
+                            <div class="spinner-layer spinner-green-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+                <!-- END: Underscore Template Definition. -->
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Modal Structure -->
+    <div style="width: 500px;height: 300px;" id="modal_add_group" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h5>Dodaj grupe</h5>
+            <p>Podaj nazwę nowej grupy, opcjonalnie wgraj plik *.csv z listą maili</p>
+            <form>
+                <div class="input-field col s6">
+                    <input id="group_name" type="text" class="validate">
+                    <label for="group_name">Nazwa nowej grupy</label>
+                </div>
+
+                <div style="margin: 0 auto;" >
+                    <p class="center">
+                        <img onclick="$('#fileupload_profile').click()" id="profile_img"
+                             style="width:70px;height: 70px;cursor: pointer; margin: 0 auto; "
+                             src="{{ asset('bundles/images/avatar-def.png') }}" alt="podaj plik *.csv" class="center tooltipped"
+                        >
+                    </p>
+                    <div id="progress_profile" class="progress" style="display: none;" >
+                        <div class="determinate" style="width: 0%"> </div>
+                    </div>
+                </div>
+                <div class="file-field input-field" style="display: none;" >
+                    <div class="btn">
+                        <span>File</span>
+                        <input id="fileupload_profile" type="file" name="files[]" data-url="{{ path( "upload_tmp_file" ) }}" /> <!-- page.url( 'FileUpload' , 'uploadUserAvatar' ) -->
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action waves-effect waves-green btn-flat ">Dodaj</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+    <div style="width: 500px;height: 300px;" id="modal_add_group" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Dodaj</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
+        </div>
+    </div>
 
     <div class="col s8 offset-s2" >
         <table class="row bordered  centered responsive-table">
@@ -76,8 +178,6 @@
         </a>
     </div>
 
-
-
     <form id="picture_edit_form" data-user_id="" class="row" style="margin: 0 auto;width: 100%;min-height: 150px;" >
 
         <div class="col s6" >
@@ -97,8 +197,6 @@
 
             </div>
             <div class="row"  >
-
-
                 <div class="file-field input-field" style="display: none;" >
                     <div class="btn">
                         <span>File</span>
@@ -111,39 +209,12 @@
                 <div id="progress_profile" class="progress" style="display: none;" >
                     <div class="determinate" style="width: 0%"> </div>
                 </div>
-
             </div>
 
         </div>
 
     </form>
 
-    <div class="row" style="clear:both;">
-
-        <div class="col s6" >
-            <ul id="groupList" class="collection">
-                <li class="collection-header"><h6>grupy</h6></li>
-                {% for group in groups %}
-                    <a href="#!" class="collection-item" style="padding: 5px;" >
-                        <div>
-                            {{ group.name }}
-                            <span class="badge">1</span>
-                        </div>
-                    </a>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="col s6" >
-            <ul class="collection">
-                <li class="collection-header"><h6>subskrybenci</h6></li>
-                {% for group in groups %}
-                    <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-                {% endfor %}
-            </ul>
-        </div>
-
-    </div>
 </div>
 
 {% endblock %}
@@ -151,18 +222,27 @@
 
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('bundles/ankieter_api/widget/SelectableCollection.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/ankieter_api/widget/ListView.js') }}"></script>
 
     <script type="text/javascript" >
         $(document).ready(function(){
 
-            var groupList = $('#groupList').SelectableCollection();
-            groupList.setSelectedItem( 1 , true );
 
+            var subscriberList = $('#subscriberList').ListView({
+                viewTemplate : "subscriber_list_template",
+                onChange : function ( items ){
+                    console.log( items );
+                }
+            });
+
+            var groupList = $('#groupList').SelectableCollection({
+                onChange : function ( items ){
+                    subscriberList.setData( items );
+                }
+            });
+            
             $('.modal-trigger').leanModal();
 
-            {% if isInvalid == true %}
-                 $('#modal_add_group').openModal();
-            {% endif %}
         });
 
         var picture_box_onfileuploaded = null;
