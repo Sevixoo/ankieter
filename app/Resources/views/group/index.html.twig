@@ -118,15 +118,46 @@
 
     </form>
 
+    <div class="row" style="clear:both;">
+
+        <div class="col s6" >
+            <ul id="groupList" class="collection">
+                <li class="collection-header"><h6>grupy</h6></li>
+                {% for group in groups %}
+                    <a href="#!" class="collection-item" style="padding: 5px;" >
+                        <div>
+                            {{ group.name }}
+                            <span class="badge">1</span>
+                        </div>
+                    </a>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col s6" >
+            <ul class="collection">
+                <li class="collection-header"><h6>subskrybenci</h6></li>
+                {% for group in groups %}
+                    <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
 </div>
 
 {% endblock %}
 
 
 {% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/ankieter_api/widget/SelectableCollection.js') }}"></script>
+
     <script type="text/javascript" >
         $(document).ready(function(){
-            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+
+            var groupList = $('#groupList').SelectableCollection();
+            groupList.setSelectedItem( 1 , true );
+
             $('.modal-trigger').leanModal();
 
             {% if isInvalid == true %}
