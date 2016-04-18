@@ -22,6 +22,10 @@ class GroupController extends BasicController
     public function indexAction(Request $request)
     {
 
+        //TODO... 1. Pierwsza grupa ma być grupa specjalna: "Wszyscy" nie zapisujemy w bazie tego
+        //przy usuwaniu trzeba zwrócić błąd że nie można usunąć grupy Wszyscy ani nic z niej
+        //TODO... 2. zwrócić ilości kontaktów w każdej grupie
+
         $conn = $this->get('database_connection');
         $groups = $conn->fetchAll('SELECT * FROM Groups');
 
@@ -189,6 +193,201 @@ class GroupController extends BasicController
 
         return $this->getJSONResponse($data);
     }
+    /*================================================================================================================*/
+    /*  REST API                                                                                                      */
+    /*================================================================================================================*/
+    /**
+     * @Route("/api/subscribers/{group_id}", name="get_subscribers")
+     * @Method({"GET"})
+     */
+    public function getSubscribersAction($group_id){
+        //TODO... implement data model
+
+        $data = array(
+            "success" => 1,
+            "data" => array(
+                "list" => array(
+                    array(
+                        "id" => 1,
+                        "email" => "aaa567@bbb.cc"
+                    ),
+                    array(
+                        "id" => 2,
+                        "email" => "aaa123@bbb.cc"
+                    ),
+                    array(
+                        "id" => 3,
+                        "email" => "aaa234@bbb.cc"
+                    ),
+                    array(
+                        "id" => 4,
+                        "email" => "aaa345@bbb.cc"
+                    ),
+                    array(
+                        "id" => 5,
+                        "email" => "aaa456@bbb.cc"
+                    )
+                )
+            )
+        );
+
+        return $this->getJSONResponse($data);
+    }
+    /**
+     * @Route("/api/subscribers/delete", name="delete_subscribers")
+     * @Method({"DELETE"})
+     */
+    public function deleteSubscribersAction(){
+        $request = Request::createFromGlobals();
+        $idsToDelete = json_decode( $request->request->get('ids') );
+        return $this->_deleteSubscribers($idsToDelete);
+    }
+    /**
+     * @Route("/api/subscribers/{id}", name="delete_subscriber")
+     * @Method({"DELETE"})
+     */
+    public function deleteSubscriberAction($id){
+        $idsToDelete = array($id);
+        return $this->_deleteSubscribers($idsToDelete);
+    }
+
+    private function _deleteSubscribers( $idsToDelete ){
+        //TODO... implement data model
+
+        $data = array(
+            "success" => 1,
+            "data" => array(
+                "deleted_items" => $idsToDelete,
+                "deleted_rows" => count($idsToDelete)
+            )
+        );
+
+        return $this->getJSONResponse($data);
+    }
+
+    /**
+     * @Route("/api/subscribers/remove/{group_id}", name="remove_subscribers")
+     * @Method({"DELETE"})
+     */
+    public function removeSubscribersFromGroupAction($group_id){
+        $request = Request::createFromGlobals();
+        $idsToDelete = json_decode( $request->request->get('ids') );
+
+        //TODO... implement data model
+
+        $data = array(
+            "success" => 1,
+            "data" => array(
+                "removed_items" => $idsToDelete,
+                "removed_rows" => count($idsToDelete)
+            )
+        );
+
+        return $this->getJSONResponse($data);
+    }
+
+    /**
+     * @Route("/api/group/{group_id}", name="delete_group")
+     * @Method({"DELETE"})
+     */
+    public function deleteGroupAction($group_id){
+        //TODO... implement data model
+
+        $data = array(
+            "success" => 1,
+            "data" => array(
+                "deleted_items" => array($group_id),
+                "deleted_rows" => count(array($group_id))
+            )
+        );
+
+        return $this->getJSONResponse($data);
+    }
+
+    /**
+     * @Route("/api/group/del_sub/{group_id}", name="delete_group_and_subs")
+     * @Method({"DELETE"})
+     */
+    public function deleteGroupAndSubsAction($group_id){
+        //TODO... implement data model
+
+        $data = array(
+            "success" => 1,
+            "data" => array(
+                "deleted_items" => array($group_id),
+                "deleted_rows" => count(array($group_id))
+            )
+        );
+
+        return $this->getJSONResponse($data);
+    }
+
+    /**
+     * @Route("/api/group/create", name="create_group")
+     * @Method({"PUT"})
+     *
+     * dodaje grupe jeśeli podamy file name to wczytuje z csv
+     *
+     */
+    public function createGroupAction(){
+        $request = Request::createFromGlobals();
+        $group_name = $request->request->get('group_name');
+        $file_name = $request->request->get('file_name');
+
+        //TODO... implement data model
+        //insert group
+        $group_id = 1;
+        $group_size = 11;
+
+        if($group_id>0) {
+            $data = array(
+                "success" => 1,
+                "data" => array(
+                    "created" => array(
+                        "id" => $group_id,
+                        "name" => $group_name,
+                        "size" => $group_size
+                    ),
+                    "import_report" => $this->_importMailsFromCSV($group_id, $file_name)
+                )
+            );
+        }else{
+            $data = array(
+                "success" => 0,
+                "error" => "COULD_NOT_ADD_GROUP"
+            );
+        }
+        return $this->getJSONResponse($data);
+    }
+
+    /**
+     * @Route("/api/group/csv/{group_id}", name="group_send_csv")
+     * @Method({"PUT"})
+     */
+    public function sendCSVGroupAction($group_id){
+        $request = Request::createFromGlobals();
+        $file_name = $request->request->get('file_name');
+        $data = $this->_importMailsFromCSV( $group_id , $file_name );
+        return $this->getJSONResponse($data);
+    }
+
+    private function _importMailsFromCSV( $_group_id , $_tmp_file_name ){
+        //TODO... implement data model
+        //wywołaj swojafunkcje do importu?
+        $data = array(
+            "success" => 1,
+            "imported_count" => 1,
+            "imported_errors" => 2,
+            "imported_items" => array(
+                "aaaa@bbb.cc" => "ALREADY_EXISTS",
+                "aaasd@bbb.cc" => "OK",
+                "aaasvvbbb.cc" => "PARSE_ERROR"
+            )
+        );
+
+        return $data;
+    }
+
 
     /*
      * Przykładowo:

@@ -55,6 +55,7 @@ jQuery.fn.extend({
                     this.onChange = opt.onChange;
                 }
                 this.displayList();
+                this.hideLoader();
             },
 
             setData : function( dataList ){
@@ -62,10 +63,23 @@ jQuery.fn.extend({
                 for( x in dataList ){
                     this.listItems.push({
                         viewType : VIEW_TYPE.ITEM,
-                        id : x,
-                        data : dataList[x]
+                        id : dataList[x].id,
+                        data : dataList[x].email
                     });
                 }
+                this.displayList();
+            },
+
+            size : function(){
+                return this.listItems.length;
+            },
+
+            selectedItems : function(){
+                return this.listView.find("a.active").length;
+            },
+
+            clearList : function( dataList ){
+                this.listItems = [];
                 this.displayList();
             },
 
@@ -97,10 +111,52 @@ jQuery.fn.extend({
                 return list;
             },
 
+            getSelectedItemsIds : function(){
+                var arr = [];
+
+                this.listView.find( "a.active").each(function( index ) {
+                    arr.push($( this ).attr("data-id"));
+                });
+
+                return arr;
+            },
+
+            countSelectedItems : function(){
+                var count = 0;
+
+                this.listView.find( "a.active").each(function( index ) {
+                    count++;
+                });
+
+                return count;
+            },
+
             setToggleItem : function( id ){
                 this.listView.find( "a[data-id="+id+"]").toggleClass("active");
-            }
+            },
 
+            showLoader : function (){
+                this.listView.find( "#subscriberList_preloader").show();
+            },
+
+            hideLoader : function(){
+                this.listView.find( "#subscriberList_preloader").hide();
+            },
+
+            deleteFromList : function (ids) {
+                for( x in ids ){
+                    this.remove(ids[x]);
+
+                }
+                this.displayList();
+            },
+            remove : function (id) {
+                for (var i = this.listItems.length; i--;) {
+                    if (this.listItems[i].id == id ) {
+                        this.listItems.splice(i, 1);
+                    }
+                }
+            }
         }
 
         model.init(options,this);
