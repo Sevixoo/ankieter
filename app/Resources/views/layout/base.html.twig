@@ -64,42 +64,6 @@
     {% endblock %}
 
 
-    <script type="text/javascript" >
-
-        var API_HOST = "{{ url('api_host') }}";
-        var SERVER = {
-            ROUTER : {
-                TEST1 : API_HOST + "/group/test1",
-                TEST2 : API_HOST + "/group/test2/{id}",
-                TMP_FILE_UPLOAD : API_HOST + "/upload_tmp_file"
-            }
-        };
-
-        /*
-         AnkieterApi.REST.get({
-         url : SERVER.ROUTER.TEST1
-         });*/
-
-        AnkieterApi.REST.post({
-            url : SERVER.ROUTER.TEST2,
-            url_data:{
-                id:1
-            },
-            data:{
-                aaa : "aaa",
-                bbb : "bbb"
-            },
-            onResult : function(data){
-                //alert(data);
-            },
-            onError : function(msg){
-                alert(msg);
-            },
-            loaderView : "#progressLoader"
-        });
-
-    </script>
-
     {% block javascripts %}{% endblock %}
 
     </body>

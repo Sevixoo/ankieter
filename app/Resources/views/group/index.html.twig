@@ -39,11 +39,13 @@
     <div class="row" style="clear:both;">
 
         <div class="col s6" >
-            <ul id="groupList" class="collection" style="height: 300px;" >
+            <ul id="groupList" class="row collection" style="height: 300px;margin-bottom: 0px;" >
                 <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
                     <h6 style="padding: 5px;padding-left:10px; display: block;float: left">Grupy</h6>
-                    <button data-target="modal_add_group" style="float: right;padding-left: 10px;padding-right: 10px;" class="modal-trigger waves-effect waves-teal btn-flat"  >dodaj<i class="material-icons right">add</i></button>
-                    <div style="clear: both" />
+                    <button id="btn_modal_add_group" data-target="modal_add_group" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  >dodaj<i class="material-icons right">add</i></button>
+                    <button id="btn_modal_import_csv" data-target="modal_import_csv" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  ><i class="material-icons">note_add</i></button>
+                    <button id="btn_modal_delete_group" data-target="modal_delete_group" style="float: right;padding-left: 10px;padding-right: 10px;" class="modal-trigger waves-effect waves-teal btn-flat"  ><i class="material-icons">delete</i></button>
+                     <div style="clear: both" />
                 </li>
                 {% for group in groups %}
                     <a class="collection-item" data-id="{{ group.id }}" data-name="{{ group.name }}" style="padding: 5px;cursor: pointer;" >
@@ -55,24 +57,26 @@
         </div>
 
         <div class="col s6" >
-            <ul id="subscriberList" class="collection" style="height: 300px;" >
+            <ul id="subscriberList" class="row collection" style="height: 300px;margin-bottom: 0px;" >
                 <!-- BEGIN: Underscore Template Definition. -->
                 <script type="text/template" id="subscriber_list_template">
                     <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
                         <h6 style="padding: 5px;padding-left:10px; display: block;float: left">Subskrybenci</h6>
-                        <div style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  >dodaj<i class="material-icons right">add</i></div>
+
+                        <button id="btn_modal_add_subscriber" data-target="modal_add_subscriber" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  >dodaj<i class="material-icons right">add</i></button>
+                        <button id="btn_modal_delete_subscribers" data-target="modal_delete_subscribers" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  ><i class="material-icons">delete</i></button>
                         <div style="clear: both" />
                     </li>
                     <% _.each( rc.listItems, function( listItem ){ %>
                         <% if ( listItem.viewType == "item") { %>
                         <a class="collection-item" data-id="<%- listItem.id %>" data-name="<%- listItem.data %>" style="padding: 5px;cursor: pointer;" >
                             <span ><%- listItem.data %></span>
-                            <span class="badge"><%- listItem.id %></span>
+                            <!--span class="badge"><%- listItem.id %></span-->
                         </a>
                         <% }else if( listItem.viewType == "loader" ){ %>
                         <% } %>
                     <% }); %>
-                    <div class="collection-item" style="width: 30px;margin: auto" >
+                    <div id="subscriberList_preloader" class="collection-item" style="width: 25px;margin: auto" >
                         <div class="preloader-wrapper small active">
                             <div class="spinner-layer spinner-green-only">
                                 <div class="circle-clipper left">
@@ -93,35 +97,41 @@
     </div>
 
     <!-- Modal Structure -->
-    <div style="width: 500px;height: 300px;" id="modal_add_group" class="modal modal-fixed-footer">
+    <div style="width: 500px;height: 300px;" id="modal_import_csv" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <h5>Dodaj grupe</h5>
-            <p>Podaj nazwę nowej grupy, opcjonalnie wgraj plik *.csv z listą maili</p>
+            <h5>Import z pliku</h5>
+            <p>Wgraj plik *.csv z listą maili</p>
             <form>
-                <div class="input-field col s6">
-                    <input id="group_name" type="text" class="validate">
-                    <label for="group_name">Nazwa nowej grupy</label>
-                </div>
-
                 <div style="margin: 0 auto;" >
                     <p class="center">
-                        <img onclick="$('#fileupload_profile').click()" id="profile_img"
+                        <img id="img_modal_import_csv" onclick="$('#file_modal_import_csv').click()"
                              style="width:70px;height: 70px;cursor: pointer; margin: 0 auto; "
-                             src="{{ asset('bundles/images/avatar-def.png') }}" alt="podaj plik *.csv" class="center tooltipped"
+                             src="{{ asset('bundles/images/icon_csv_import.png') }}" alt="podaj plik *.csv" class="center tooltipped"
                         >
                     </p>
-                    <div id="progress_profile" class="progress" style="display: none;" >
+                    <div id="progress_modal_import_csv" class="progress" style="display: none;" >
                         <div class="determinate" style="width: 0%"> </div>
                     </div>
                 </div>
                 <div class="file-field input-field" style="display: none;" >
                     <div class="btn">
                         <span>File</span>
-                        <input id="fileupload_profile" type="file" name="files[]" data-url="{{ path( "upload_tmp_file" ) }}" /> <!-- page.url( 'FileUpload' , 'uploadUserAvatar' ) -->
+                        <input id="file_modal_import_csv" type="file" name="files[]" data-url="{{ path( "upload_tmp_file" ) }}" /> <!-- page.url( 'FileUpload' , 'uploadUserAvatar' ) -->
                     </div>
                 </div>
 
             </form>
+        </div>
+        <div  class="modal-footer">
+            <a id="confirm_modal_import_csv" href="#" class="modal-action waves-effect waves-green btn-flat ">Dodaj</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
+        </div>
+    </div>
+    <!-- Modal Structure modal_add_subscriber -->
+    <div style="width: 500px;height: 300px;" id="modal_add_subscriber" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>modal_add_subscriber</h4>
+            <p>modal_add_subscriber</p>
         </div>
         <div class="modal-footer">
             <a href="#" class="modal-action waves-effect waves-green btn-flat ">Dodaj</a>
@@ -131,90 +141,107 @@
     <!-- Modal Structure -->
     <div style="width: 500px;height: 300px;" id="modal_add_group" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+            <h5>Dodaj nową grupę</h5>
+            <p>Podaj nazwę nowej grupy, opcjonalnie wgraj plik *.csv z listą maili</p>
+            <form>
+                <div class="input-field col s6">
+                    <input id="input_modal_add_group" type="text" class="validate">
+                    <label for="input_modal_add_group">Nazwa nowej grupy</label>
+                </div>
+
+                <div style="margin: 0 auto;" >
+                    <p class="center">
+                        <img id="img_modal_add_group" onclick="$('#file_modal_add_group').click()"
+                             style="width:70px;height: 70px;cursor: pointer; margin: 0 auto; "
+                             src="{{ asset('bundles/images/icon_csv_import.png') }}" alt="podaj plik *.csv" class="center tooltipped"
+                        >
+                    </p>
+                    <div id="progress_profile" class="progress" style="display: none;" >
+                        <div class="determinate" style="width: 0%"> </div>
+                    </div>
+                </div>
+                <div class="file-field input-field" style="display: none;" >
+                    <div class="btn">
+                        <span>File</span>
+                        <input id="file_modal_add_group" type="file" name="files[]" data-url="{{ path( "upload_tmp_file" ) }}" /> <!-- page.url( 'FileUpload' , 'uploadUserAvatar' ) -->
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div  class="modal-footer">
+            <a id="confirm_modal_add_group" href="#" class="modal-action waves-effect waves-green btn-flat ">Dodaj</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
+        </div>
+    </div>
+    <!-- Modal Structure modal_add_subscriber -->
+    <div style="width: 500px;height: 300px;" id="modal_add_subscriber" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>modal_add_subscriber</h4>
+            <p>modal_add_subscriber</p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Dodaj</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
+            <a href="#" class="modal-action waves-effect waves-green btn-flat ">Dodaj</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
         </div>
     </div>
-
-    <div class="col s8 offset-s2" >
-        <table class="row bordered  centered responsive-table">
-            <thead>
-                <tr>
-
-                    <th >Nazwa</th>
-
-                    <th>Wgraj CSV</th>
-                    <th>Generuj CSV</th>
-                    <th>Usuń</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {% for group in groups %}
-                    <tr>
-                        <td  ><a href="{{ path('groupIndex', {'id': group.id}) }}">{{ group.name }}</a></td>
-                        <td><a href="{{ path('groupPushCSV', {'id': group.id}) }}"><i class="material-icons">call_received</i></a></td>
-                        <td><a href="{{ path('groupPullCSV', {'id': group.id}) }}"><i class="material-icons">call_made</i></a></td>
-                        <td><a href="{{ path('groupDelete', {'id': group.id}) }}"> <i class="material-icons">delete</i></a></td>
-
-                    </tr>
-                {% endfor %}
-            </tbody>
-
-
-        </table>
+    <!-- Modal Structure modal_delete_subscribers -->
+    <div style="width: 400px;height: 280px;" id="modal_delete_subscribers" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h5>Usuń subskrybentów z grupy</h5>
+            <p id="desc_modal_delete_subscribers" >desc_modal_delete_subscribers</p>
+            <p>
+                <input id="cbx_action_modal_delete_subscribers" class="filled-in" type="checkbox"  />
+                <label for="cbx_action_modal_delete_subscribers">Usuń na stałe</label>
+                <span>elementy zostaną na stałe usunięte z bazy danych</span>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a id="confirm_action_modal_delete_subscribers" href="#" class="modal-action waves-effect waves-green btn-flat ">Usuń</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
+        </div>
     </div>
-
-    {% include ':dialogs:modal_add_group.html.twig' %}
-
-
+    <!-- Modal Structure modal_delete_subscribers -->
+    <div  style="width: 400px;height: 280px;"  id="modal_delete_group" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Usuń grupę</h4>
+            <p>
+                <input id="cbx_action_modal_delete_group" class="filled-in" type="checkbox" />
+                <label for="cbx_action_modal_delete_group">Usuń trwale subskrybentów</label>
+                <span>elementy zostaną na stałe usunięte z bazy danych</span>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a id="confirm_action_modal_delete_group" href="#" class="modal-action waves-effect waves-green btn-flat ">Usuń</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
+        </div>
+    </div>
+    <!-- Modal Structure modal_delete_subscribers -->
+    <div id="modal_loader" style="width: 280px;height: 145px;" class="modal">
+        <div class="modal-content">
+            <div style="width: 25px;margin: auto;margin-top: 25px " >
+                <div  class="preloader-wrapper small active  ">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button  id="trigger_modal_loader" data-target="modal_loader" style="display: none" class="waves-effect waves-teal btn-flat"  ></button>
+    <!--
     <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
         <a href="#modal_add_group" class="modal-trigger btn-floating btn-large red">
             <i class="large material-icons">add</i>
         </a>
     </div>
-
-    <form id="picture_edit_form" data-user_id="" class="row" style="margin: 0 auto;width: 100%;min-height: 150px;" >
-
-        <div class="col s6" >
-
-            <div class="row" style="margin: 0 auto;" >
-                <div class="col s6" >
-                    <p style="text-align: center; font-size: 11px;" >skan zdjęcia typu paszportowe</p>
-                </div>
-                <div class="col s6" >
-                    <p class="center">
-                        <img onclick="$('#fileupload_profile').click()" id="profile_img"
-                             style="width:70px;height: 70px;cursor: pointer; margin: 0 auto; "
-                             src="{{ asset('bundles/images/avatar-def.png') }}" alt="" class="center tooltipped"
-                        >
-                    </p>
-                </div>
-
-            </div>
-            <div class="row"  >
-                <div class="file-field input-field" style="display: none;" >
-                    <div class="btn">
-                        <span>File</span>
-                        <input id="fileupload_profile" type="file" name="files[]" data-url="{{ path( "upload_tmp_file" ) }}" /> <!-- page.url( 'FileUpload' , 'uploadUserAvatar' ) -->
-                    </div>
-                </div>
-
-                <div style="clear:both;" > </div>
-
-                <div id="progress_profile" class="progress" style="display: none;" >
-                    <div class="determinate" style="width: 0%"> </div>
-                </div>
-            </div>
-
-        </div>
-
-    </form>
-
+    -->
 </div>
 
 {% endblock %}
@@ -227,23 +254,228 @@
     <script type="text/javascript" >
         $(document).ready(function(){
 
+            var API_HOST = "{{ url('api_host') }}";
+            var SERVER = {
+                ROUTER : {
+                    TEST1 : API_HOST + "/group/test1",
+                    TEST2 : API_HOST + "/group/test2/{id}",
+                    TMP_FILE_UPLOAD : API_HOST + "/upload_tmp_file",
+                    GET_SUBSCRIBERS : API_HOST + "/subscribers/{group_id}",
+                    DEL_SUBSCRIBER : API_HOST + "/subscribers/{id}",
+                    DEL_SUBSCRIBERS : API_HOST + "/subscribers/delete",
+                    REMOVE_SUBSCRIBERS : API_HOST + "/subscribers/remove/{group_id}",
+                    DEL_GROUP : API_HOST + "/group/{group_id}",
+                    DEL_GROUP_AND_SUBS : API_HOST + "/group/del_sub/{group_id}",
+                    ADD_GROUP : API_HOST + "/group/create",
+                    IMPORT_CSV : API_HOST + "/group/csv/{group_id}"
+                }
+            };
 
             var subscriberList = $('#subscriberList').ListView({
                 viewTemplate : "subscriber_list_template",
                 onChange : function ( items ){
-                    console.log( items );
+                    if( subscriberList.selectedItems() > 0 ){
+                        $("#btn_modal_delete_subscribers").show();
+                    }else{
+                        $("#btn_modal_delete_subscribers").hide();
+                    }
                 }
             });
 
             var groupList = $('#groupList').SelectableCollection({
-                onChange : function ( items ){
-                    subscriberList.setData( items );
-                }
+                onSelect : function ( item ){
+                    if(item){
+                        $("#btn_modal_delete_group").show();
+                        GroupModule.loadSubscribers(item.id);
+                    }else{
+                        $("#btn_modal_delete_group").hide();
+                    }
+                },
+                disallowMultiSelect : true
             });
             
-            $('.modal-trigger').leanModal();
+            var GroupModule = {
+                init : function(){
 
+                    $("#btn_modal_delete_group").hide();
+
+                    $('.modal-trigger').leanModal();
+
+                    $('#trigger_modal_loader').leanModal({
+                        in_duration: 50,
+                        out_duration: 150,
+                        dismissible: false
+                    });
+
+                    $('#btn_modal_add_group').leanModal({
+                        in_duration: 150,
+                        out_duration: 150,
+                        ready: function() {
+                            $('#input_modal_add_group').val('');
+                            $('#file_modal_add_group').val('');
+                            $('#img_modal_add_group').attr("src" , "{{ asset('bundles/images/icon_csv_import.png') }}");
+                        }
+                    });
+
+                    $('#btn_modal_import_csv').leanModal({
+                        in_duration: 150,
+                        out_duration: 150,
+                        ready: function() {
+                        }
+                    });
+
+                    this.initSubscribersModels();
+
+                    $('#confirm_action_modal_delete_subscribers').click(function() {
+                        if(subscriberList.getSelectedItemsIds()) {
+                            if ($('#cbx_action_modal_delete_subscribers').prop("checked")) {
+                                GroupModule.deleteSubscribers(subscriberList.getSelectedItemsIds());
+                            } else {
+                                GroupModule.removeSubscribersFromGroup(
+                                        subscriberList.getSelectedItemsIds(),
+                                        groupList.getSelectedItem().id
+                                );
+                            }
+                        }
+                    });
+
+                    $('#confirm_action_modal_delete_group').click(function() {
+                        if(groupList.getSelectedItem()) {
+                            if ($('#cbx_action_modal_delete_group').prop("checked")) {
+                                GroupModule.deleteGroupAndSubscribers(groupList.getSelectedItem().id);
+                            } else {
+                                GroupModule.deleteGroup(groupList.getSelectedItem().id);
+                            }
+                        }
+                    });
+
+                    $('#confirm_modal_add_group').click(function() {
+                        GroupModule.addGroupGroup( $('#input_modal_add_group').val() , $('#file_modal_add_group').val() );
+                    });
+
+                    $('#confirm_modal_import_csv').click(function() {
+                        //
+                    });
+
+                },
+                initSubscribersModels : function(){
+                    $('#btn_modal_delete_subscribers').leanModal({
+                        in_duration: 150,
+                        out_duration: 150,
+                        ready: function() {
+                            var c = subscriberList.countSelectedItems();
+                            $('#desc_modal_delete_subscribers').html("Ilość elemantów do usunięcia: " + c);
+                        }
+                    });
+                    $('#btn_modal_add_subscriber').leanModal( );
+
+                    $("#btn_modal_delete_subscribers").hide();
+                },
+                onError : function(msg){
+                    Materialize.toast( msg , 4000 , 'red darken-3' );
+                },
+                loadSubscribers : function( group_id ){
+                    subscriberList.clearList();
+                    $("#btn_modal_delete_subscribers").hide();
+                    AnkieterApi.REST.get({
+                        url : SERVER.ROUTER.GET_SUBSCRIBERS,
+                        url_data:{ group_id:group_id },
+                        onResult : function(data){
+                            subscriberList.setData(data.list);
+                            subscriberList.hideLoader();
+                            GroupModule.initSubscribersModels();
+                        },
+                        onError : GroupModule.onError,
+                        loaderView : "#subscriberList_preloader"
+                    });
+                },
+                deleteSubscribers : function( toDelete ){
+                    $('#modal_delete_subscribers').closeModal();
+                    AnkieterApi.REST.delete({
+                        url : SERVER.ROUTER.DEL_SUBSCRIBERS,
+                        data:{ ids: JSON.stringify( toDelete ) },
+                        onResult : function(data){
+                            subscriberList.deleteFromList(data.deleted_items);
+                            GroupModule.initSubscribersModels();
+                            subscriberList.hideLoader();
+                        },
+                        onError : GroupModule.onError,
+                        loaderModal : "#modal_loader"
+                    });
+                },
+                removeSubscribersFromGroup : function( toDelete , group_id ){
+                    $('#modal_delete_subscribers').closeModal();
+                    console.log(toDelete);
+                    AnkieterApi.REST.delete({
+                        url : SERVER.ROUTER.REMOVE_SUBSCRIBERS,
+                        url_data : { group_id : group_id },
+                        data:{ ids:JSON.stringify( toDelete ) },
+                        onResult : function(data){
+                            subscriberList.deleteFromList(data.removed_items);
+                            GroupModule.initSubscribersModels();
+                            subscriberList.hideLoader();
+                        },
+                        onError : GroupModule.onError,
+                        loaderModal : "#modal_loader"
+                    });
+                },
+                applySubscribersToGroup : function(){
+
+                },
+                addGroupGroup : function( group_name , file_name ){
+                    console.log(file_name);
+                    $('#modal_add_group').closeModal();
+                    AnkieterApi.REST.put({
+                        url : SERVER.ROUTER.ADD_GROUP,
+                        data:{
+                            group_name:group_name,
+                            file_name:file_name
+                        },
+                        onResult : function(data){
+                            groupList.addGroup( data.created );
+                        },
+                        onError : GroupModule.onError,
+                        loaderModal : "#modal_loader"
+                    });
+                },
+                deleteGroup : function( group_id ){
+                    $('#modal_delete_group').closeModal();
+                    AnkieterApi.REST.delete({
+                        url : SERVER.ROUTER.DEL_GROUP,
+                        url_data:{ group_id:group_id },
+                        onResult : function(data){
+                            groupList.deleteFromList(data.deleted_items);
+                            subscriberList.clearList();
+                            GroupModule.initSubscribersModels();
+                        },
+                        onError : GroupModule.onError,
+                        loaderModal : "#modal_loader"
+                    });
+                },
+                deleteGroupAndSubscribers : function( group_id ){
+                    $('#modal_delete_group').closeModal();
+                    AnkieterApi.REST.delete({
+                        url : SERVER.ROUTER.DEL_GROUP_AND_SUBS,
+                        url_data:{ group_id:group_id },
+                        onResult : function(data){
+                            groupList.deleteFromList(data.deleted_items);
+                            subscriberList.clearList();
+                            subscriberList.hideLoader();
+                            GroupModule.initSubscribersModels();
+                        },
+                        onError : GroupModule.onError,
+                        loaderModal : "#modal_loader"
+                    });
+                },
+                loadSubscribersFromCSV : function(){
+
+                }
+            };
+
+            GroupModule.init();
         });
+
+
 
         var picture_box_onfileuploaded = null;
 
@@ -253,7 +485,7 @@
 
         $(function () {
 
-            $('#fileupload_profile').fileupload({
+            $('#file_modal_add_group').fileupload({
                 dataType: 'json',
                 add: function (e, data) {
 
@@ -268,7 +500,7 @@
                     console.log( data.result );
                     if( data.result.success == 1 ){
                         src = "{{ asset('bundles/tmp/images/thumbnail/') }}" + data.result.file.name;
-                        $("#profile_img").attr( "src" , src );
+                        $("#img_modal_add_group").attr( "src" , src );
                         if( picture_box_onfileuploaded )
                             picture_box_onfileuploaded(src);
                     }else{
@@ -297,16 +529,13 @@
         var imagesUrl = "{{ asset('bundles/tmp/images/') }}";
         //------------------------------------------------------------------------------------
         function picture_upload_clear(){
-            $("#profile_img").attr( "src" , "{{ asset('bundles/images/avatar-def.png') }}" );
+            $("#img_modal_add_group").attr( "src" , "{{ asset('bundles/images/icon_csv_import.png') }}" );
         }
         //------------------------------------------------------------------------------------
         function picture_upload_setData( data ){
             if( data.avatar ){
-                $("#profile_img").attr( "src" , avatarsUrl + data.avatar );
+                $("#img_modal_add_group").attr( "src" , avatarsUrl + data.avatar );
                 console.log(avatarsUrl + data.avatar);
-            }
-            if(data.id_image ){
-                $("#identy_img").attr( "src" , imagesUrl + data.id_image );
             }
         }
         //------------------------------------------------------------------------------------

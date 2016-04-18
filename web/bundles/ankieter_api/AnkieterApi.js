@@ -51,6 +51,7 @@ var AnkieterApi = {
          *      "onError":onError(String msg)
          *      "defLoader":defLoader(Boolean)
          *      "loaderView":loaderView(String selector)
+         *      "loaderModal":loaderView(String selector)
          *  }
          *  , url_data , form_data , headers , onResult , onError
          * */
@@ -62,11 +63,16 @@ var AnkieterApi = {
             var uri = config.url;
             var defLoader = true;
             var loaderView = false;
+            var loaderModal = false;
+
             if(config.defLoader){
                 defLoader = config.defLoader;
             }
             if(config.loaderView){
                 loaderView = config.loaderView;
+            }
+            if(config.loaderModal){
+                loaderModal = config.loaderModal;
             }
 
             if(config.url_data){
@@ -76,9 +82,13 @@ var AnkieterApi = {
             console.log( "{"+method+"}" + uri );
 
             var headers = {'Content-Type':'application/json'};
+
+            if(method!="GET"){
+                headers = {'Content-Type':'application/x-www-form-urlencoded'};
+            }
+
             if( config.headers ){
                 headers =  config.headers;
-
             }
 
             for (x in headers) {
@@ -104,6 +114,8 @@ var AnkieterApi = {
 
             if(loaderView) {
                 $( loaderView ).show();
+            }else if(loaderModal){
+                $(loaderModal).openModal();
             }else if(defLoader) {
                 AnkieterApi.showLoader();
             }
@@ -121,6 +133,8 @@ var AnkieterApi = {
             req.always(function (jqXHR, textStatus, errorThrown) {
                 if(loaderView) {
                     $( loaderView ).hide();
+                }else if(loaderModal){
+                    $(loaderModal).closeModal();
                 }else if(defLoader) {
                     AnkieterApi.hideLoader();
                 }
