@@ -3,6 +3,7 @@
 namespace AppDataBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -68,4 +69,31 @@ class Groups
     {
         return $this->id;
     }
+
+    public function  setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    private $numberOfSubscribers;
+
+    /**
+     * Get numberOfSubscribers
+     *
+     * @return integer
+     */
+
+    public function getNumberOfSubscribers()
+    {
+       return $this->numberOfSubscribers;
+    }
+
+    public function setNumberOfSubscribers($number)
+    {
+        $this->numberOfSubscribers = $number;
+        return $this;
+    }
+
 }

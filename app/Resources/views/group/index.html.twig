@@ -50,7 +50,7 @@
                 {% for group in groups %}
                     <a class="collection-item" data-id="{{ group.id }}" data-name="{{ group.name }}" style="padding: 5px;cursor: pointer;" >
                         <span >{{ group.name }}</span>
-                        <span class="badge">1</span>
+                        <span class="badge">{{ group.numberOfSubscribers }}</span>
                     </a>
                 {% endfor %}
             </ul>

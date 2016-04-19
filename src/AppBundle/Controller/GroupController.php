@@ -22,12 +22,35 @@ class GroupController extends BasicController
     public function indexAction(Request $request)
     {
 
-        //TODO... 1. Pierwsza grupa ma być grupa specjalna: "Wszyscy" nie zapisujemy w bazie tego
+
         //przy usuwaniu trzeba zwrócić błąd że nie można usunąć grupy Wszyscy ani nic z niej
         //TODO... 2. zwrócić ilości kontaktów w każdej grupie
 
         $conn = $this->get('database_connection');
-        $groups = $conn->fetchAll('SELECT * FROM Groups');
+
+        $groups = array();
+
+        $groups = $this->getDoctrine()->getRepository('AppDataBundle:Groups')->findAll();
+
+        $allGroup = new Groups();
+        $allGroup->setName("Wszyscy");
+        $allGroup->setId(-1);
+
+        array_unshift($groups, $allGroup);
+        
+        foreach($groups as $group)
+        {
+            if ($group->getId()==-1) {
+                $value = $conn->fetchArray("SELECT COUNT(*) FROM Subscribers");
+                $value = $value[0];
+            }
+            else {
+                $id = $group->getId();
+                $value = $conn->fetchArray("SELECT COUNT(*) FROM GroupsSubscribers WHERE GroupsSubscribers.idGroup = '$id'");
+                $value = $value[0];
+            }
+            $group->setNumberOfSubscribers($value);
+        }
 
         $groupFromForm = new Groups();
 
@@ -94,6 +117,8 @@ class GroupController extends BasicController
 
         $conn = $this->get('database_connection');
         $groups = $conn->fetchAll('SELECT * FROM Groups');
+
+
 
         // replace this example code with whatever you need
         return $this->render(':group:index.html.twig', array(
