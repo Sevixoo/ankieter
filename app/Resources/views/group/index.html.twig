@@ -261,10 +261,10 @@
                     TEST2 : API_HOST + "/group/test2/{id}",
                     TMP_FILE_UPLOAD : API_HOST + "/upload_tmp_file",
                     GET_SUBSCRIBERS : API_HOST + "/subscribers/{group_id}",
-                    DEL_SUBSCRIBER : API_HOST + "/subscribers/{id}",
+                    DEL_SUBSCRIBER : API_HOST + "/subscribers/delete/{id}",
                     DEL_SUBSCRIBERS : API_HOST + "/subscribers/delete",
                     REMOVE_SUBSCRIBERS : API_HOST + "/subscribers/remove/{group_id}",
-                    DEL_GROUP : API_HOST + "/group/{group_id}",
+                    DEL_GROUP : API_HOST + "/group/delete/{group_id}",
                     DEL_GROUP_AND_SUBS : API_HOST + "/group/del_sub/{group_id}",
                     ADD_GROUP : API_HOST + "/group/create",
                     IMPORT_CSV : API_HOST + "/group/csv/{group_id}"
@@ -391,7 +391,7 @@
                 },
                 deleteSubscribers : function( toDelete ){
                     $('#modal_delete_subscribers').closeModal();
-                    AnkieterApi.REST.delete({
+                    AnkieterApi.REST.post({
                         url : SERVER.ROUTER.DEL_SUBSCRIBERS,
                         data:{ ids: JSON.stringify( toDelete ) },
                         onResult : function(data){
@@ -406,7 +406,7 @@
                 removeSubscribersFromGroup : function( toDelete , group_id ){
                     $('#modal_delete_subscribers').closeModal();
                     console.log(toDelete);
-                    AnkieterApi.REST.delete({
+                    AnkieterApi.REST.post({
                         url : SERVER.ROUTER.REMOVE_SUBSCRIBERS,
                         url_data : { group_id : group_id },
                         data:{ ids:JSON.stringify( toDelete ) },
@@ -425,7 +425,7 @@
                 addGroupGroup : function( group_name , file_name ){
                     console.log(file_name);
                     $('#modal_add_group').closeModal();
-                    AnkieterApi.REST.put({
+                    AnkieterApi.REST.post({
                         url : SERVER.ROUTER.ADD_GROUP,
                         data:{
                             group_name:group_name,
@@ -440,7 +440,7 @@
                 },
                 deleteGroup : function( group_id ){
                     $('#modal_delete_group').closeModal();
-                    AnkieterApi.REST.delete({
+                    AnkieterApi.REST.post({
                         url : SERVER.ROUTER.DEL_GROUP,
                         url_data:{ group_id:group_id },
                         onResult : function(data){
@@ -454,7 +454,7 @@
                 },
                 deleteGroupAndSubscribers : function( group_id ){
                     $('#modal_delete_group').closeModal();
-                    AnkieterApi.REST.delete({
+                    AnkieterApi.REST.post({
                         url : SERVER.ROUTER.DEL_GROUP_AND_SUBS,
                         url_data:{ group_id:group_id },
                         onResult : function(data){

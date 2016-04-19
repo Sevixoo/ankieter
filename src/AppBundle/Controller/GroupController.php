@@ -235,7 +235,7 @@ class GroupController extends BasicController
     }
     /**
      * @Route("/api/subscribers/delete", name="delete_subscribers")
-     * @Method({"DELETE"})
+     * @Method({"POST"})
      */
     public function deleteSubscribersAction(){
         $request = Request::createFromGlobals();
@@ -243,8 +243,8 @@ class GroupController extends BasicController
         return $this->_deleteSubscribers($idsToDelete);
     }
     /**
-     * @Route("/api/subscribers/{id}", name="delete_subscriber")
-     * @Method({"DELETE"})
+     * @Route("/api/subscribers/delete/{id}", name="delete_subscriber")
+     * @Method({"POST"})
      */
     public function deleteSubscriberAction($id){
         $idsToDelete = array($id);
@@ -267,7 +267,7 @@ class GroupController extends BasicController
 
     /**
      * @Route("/api/subscribers/remove/{group_id}", name="remove_subscribers")
-     * @Method({"DELETE"})
+     * @Method({"POST"})
      */
     public function removeSubscribersFromGroupAction($group_id){
         $request = Request::createFromGlobals();
@@ -287,8 +287,8 @@ class GroupController extends BasicController
     }
 
     /**
-     * @Route("/api/group/{group_id}", name="delete_group")
-     * @Method({"DELETE"})
+     * @Route("/api/group/delete/{group_id}", name="delete_group")
+     * @Method({"POST"})
      */
     public function deleteGroupAction($group_id){
         //TODO... implement data model
@@ -306,7 +306,7 @@ class GroupController extends BasicController
 
     /**
      * @Route("/api/group/del_sub/{group_id}", name="delete_group_and_subs")
-     * @Method({"DELETE"})
+     * @Method({"POST"})
      */
     public function deleteGroupAndSubsAction($group_id){
         //TODO... implement data model
@@ -324,7 +324,7 @@ class GroupController extends BasicController
 
     /**
      * @Route("/api/group/create", name="create_group")
-     * @Method({"PUT"})
+     * @Method({"POST"})
      *
      * dodaje grupe jeśeli podamy file name to wczytuje z csv
      *
@@ -362,7 +362,7 @@ class GroupController extends BasicController
 
     /**
      * @Route("/api/group/csv/{group_id}", name="group_send_csv")
-     * @Method({"PUT"})
+     * @Method({"POST"})
      */
     public function sendCSVGroupAction($group_id){
         $request = Request::createFromGlobals();
