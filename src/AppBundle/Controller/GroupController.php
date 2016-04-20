@@ -23,8 +23,8 @@ class GroupController extends BasicController
     {
 
 
-        //przy usuwaniu trzeba zwrócić błąd że nie można usunąć grupy Wszyscy ani nic z niej
-        //TODO... 2. zwrócić ilości kontaktów w każdej grupie
+        // TODO: przy usuwaniu trzeba zwrócić błąd że nie można usunąć grupy Wszyscy ani nic z niej
+
 
         $conn = $this->get('database_connection');
 
@@ -37,7 +37,7 @@ class GroupController extends BasicController
         $allGroup->setId(-1);
 
         array_unshift($groups, $allGroup);
-        
+
         foreach($groups as $group)
         {
             if ($group->getId()==-1) {
@@ -118,9 +118,6 @@ class GroupController extends BasicController
         $conn = $this->get('database_connection');
         $groups = $conn->fetchAll('SELECT * FROM Groups');
 
-
-
-        // replace this example code with whatever you need
         return $this->render(':group:index.html.twig', array(
             'groups' => $groups
         ));
@@ -226,33 +223,27 @@ class GroupController extends BasicController
      * @Method({"GET"})
      */
     public function getSubscribersAction($group_id){
-        //TODO... implement data model
 
+        $list = array();
+        $conn = $this->get('database_connection');
+        if($group_id !=-1) {
+            $list = $conn->fetchAll("
+            SELECT Subscribers.email, Subscribers.id
+            FROM Subscribers
+            INNER JOIN GroupsSubscribers
+            ON Subscribers.id=GroupsSubscribers.idsubscriber
+            WHERE GroupsSubscribers.idgroup = '$group_id'");
+        }
+        else {
+            $list = $conn->fetchAll("
+            SELECT *
+            FROM Subscribers");
+        }
+        
         $data = array(
             "success" => 1,
             "data" => array(
-                "list" => array(
-                    array(
-                        "id" => 1,
-                        "email" => "aaa567@bbb.cc"
-                    ),
-                    array(
-                        "id" => 2,
-                        "email" => "aaa123@bbb.cc"
-                    ),
-                    array(
-                        "id" => 3,
-                        "email" => "aaa234@bbb.cc"
-                    ),
-                    array(
-                        "id" => 4,
-                        "email" => "aaa345@bbb.cc"
-                    ),
-                    array(
-                        "id" => 5,
-                        "email" => "aaa456@bbb.cc"
-                    )
-                )
+                "list" =>  $list
             )
         );
 
