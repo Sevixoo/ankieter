@@ -372,6 +372,7 @@ class GroupController extends BasicController
                 "error" => "Grupa o podanej nazwie istnieje w bazie"
             );
             return $this->getJSONResponse($data);
+            //
         }
 
         $group = new Groups();
