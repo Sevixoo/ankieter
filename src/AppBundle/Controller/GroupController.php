@@ -381,7 +381,7 @@ class GroupController extends BasicController
 
         $group_id = $group->getId();
 
-        CSVController::addCSVAction(new Request(),$group_id,$file_name);
+       // CSVController::addCSVAction(new Request(),$group_id,$file_name);
 
         $group_size = 11;
 
