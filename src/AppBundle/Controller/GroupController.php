@@ -362,6 +362,17 @@ class GroupController extends BasicController
         $group_name = $request->request->get('group_name');
         $file_name = $request->request->get('file_name');
 
+        $existingGroup = $this->getDoctrine()->getRepository("AppDataBundle:Groups")->findOneByname($file_name);
+
+        if (is_null($existingGroup))
+        {
+            $data = array(
+                "success" => 0,
+                "error" => "Grupa o podanej nazwie istnieje w bazie"
+            );
+            return $this->getJSONResponse($data);
+        }
+
         $group = new Groups();
         $group->setName($group_name);
 
