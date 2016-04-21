@@ -12,6 +12,7 @@ use Symfony\Component\Form\FormError;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use AppBundle\Controller\CSVController;
 
 class GroupController extends BasicController
 {
@@ -239,7 +240,7 @@ class GroupController extends BasicController
             SELECT *
             FROM Subscribers");
         }
-        
+
         $data = array(
             "success" => 1,
             "data" => array(
@@ -268,7 +269,14 @@ class GroupController extends BasicController
     }
 
     private function _deleteSubscribers( $idsToDelete ){
-        //TODO... implement data model
+
+
+        $conn = $this->get('database_connection');
+
+        foreach($idsToDelete as $id) {
+            $conn->exec("DELETE FROM Subscribers WHERE id = '$id' ");
+            $conn->exec("DELETE FROM GroupsSubscribers WHERE idSubscriber = '$id' ");
+        }
 
         $data = array(
             "success" => 1,
@@ -289,7 +297,11 @@ class GroupController extends BasicController
         $request = Request::createFromGlobals();
         $idsToDelete = json_decode( $request->request->get('ids') );
 
-        //TODO... implement data model
+        $conn = $this->get('database_connection');
+
+        foreach($idsToDelete as $id) {
+            $conn->exec("DELETE FROM GroupsSubscribers WHERE idGroup = '$group_id' AND idSubscriber = '$id' ");
+        }
 
         $data = array(
             "success" => 1,
@@ -350,10 +362,19 @@ class GroupController extends BasicController
         $group_name = $request->request->get('group_name');
         $file_name = $request->request->get('file_name');
 
-        //TODO... implement data model
-        //insert group
-        $group_id = 1;
+        $group = new Groups();
+        $group->setName($group_name);
+
+        $this->getDoctrine()->persist($group);
+        $this->getDoctrine()->flush();
+
+        $group_id = $group->getId();
+
+        CSVController::addCSVAction(new Request(),$group_id,$file_name);
+
         $group_size = 11;
+
+
 
         if($group_id>0) {
             $data = array(
