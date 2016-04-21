@@ -364,7 +364,7 @@ class GroupController extends BasicController
 
         $existingGroup = $this->getDoctrine()->getRepository("AppDataBundle:Groups")->findOneByname($file_name);
 
-        if (is_null($existingGroup))
+        if (!is_null($existingGroup))
         {
             $data = array(
                 "success" => 0,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="Walidacja dodawani, próba">
+    <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
     </list>
@@ -43,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.3809524">
-              <caret line="366" column="12" selection-start-line="366" selection-start-column="12" selection-end-line="366" selection-end-column="12" />
+              <caret line="366" column="13" selection-start-line="366" selection-start-column="13" selection-end-line="366" selection-end-column="13" />
               <folding>
                 <element signature="e#40#72#0#PHP" expanded="true" />
                 <element signature="e#939#961#1#PHP" expanded="true" />
@@ -56,28 +56,28 @@
                 <element signature="e#4507#4531#0#PHP" expanded="true" />
                 <element signature="e#4851#4878#0#PHP" expanded="true" />
                 <element signature="e#10555#10577#1#PHP" expanded="true" />
-                <marker date="1461234694140" expanded="true" signature="1252:1284" placeholder="SELECT COUNT... Subscribers" />
-                <marker date="1461234694140" expanded="true" signature="1440:1512" placeholder="SELECT COUNT... GroupsSubscribers" />
-                <marker date="1461234694140" expanded="true" signature="1440:1514" placeholder="SELECT COUNT... GroupsSubscribers" />
-                <marker date="1461234694140" expanded="true" signature="1440:1518" placeholder="SELECT COUNT... GroupsSubscribers" />
-                <marker date="1461234694140" expanded="true" signature="1440:1520" placeholder="SELECT COUNT... GroupsSubscribers" />
-                <marker date="1461234694140" expanded="true" signature="1623:1672" placeholder="SELECT COUNT... SUBSCRIBERS" />
-                <marker date="1461234694140" expanded="true" signature="3383:3401" placeholder="/** * @Route... " />
-                <marker date="1461234694140" expanded="true" signature="3597:3617" placeholder="SELECT * FRO... Groups" />
-                <marker date="1461234694140" expanded="true" signature="3965:3985" placeholder="SELECT * FRO... Groups" />
-                <marker date="1461234694140" expanded="true" signature="4393:4413" placeholder="SELECT * FRO... Groups" />
-                <marker date="1461234694140" expanded="true" signature="4737:4757" placeholder="SELECT * FRO... Groups" />
-                <marker date="1461234694140" expanded="true" signature="5152:5186" placeholder="DELETE FROM " />
-                <marker date="1461234694140" expanded="true" signature="5229:5249" placeholder="SELECT * FRO... Groups" />
-                <marker date="1461234694140" expanded="true" signature="6653:6882" placeholder="SELECT Subsc... Subscribers" />
-                <marker date="1461234694140" expanded="true" signature="6653:7035" placeholder="SELECT Subsc... Subscribers" />
-                <marker date="1461234694140" expanded="true" signature="6961:6998" placeholder="SELECT * FRO... Subscribers" />
-                <marker date="1461234694140" expanded="true" signature="7975:8009" placeholder="DELETE FROM " />
-                <marker date="1461234694140" expanded="true" signature="7975:8010" placeholder="DELETE FROM " />
-                <marker date="1461234694140" expanded="true" signature="7975:8015" placeholder="DELETE FROM " />
-                <marker date="1461234694140" expanded="true" signature="8045:8101" placeholder="DELETE FROM " />
-                <marker date="1461234694140" expanded="true" signature="8799:8856" placeholder="DELETE FROM " />
-                <marker date="1461234694140" expanded="true" signature="8799:8881" placeholder="DELETE FROM " />
+                <marker date="1461234716512" expanded="true" signature="1252:1284" placeholder="SELECT COUNT... Subscribers" />
+                <marker date="1461234716512" expanded="true" signature="1440:1512" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1461234716512" expanded="true" signature="1440:1514" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1461234716512" expanded="true" signature="1440:1518" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1461234716512" expanded="true" signature="1440:1520" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1461234716512" expanded="true" signature="1623:1672" placeholder="SELECT COUNT... SUBSCRIBERS" />
+                <marker date="1461234716512" expanded="true" signature="3383:3401" placeholder="/** * @Route... " />
+                <marker date="1461234716512" expanded="true" signature="3597:3617" placeholder="SELECT * FRO... Groups" />
+                <marker date="1461234716512" expanded="true" signature="3965:3985" placeholder="SELECT * FRO... Groups" />
+                <marker date="1461234716512" expanded="true" signature="4393:4413" placeholder="SELECT * FRO... Groups" />
+                <marker date="1461234716512" expanded="true" signature="4737:4757" placeholder="SELECT * FRO... Groups" />
+                <marker date="1461234716512" expanded="true" signature="5152:5186" placeholder="DELETE FROM " />
+                <marker date="1461234716512" expanded="true" signature="5229:5249" placeholder="SELECT * FRO... Groups" />
+                <marker date="1461234716512" expanded="true" signature="6653:6882" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1461234716512" expanded="true" signature="6653:7035" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1461234716512" expanded="true" signature="6961:6998" placeholder="SELECT * FRO... Subscribers" />
+                <marker date="1461234716512" expanded="true" signature="7975:8009" placeholder="DELETE FROM " />
+                <marker date="1461234716512" expanded="true" signature="7975:8010" placeholder="DELETE FROM " />
+                <marker date="1461234716512" expanded="true" signature="7975:8015" placeholder="DELETE FROM " />
+                <marker date="1461234716512" expanded="true" signature="8045:8101" placeholder="DELETE FROM " />
+                <marker date="1461234716512" expanded="true" signature="8799:8856" placeholder="DELETE FROM " />
+                <marker date="1461234716512" expanded="true" signature="8799:8881" placeholder="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -832,7 +832,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461234594370</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Walidacja dodawani, próba">
+      <created>1461234705366</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1461234705366</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1295,7 +1301,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3809524">
-          <caret line="366" column="12" selection-start-line="366" selection-start-column="12" selection-end-line="366" selection-end-column="12" />
+          <caret line="366" column="13" selection-start-line="366" selection-start-column="13" selection-end-line="366" selection-end-column="13" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
             <element signature="e#939#961#1#PHP" expanded="true" />
@@ -1308,28 +1314,28 @@
             <element signature="e#4507#4531#0#PHP" expanded="true" />
             <element signature="e#4851#4878#0#PHP" expanded="true" />
             <element signature="e#10555#10577#1#PHP" expanded="true" />
-            <marker date="1461234694140" expanded="true" signature="1252:1284" placeholder="SELECT COUNT... Subscribers" />
-            <marker date="1461234694140" expanded="true" signature="1440:1512" placeholder="SELECT COUNT... GroupsSubscribers" />
-            <marker date="1461234694140" expanded="true" signature="1440:1514" placeholder="SELECT COUNT... GroupsSubscribers" />
-            <marker date="1461234694140" expanded="true" signature="1440:1518" placeholder="SELECT COUNT... GroupsSubscribers" />
-            <marker date="1461234694140" expanded="true" signature="1440:1520" placeholder="SELECT COUNT... GroupsSubscribers" />
-            <marker date="1461234694140" expanded="true" signature="1623:1672" placeholder="SELECT COUNT... SUBSCRIBERS" />
-            <marker date="1461234694140" expanded="true" signature="3383:3401" placeholder="/** * @Route... " />
-            <marker date="1461234694140" expanded="true" signature="3597:3617" placeholder="SELECT * FRO... Groups" />
-            <marker date="1461234694140" expanded="true" signature="3965:3985" placeholder="SELECT * FRO... Groups" />
-            <marker date="1461234694140" expanded="true" signature="4393:4413" placeholder="SELECT * FRO... Groups" />
-            <marker date="1461234694140" expanded="true" signature="4737:4757" placeholder="SELECT * FRO... Groups" />
-            <marker date="1461234694140" expanded="true" signature="5152:5186" placeholder="DELETE FROM " />
-            <marker date="1461234694140" expanded="true" signature="5229:5249" placeholder="SELECT * FRO... Groups" />
-            <marker date="1461234694140" expanded="true" signature="6653:6882" placeholder="SELECT Subsc... Subscribers" />
-            <marker date="1461234694140" expanded="true" signature="6653:7035" placeholder="SELECT Subsc... Subscribers" />
-            <marker date="1461234694140" expanded="true" signature="6961:6998" placeholder="SELECT * FRO... Subscribers" />
-            <marker date="1461234694140" expanded="true" signature="7975:8009" placeholder="DELETE FROM " />
-            <marker date="1461234694140" expanded="true" signature="7975:8010" placeholder="DELETE FROM " />
-            <marker date="1461234694140" expanded="true" signature="7975:8015" placeholder="DELETE FROM " />
-            <marker date="1461234694140" expanded="true" signature="8045:8101" placeholder="DELETE FROM " />
-            <marker date="1461234694140" expanded="true" signature="8799:8856" placeholder="DELETE FROM " />
-            <marker date="1461234694140" expanded="true" signature="8799:8881" placeholder="DELETE FROM " />
+            <marker date="1461234716512" expanded="true" signature="1252:1284" placeholder="SELECT COUNT... Subscribers" />
+            <marker date="1461234716512" expanded="true" signature="1440:1512" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1461234716512" expanded="true" signature="1440:1514" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1461234716512" expanded="true" signature="1440:1518" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1461234716512" expanded="true" signature="1440:1520" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1461234716512" expanded="true" signature="1623:1672" placeholder="SELECT COUNT... SUBSCRIBERS" />
+            <marker date="1461234716512" expanded="true" signature="3383:3401" placeholder="/** * @Route... " />
+            <marker date="1461234716512" expanded="true" signature="3597:3617" placeholder="SELECT * FRO... Groups" />
+            <marker date="1461234716512" expanded="true" signature="3965:3985" placeholder="SELECT * FRO... Groups" />
+            <marker date="1461234716512" expanded="true" signature="4393:4413" placeholder="SELECT * FRO... Groups" />
+            <marker date="1461234716512" expanded="true" signature="4737:4757" placeholder="SELECT * FRO... Groups" />
+            <marker date="1461234716512" expanded="true" signature="5152:5186" placeholder="DELETE FROM " />
+            <marker date="1461234716512" expanded="true" signature="5229:5249" placeholder="SELECT * FRO... Groups" />
+            <marker date="1461234716512" expanded="true" signature="6653:6882" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1461234716512" expanded="true" signature="6653:7035" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1461234716512" expanded="true" signature="6961:6998" placeholder="SELECT * FRO... Subscribers" />
+            <marker date="1461234716512" expanded="true" signature="7975:8009" placeholder="DELETE FROM " />
+            <marker date="1461234716512" expanded="true" signature="7975:8010" placeholder="DELETE FROM " />
+            <marker date="1461234716512" expanded="true" signature="7975:8015" placeholder="DELETE FROM " />
+            <marker date="1461234716512" expanded="true" signature="8045:8101" placeholder="DELETE FROM " />
+            <marker date="1461234716512" expanded="true" signature="8799:8856" placeholder="DELETE FROM " />
+            <marker date="1461234716512" expanded="true" signature="8799:8881" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
