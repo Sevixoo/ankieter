@@ -28,8 +28,6 @@
         .ui-autocomplete{
             z-index: 9000000;
         }
-
-
     </style>
 
 </head>
@@ -44,16 +42,8 @@
     </div>
 
     <div class="col s12">
-        <div class="row" style="height: 100%;"  >
-            <div class="col s3" style="height: 100%;"  >
-                {% include ':parts:side_menu.html.twig' %}
-            </div>
-
-            <div class="col s9" >
-                {% block content %}{% endblock %}
-                <div style="clear:both;" ></div>
-            </div>
-        </div>
+        {% block content %}{% endblock %}
+        <div style="clear:both;" ></div>
     </div>
 
     {% block footer %}
@@ -61,7 +51,6 @@
             {%include 'parts/footer_small.html.twig' %}
         </footer-->
     {% endblock %}
-
 
     {% block javascripts %}{% endblock %}
 

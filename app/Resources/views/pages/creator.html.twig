@@ -1,0 +1,58 @@
+
+{% extends ':layout:no_menu.html.twig' %}
+
+{% block title %}Kreator{% endblock %}
+
+{% block stylesheets %}
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+{% endblock %}
+
+{% block content%}
+
+<div class="row" style="clear:both;">
+
+    <div class="col s3" style="height: 100%;width: 365px;margin-top: 25px"  >
+        <ul style="color: #03a9f4" class="tabs">
+            <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a class="active"  href="#test1">Dodaj pole</a></li>
+            <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a href="#test2">Właściwości</a></li>
+            <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a href="#test4">Ustawienia</a></li>
+        </ul>
+        <div id="test1" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">Test 1</div>
+        <div id="test2" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">Test 2</div>
+        <div id="test4" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">Test 4</div>
+    </div>
+
+    <div class="col s9" >
+        <div style="clear:both;" ></div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+    <script type="text/javascript" >
+        $(document).ready(function(){
+
+            var API_HOST = "{{ url('api_host') }}";
+            var SERVER = {
+                ROUTER : {
+                    TEST1 : API_HOST + "/group/test1",
+                    TEST2 : API_HOST + "/group/test2/{id}",
+                }
+            };
+
+            var CreatorModule = {
+                init: function () {
+                    $('ul.tabs').tabs();
+                }
+            };
+            CreatorModule.init();
+        });
+    </script>
+{% endblock %}
+
