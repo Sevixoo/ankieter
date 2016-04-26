@@ -70,6 +70,15 @@ jQuery.fn.extend({
                 this.displayList();
             },
 
+            addData : function( id , email ){
+                this.listItems.push({
+                    viewType : VIEW_TYPE.ITEM,
+                    id : id,
+                    data : email
+                })
+                this.displayList();
+            },
+
             size : function(){
                 return this.listItems.length;
             },
