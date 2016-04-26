@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/bundles/images/icon_csv.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Ankieter.iml" afterPath="$PROJECT_DIR$/.idea/Ankieter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/group/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/group/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/bundles/ankieter_api/widget/SelectableCollection.js" afterPath="$PROJECT_DIR$/web/bundles/ankieter_api/widget/SelectableCollection.js" />
     </list>
     <list id="7c12036a-d440-411a-8473-1248aee2ea4a" name="New changelist" comment="New changelist" />
     <list id="71194f9c-039f-4157-b543-f4f93489d785" name="Test2" comment="Test2" />
@@ -38,37 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GroupController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
-              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-              <folding>
-                <element signature="e#40#72#0#PHP" expanded="true" />
-                <marker date="1461682222438" expanded="true" signature="1252:1284" placeholder="SELECT COUNT..Subscribers..." />
-                <marker date="1461682222438" expanded="true" signature="1440:1518" placeholder="SELECT COUNT..GroupsSubscribers..." />
-                <marker date="1461682222438" expanded="true" signature="3597:3617" placeholder="SELECT * FRO..Groups..." />
-                <marker date="1461682222438" expanded="true" signature="3965:3985" placeholder="SELECT * FRO..Groups..." />
-                <marker date="1461682222438" expanded="true" signature="4393:4413" placeholder="SELECT * FRO..Groups..." />
-                <marker date="1461682222438" expanded="true" signature="4737:4757" placeholder="SELECT * FRO..Groups..." />
-                <marker date="1461682222438" expanded="true" signature="5152:5186" placeholder="DELETE FROM ..." />
-                <marker date="1461682222438" expanded="true" signature="5229:5249" placeholder="SELECT * FRO..Groups..." />
-                <marker date="1461682222438" expanded="true" signature="6653:6882" placeholder="SELECT Subsc..Subscribers..." />
-                <marker date="1461682222438" expanded="true" signature="6961:6998" placeholder="SELECT * FRO..Subscribers..." />
-                <marker date="1461682222438" expanded="true" signature="7975:8015" placeholder="DELETE FROM ..." />
-                <marker date="1461682222438" expanded="true" signature="8045:8101" placeholder="DELETE FROM ..." />
-                <marker date="1461682222438" expanded="true" signature="8799:8881" placeholder="DELETE FROM ..." />
-                <marker date="1461682222438" expanded="true" signature="10590:10646" placeholder="SELECT * FRO..Groups..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BasicController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Basic/BasicController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -100,8 +79,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/group/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61538464">
-              <caret line="494" column="23" selection-start-line="494" selection-start-column="23" selection-end-line="494" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.5051975">
+              <caret line="529" column="60" selection-start-line="529" selection-start-column="60" selection-end-line="529" selection-end-column="60" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -116,36 +95,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnkieterApi.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/AnkieterApi.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="164" column="38" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/widget/ListView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SelectableCollection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/widget/SelectableCollection.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="110" column="43" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
+              <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
               <folding>
-                <marker date="1461683216762" expanded="true" signature="3195:3224" placeholder="..." />
-                <marker date="1461683216762" expanded="true" signature="3326:3367" placeholder="..." />
+                <marker date="1461685485845" expanded="true" signature="3218:3247" placeholder="..." />
+                <marker date="1461685485845" expanded="true" signature="3349:3390" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -217,7 +174,6 @@
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/Basic/UploadHandler.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout/simple.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout/base.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/widget/ListView.js" />
@@ -227,9 +183,10 @@
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CSVController.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/AnkieterApi.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/widget/SelectableCollection.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/group/index.html.twig" />
       </list>
     </option>
@@ -332,6 +289,32 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="External Dependencies">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="C:">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Users">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Seweryn">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Desktop">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="ankieter">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
@@ -386,7 +369,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ankieter_api">
+            <PATH_ELEMENT USER_OBJECT="images">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -400,19 +383,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="web">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="bundles">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ankieter_api">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="widget">
+            <PATH_ELEMENT USER_OBJECT="vendor">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -427,6 +398,46 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ankieter">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AppDataBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ankieter">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="AppDataBundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Resources">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -467,38 +478,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="Controller">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ankieter">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ankieter">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="config">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -567,17 +546,18 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ankieter\web\bundles\images" />
+      <recent name="C:\xampp\htdocs\ankieter\web\bundles\tmp\images" />
+      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\layout" />
+      <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ankieter\web\bundles\images" />
       <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\group" />
       <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
       <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\auth" />
       <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\layout" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ankieter\web\bundles\tmp\images" />
-      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\layout" />
-      <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.GroupsController">
@@ -793,7 +773,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12254161" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22239032" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47836256" sideWeight="0.5021575" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1001,13 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3529412">
@@ -1165,30 +1138,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1461682222438" expanded="true" signature="1252:1284" placeholder="SELECT COUNT..Subscribers..." />
-            <marker date="1461682222438" expanded="true" signature="1440:1518" placeholder="SELECT COUNT..GroupsSubscribers..." />
-            <marker date="1461682222438" expanded="true" signature="3597:3617" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1461682222438" expanded="true" signature="3965:3985" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1461682222438" expanded="true" signature="4393:4413" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1461682222438" expanded="true" signature="4737:4757" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1461682222438" expanded="true" signature="5152:5186" placeholder="DELETE FROM ..." />
-            <marker date="1461682222438" expanded="true" signature="5229:5249" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1461682222438" expanded="true" signature="6653:6882" placeholder="SELECT Subsc..Subscribers..." />
-            <marker date="1461682222438" expanded="true" signature="6961:6998" placeholder="SELECT * FRO..Subscribers..." />
-            <marker date="1461682222438" expanded="true" signature="7975:8015" placeholder="DELETE FROM ..." />
-            <marker date="1461682222438" expanded="true" signature="8045:8101" placeholder="DELETE FROM ..." />
-            <marker date="1461682222438" expanded="true" signature="8799:8881" placeholder="DELETE FROM ..." />
-            <marker date="1461682222438" expanded="true" signature="10590:10646" placeholder="SELECT * FRO..Groups..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppDataBundle/Entity/Groups.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.423077">
@@ -1210,35 +1159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/AnkieterApi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="164" column="38" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/widget/ListView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/widget/SelectableCollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="43" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
-          <folding>
-            <marker date="1461683216762" expanded="true" signature="3195:3224" placeholder="..." />
-            <marker date="1461683216762" expanded="true" signature="3326:3367" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.423077">
@@ -1247,18 +1167,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/widget/ListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33208954">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/AnkieterApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.3936567">
+          <caret line="164" column="38" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4">
+          <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#72#0#PHP" expanded="true" />
+            <marker date="1461685094358" expanded="true" signature="1252:1284" placeholder="SELECT COUNT..Subscribers..." />
+            <marker date="1461685094358" expanded="true" signature="1440:1518" placeholder="SELECT COUNT..GroupsSubscribers..." />
+            <marker date="1461685094358" expanded="true" signature="3597:3617" placeholder="SELECT * FRO..Groups..." />
+            <marker date="1461685094358" expanded="true" signature="3965:3985" placeholder="SELECT * FRO..Groups..." />
+            <marker date="1461685094358" expanded="true" signature="4393:4413" placeholder="SELECT * FRO..Groups..." />
+            <marker date="1461685094358" expanded="true" signature="4737:4757" placeholder="SELECT * FRO..Groups..." />
+            <marker date="1461685094358" expanded="true" signature="5152:5186" placeholder="DELETE FROM ..." />
+            <marker date="1461685094358" expanded="true" signature="5229:5249" placeholder="SELECT * FRO..Groups..." />
+            <marker date="1461685094358" expanded="true" signature="6653:6882" placeholder="SELECT Subsc..Subscribers..." />
+            <marker date="1461685094358" expanded="true" signature="6961:6998" placeholder="SELECT * FRO..Subscribers..." />
+            <marker date="1461685094358" expanded="true" signature="7975:8015" placeholder="DELETE FROM ..." />
+            <marker date="1461685094358" expanded="true" signature="8045:8101" placeholder="DELETE FROM ..." />
+            <marker date="1461685094358" expanded="true" signature="8799:8881" placeholder="DELETE FROM ..." />
+            <marker date="1461685094358" expanded="true" signature="9408:9442" placeholder="DELETE FROM ..." />
+            <marker date="1461685094358" expanded="true" signature="10679:10735" placeholder="SELECT * FRO..Groups..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Basic/BasicController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/bundles/ankieter_api/widget/SelectableCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="39" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+          <folding>
+            <marker date="1461685485845" expanded="true" signature="3218:3247" placeholder="..." />
+            <marker date="1461685485845" expanded="true" signature="3349:3390" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.13333334">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/group/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61538464">
-          <caret line="494" column="23" selection-start-line="494" selection-start-column="23" selection-end-line="494" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.5051975">
+          <caret line="529" column="60" selection-start-line="529" selection-start-column="60" selection-end-line="529" selection-end-column="60" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />

@@ -314,6 +314,7 @@
                             $('#input_modal_add_group').val('');
                             $('#file_modal_add_group').val('');
                             $('#img_modal_add_group').attr("src" , "{{ asset('bundles/images/icon_csv_import.png') }}");
+                            $('#img_modal_add_group').attr( "data-filename" , "");
                         }
                     });
 
@@ -350,7 +351,11 @@
                     });
 
                     $('#confirm_modal_add_group').click(function() {
-                        GroupModule.addGroupGroup( $('#input_modal_add_group').val() , $('#file_modal_add_group').val() );
+                        GroupModule.addGroupGroup( $('#input_modal_add_group').val() , $('#img_modal_add_group').attr( "data-filename") );
+                    });
+
+                    $("#confirm_action_modal_add_subscriber").click(function() {
+                        GroupModule.addSubsctiber( $('#input_modal_add_subscriber').val() , groupList.getSelectedItem().id );
                     });
 
                     $('#confirm_modal_import_csv').click(function() {
@@ -373,10 +378,6 @@
                         ready: function() {
                             $('#input_modal_add_subscriber').val("");
                         }
-                    });
-
-                    $("#confirm_action_modal_add_subscriber").click(function() {
-                        GroupModule.addSubsctiber( $('#input_modal_add_group').val() , $('#file_modal_add_group').val() );
                     });
 
                     $("#btn_modal_delete_subscribers").hide();
@@ -502,8 +503,6 @@
             GroupModule.init();
         });
 
-
-
         var picture_box_onfileuploaded = null;
 
         function notyfiError(  err ){
@@ -516,8 +515,6 @@
                 dataType: 'json',
                 add: function (e, data) {
 
-                    data.formData = {user_id: $("#picture_edit_form").attr("data-user_id") };
-
                     $(this).attr( "data-url" , "" );
 
                     data.submit();
@@ -526,8 +523,9 @@
                 done: function (e, data) {
                     console.log( data.result );
                     if( data.result.success == 1 ){
-                        src = "{{ asset('bundles/tmp/images/thumbnail/') }}" + data.result.file.name;
+                        src = "{{ asset('bundles/images/icon_csv.png') }}";
                         $("#img_modal_add_group").attr( "src" , src );
+                        $("#img_modal_add_group").attr( "data-filename" , data.result.file.name );
                         if( picture_box_onfileuploaded )
                             picture_box_onfileuploaded(src);
                     }else{
@@ -540,14 +538,13 @@
 
                 },
                 progressall: function (e, data) {
-
                     var progress = parseInt(data.loaded / data.total * 100, 10);
                     $('#progress_profile .determinate').css(
                             'width',
                             progress + '%'
                     );
                 },
-                acceptFileTypes : "/(\.|\/)(gif|jpe?g|png)$/i",
+                acceptFileTypes : "/(\.|\/)(csv)$/i",
                 maxFileSize : 1500000
             });
         });
@@ -560,10 +557,7 @@
         }
         //------------------------------------------------------------------------------------
         function picture_upload_setData( data ){
-            if( data.avatar ){
-                $("#img_modal_add_group").attr( "src" , avatarsUrl + data.avatar );
-                console.log(avatarsUrl + data.avatar);
-            }
+            $("#img_modal_add_group").attr( "src" , "{{ asset('bundles/images/icon_csv.png') }}" );
         }
         //------------------------------------------------------------------------------------
 

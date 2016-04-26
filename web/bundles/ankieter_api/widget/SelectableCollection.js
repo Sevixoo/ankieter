@@ -68,7 +68,7 @@ jQuery.fn.extend({
                 if(this.isMultiSelect){
                     return;
                 }
-                var data = {};
+                var data = {id :"-1",name:"Wszyscy"};
 
                 this.view.find( "a.active").each(function( index ) {
                     data = {

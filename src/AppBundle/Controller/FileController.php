@@ -19,7 +19,7 @@ class FileController extends BasicController
             'upload_dir' => './bundles/tmp/images/',
             'upload_url' => './bundles/tmp/images/',
             'max_file_size' => 2500000,
-            'accept_file_types' => '/\.(gif|jpe?g|png)$/i'
+            'accept_file_types' => '/\.(csv)$/i'
         ) );
 
         $response = $upload_handler->get_response();
