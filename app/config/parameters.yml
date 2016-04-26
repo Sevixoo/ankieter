@@ -1,10 +1,10 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host:     localhost #radasp34.ayz.pl #localhost
+    database_host:     radasp34.ayz.pl #localhost
     database_port:     3306
     database_name:     radasp34_ankiety
-    database_user:     root #radasp34_ankiety
-    database_password: #zaq1@WSX
+    database_user:     radasp34_ankiety
+    database_password: zaq1@WSX
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 

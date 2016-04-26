@@ -40,7 +40,7 @@
     <div class="row" style="clear:both;">
 
         <div class="col s6" >
-            <ul id="groupList" class="row collection" style="height: 300px;margin-bottom: 0px;" >
+            <ul id="groupList" class="row collection" style="margin-bottom: 0px;" >
                 <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
                     <h6 style="padding: 5px;padding-left:10px; display: block;float: left">Grupy</h6>
                     <button id="btn_modal_add_group" data-target="modal_add_group" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  >dodaj<i class="material-icons right">add</i></button>
@@ -48,17 +48,19 @@
                     <button id="btn_modal_delete_group" data-target="modal_delete_group" style="float: right;padding-left: 10px;padding-right: 10px;" class="modal-trigger waves-effect waves-teal btn-flat"  ><i class="material-icons">delete</i></button>
                      <div style="clear: both" />
                 </li>
+                <div id="groupList_container" style="overflow: auto;height: 300px" >
                 {% for group in groups %}
                     <a class="collection-item" data-id="{{ group.id }}" data-name="{{ group.name }}" style="padding: 5px;cursor: pointer;" >
                         <span >{{ group.name }}</span>
-                        <span class="badge">1</span>
+                        <span class="badge" style="float: right;position: static !important;" >{{ group.numberOfSubscribers }}</span>
                     </a>
                 {% endfor %}
+                </div>
             </ul>
         </div>
 
         <div class="col s6" >
-            <ul id="subscriberList" class="row collection" style="height: 300px;margin-bottom: 0px;" >
+            <ul id="subscriberList" class="row collection" style="margin-bottom: 0px;" >
                 <!-- BEGIN: Underscore Template Definition. -->
                 <script type="text/template" id="subscriber_list_template">
                     <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
@@ -68,24 +70,26 @@
                         <button id="btn_modal_delete_subscribers" data-target="modal_delete_subscribers" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  ><i class="material-icons">delete</i></button>
                         <div style="clear: both" />
                     </li>
-                    <% _.each( rc.listItems, function( listItem ){ %>
-                        <% if ( listItem.viewType == "item") { %>
-                        <a class="collection-item" data-id="<%- listItem.id %>" data-name="<%- listItem.data %>" style="padding: 5px;cursor: pointer;" >
-                            <span ><%- listItem.data %></span>
-                            <!--span class="badge"><%- listItem.id %></span-->
-                        </a>
-                        <% }else if( listItem.viewType == "loader" ){ %>
-                        <% } %>
-                    <% }); %>
-                    <div id="subscriberList_preloader" class="collection-item" style="width: 25px;margin: auto" >
-                        <div class="preloader-wrapper small active">
-                            <div class="spinner-layer spinner-green-only">
-                                <div class="circle-clipper left">
-                                    <div class="circle"></div>
-                                </div><div class="gap-patch">
-                                    <div class="circle"></div>
-                                </div><div class="circle-clipper right">
-                                    <div class="circle"></div>
+                    <div id="groupList_container" style="overflow: auto;height: 300px" >
+                        <% _.each( rc.listItems, function( listItem ){ %>
+                            <% if ( listItem.viewType == "item") { %>
+                            <a class="collection-item" data-id="<%- listItem.id %>" data-name="<%- listItem.data %>" style="padding: 5px;cursor: pointer;" >
+                                <span ><%- listItem.data %></span>
+                                <!--span class="badge"><%- listItem.id %></span-->
+                            </a>
+                            <% }else if( listItem.viewType == "loader" ){ %>
+                            <% } %>
+                        <% }); %>
+                        <div id="subscriberList_preloader" class="collection-item" style="width: 25px;margin: auto" >
+                            <div class="preloader-wrapper small active">
+                                <div class="spinner-layer spinner-green-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div><div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div><div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

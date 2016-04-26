@@ -364,7 +364,7 @@ class GroupController extends BasicController
 
         $conn = $this->get('database_connection');
 
-        $existingGroup = $conn->fetchAssoc("SELECT * FROM `groups` WHERE groups.name = '$group_name'");
+        $existingGroup = $conn->fetchAssoc("SELECT * FROM `Groups` WHERE Groups.name = '$group_name'");
 
         if (!empty($existingGroup)) {
             $data = array(

@@ -155,7 +155,7 @@ var AnkieterApi = {
                             }
                         } else {
                             if (onError) {
-                                onError(data.code);
+                                onError(data.error);
                             }
                         }
 

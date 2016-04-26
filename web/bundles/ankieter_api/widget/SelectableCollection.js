@@ -101,10 +101,10 @@ jQuery.fn.extend({
             },
 
             addGroup : function( group ){
-                this.view.append(
+                this.view.find("#groupList_container").append(
                     '<a class="collection-item" data-id="'+group.id+'" data-name="'+group.name+'" style="padding: 5px;cursor: pointer;" >' +
                         '<span >'+group.name+'</span>' +
-                        '<span class="badge">'+group.size+'</span>' +
+                        '<span style="float: right;position: static !important;" class="badge">'+group.size+'</span>' +
                     '</a>'
                 );
                 var sender = this;
