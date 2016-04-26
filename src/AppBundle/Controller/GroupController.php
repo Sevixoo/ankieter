@@ -498,7 +498,7 @@ class GroupController extends BasicController
         $request = Request::createFromGlobals();
 
         $subscriber_email = $request->request->get('email');
-        $group_id = $request->request->get('id');
+        $group_id = $request->request->get('group_id');
 
         $conn = $this->get('database_connection');
 
@@ -507,19 +507,23 @@ class GroupController extends BasicController
         $existingEmail = $conn->fetchAssoc("SELECT * FROM `Subscribers` WHERE email = '$subscriber_email'");
 
         if (empty($existingEmail)) {
-
-            $conn = exec("INSERT INTO Subscribers (email) VALUES '$existingEmail'");
-
+            $dodano = $conn->exec("INSERT INTO Subscribers (email) VALUE ('$subscriber_email')");
+            $existingEmail = $conn->fetchArray("SELECT id FROM Subscribers WHERE email = '$subscriber_email'");
         }
 
+        $existingEmailID = $existingEmail['id'];
+        $existingEmail = $existingEmail['email'];
 
-        $conn = exec("INSERT INTO GroupsSububscribers (idGroup,idSubscriber) VALUES ('$group_id', '$existingEmail[id]')");
+        $conn->exec("INSERT INTO GroupsSubscribers(idGroup,idSubscriber) VALUE ('$group_id', '$existingEmailID')");
+
+
 
             $data = array(
                 "success" => 1,
                 "data" => array(
                     "created" => array(
-                        "id" => $group_id,
+                        "id" => $existingEmailID,
+                        "email" => $existingEmail,
                     ),
 
                 )
