@@ -319,13 +319,16 @@ class GroupController extends BasicController
      * @Method({"POST"})
      */
     public function deleteGroupAction($group_id){
-        //TODO... implement data model
+
+        $conn = $this->get('database_connection');
+
+        $deleted_rows =  $conn->exec("DELETE FROM `Groups` WHERE `id` = $group_id");
 
         $data = array(
             "success" => 1,
             "data" => array(
                 "deleted_items" => array($group_id),
-                "deleted_rows" => count(array($group_id))
+                "deleted_rows" => $deleted_rows
             )
         );
 
