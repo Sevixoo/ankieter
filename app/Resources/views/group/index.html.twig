@@ -132,17 +132,6 @@
             <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
         </div>
     </div>
-    <!-- Modal Structure modal_add_subscriber -->
-    <div style="width: 500px;height: 300px;" id="modal_add_subscriber" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>modal_add_subscriber</h4>
-            <p>modal_add_subscriber</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="modal-action waves-effect waves-green btn-flat ">Dodaj</a>
-            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
-        </div>
-    </div>
     <!-- Modal Structure -->
     <div style="width: 500px;height: 300px;" id="modal_add_group" class="modal modal-fixed-footer">
         <div class="modal-content">
@@ -182,11 +171,16 @@
     <!-- Modal Structure modal_add_subscriber -->
     <div style="width: 500px;height: 300px;" id="modal_add_subscriber" class="modal modal-fixed-footer">
         <div class="modal-content">
-            <h4>modal_add_subscriber</h4>
-            <p>modal_add_subscriber</p>
+            <h4>Dodaj nowego subskrybenta</h4>
+            <form>
+                <div class="input-field col s6">
+                    <input id="input_modal_add_subscriber" type="text" class="validate">
+                    <label for="input_modal_add_subscriber">Email nowego subskrybenta</label>
+                </div>
+            </form>
         </div>
         <div class="modal-footer">
-            <a href="#" class="modal-action waves-effect waves-green btn-flat ">Dodaj</a>
+            <a id="confirm_action_modal_add_subscriber" href="#" class="modal-action waves-effect waves-green btn-flat ">Dodaj</a>
             <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Anuluj</a>
         </div>
     </div>
@@ -272,6 +266,7 @@
                     DEL_GROUP : API_HOST + "/group/delete/{group_id}",
                     DEL_GROUP_AND_SUBS : API_HOST + "/group/del_sub/{group_id}",
                     ADD_GROUP : API_HOST + "/group/create",
+                    ADD_SUBSCRIBER : API_HOST + "/subscribers/create",
                     IMPORT_CSV : API_HOST + "/group/csv/{group_id}"
                 }
             };
@@ -372,7 +367,17 @@
                             $('#desc_modal_delete_subscribers').html("Ilość elemantów do usunięcia: " + c);
                         }
                     });
-                    $('#btn_modal_add_subscriber').leanModal( );
+                    $('#btn_modal_add_subscriber').leanModal({
+                        in_duration: 150,
+                        out_duration: 150,
+                        ready: function() {
+                            $('#input_modal_add_subscriber').val("");
+                        }
+                    });
+
+                    $("#confirm_action_modal_add_subscriber").click(function() {
+                        GroupModule.addSubsctiber( $('#input_modal_add_group').val() , $('#file_modal_add_group').val() );
+                    });
 
                     $("#btn_modal_delete_subscribers").hide();
                 },
@@ -465,6 +470,23 @@
                         onResult : function(data){
                             groupList.deleteFromList(data.deleted_items);
                             subscriberList.clearList();
+                            subscriberList.hideLoader();
+                            GroupModule.initSubscribersModels();
+                        },
+                        onError : GroupModule.onError,
+                        loaderModal : "#modal_loader"
+                    });
+                },
+                addSubsctiber : function( email , group_id ){
+                    $('#modal_add_subscriber').closeModal();
+                    AnkieterApi.REST.post({
+                        url : SERVER.ROUTER.ADD_SUBSCRIBER,
+                        data:{
+                            email:email,
+                            group_id:group_id
+                        },
+                        onResult : function(data){
+                            subscriberList.setData(data.list);
                             subscriberList.hideLoader();
                             GroupModule.initSubscribersModels();
                         },
