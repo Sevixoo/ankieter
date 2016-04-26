@@ -506,29 +506,73 @@ class GroupController extends BasicController
 
         $existingEmail = $conn->fetchAssoc("SELECT * FROM `Subscribers` WHERE email = '$subscriber_email'");
 
+
+
         if (empty($existingEmail)) {
-            $dodano = $conn->exec("INSERT INTO Subscribers (email) VALUE ('$subscriber_email')");
-            $existingEmail = $conn->fetchArray("SELECT id FROM Subscribers WHERE email = '$subscriber_email'");
+            $conn->exec("INSERT INTO Subscribers (email) VALUE ('$subscriber_email')");
+            $existingEmail = $conn->fetchAssoc("SELECT * FROM Subscribers WHERE email = '$subscriber_email'");
         }
 
         $existingEmailID = $existingEmail['id'];
         $existingEmail = $existingEmail['email'];
 
-        $conn->exec("INSERT INTO GroupsSubscribers(idGroup,idSubscriber) VALUE ('$group_id', '$existingEmailID')");
 
+        $existingConnection = $conn->fetchAssoc("
+        SELECT * FROM GroupsSubscribers WHERE idGroup = '$group_id' AND idSubscriber = '$existingEmailID'
+        ");
 
-
+        if (empty($existingConnection) && $group_id >= 0) {
+            $conn->exec("INSERT INTO GroupsSubscribers(idGroup,idSubscriber) VALUE ('$group_id', '$existingEmailID')");
             $data = array(
                 "success" => 1,
                 "data" => array(
                     "created" => array(
                         "id" => $existingEmailID,
                         "email" => $existingEmail,
+                        "badges" => $this->_getActualBadges(),
                     ),
 
                 )
             );
+        }
+
+        else
+        {
+            $data = array(
+                "success" => 0,
+                "error" => "Podany adres istnieje w tej grupie",
+            );
+
+        }
+
+
+
 
         return $this->getJSONResponse($data);
     }
+
+    private function _getActualBadges()
+    {
+        $conn = $this->get('database_connection');
+        $groups = $conn->fetchAll("SELECT id FROM Groups");
+        $badges = array();
+
+        //Grupa Wszyscy
+        $badges[] = array('id'=>-1, 'size'=>($conn->fetchColumn("SELECT COUNT(*) FROM Subscribers")));
+
+        $conn->close();
+
+        //Reszta Grup
+        foreach ($groups as $group)
+        {
+            $group = $group['id'];
+            $size = $conn->fetchColumn("SELECT COUNT(*) FROM GroupsSubscribers WHERE idGroup = '$group'");
+            $conn->close();
+
+            $badges[] = array('id'=>$group, 'size'=>$size);
+        }
+
+        return $badges;
+    }
+
 }
