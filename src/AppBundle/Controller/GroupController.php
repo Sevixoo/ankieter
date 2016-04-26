@@ -329,7 +329,7 @@ class GroupController extends BasicController
             "data" => array(
                 "deleted_items" => array($group_id),
                 "deleted_rows" => $deleted_rows
-            )
+            ),
         );
 
         return $this->getJSONResponse($data);
@@ -342,11 +342,24 @@ class GroupController extends BasicController
     public function deleteGroupAndSubsAction($group_id){
         //TODO... implement data model
 
+        $conn = $this->get('database_connection');
+
+        $deleted_rows =  $conn->exec("DELETE FROM `Groups` WHERE `id` = $group_id");
+
+        $list = $conn->fetchAll("
+        SELECT Subscribers.email, Subscribers.id
+        FROM Subscribers
+        INNER JOIN GroupsSubscribers
+        ON Subscribers.id=GroupsSubscribers.idsubscriber
+        WHERE GroupsSubscribers.idgroup = '$group_id'");
+
+
         $data = array(
             "success" => 1,
             "data" => array(
                 "deleted_items" => array($group_id),
-                "deleted_rows" => count(array($group_id))
+                "deleted_rows" => count(array($group_id)),
+                "list" =>  $list,
             )
         );
 
@@ -473,4 +486,45 @@ class GroupController extends BasicController
      *   error_code = int
      * }
      * */
+
+
+    /**
+     * @Route("/api/subscribers/create", name="create_subscribers")
+     * @Method({"POST"})
+     *
+     *
+     */
+    public function createSubscribersAction(){
+        $request = Request::createFromGlobals();
+
+        $subscriber_email = $request->request->get('email');
+        $group_id = $request->request->get('id');
+
+        $conn = $this->get('database_connection');
+
+        //Czy email istnieje w bazie
+
+        $existingEmail = $conn->fetchAssoc("SELECT * FROM `Subscribers` WHERE email = '$subscriber_email'");
+
+        if (empty($existingEmail)) {
+
+            $conn = exec("INSERT INTO Subscribers (email) VALUES '$existingEmail'");
+
+        }
+
+
+        $conn = exec("INSERT INTO GroupsSububscribers (idGroup,idSubscriber) VALUES ('$group_id', '$existingEmail[id]')");
+
+            $data = array(
+                "success" => 1,
+                "data" => array(
+                    "created" => array(
+                        "id" => $group_id,
+                    ),
+
+                )
+            );
+
+        return $this->getJSONResponse($data);
+    }
 }
