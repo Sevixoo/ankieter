@@ -34,6 +34,7 @@
 {% block content%}
 
 
+
 <div class="row" style="clear:both;">
 
     <div class="row" style="clear:both;">
@@ -62,22 +63,10 @@
                 <script type="text/template" id="subscriber_list_template">
                     <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
                         <h6 style="padding: 5px;padding-left:10px; display: block;float: left">Subskrybenci</h6>
+
                         <button id="btn_modal_add_subscriber" data-target="modal_add_subscriber" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  >dodaj<i class="material-icons right">add</i></button>
                         <button id="btn_modal_delete_subscribers" data-target="modal_delete_subscribers" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  ><i class="material-icons">delete</i></button>
                         <div style="clear: both" />
-                    </li>
-                    <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
-                        <table >
-                            <tr>
-                                <td style="padding: 0px;" >
-                                    <input id="search_box" type="text" class="validate" style=" height: 28px;margin: 5px; " >
-                                </td>
-                                <td style="padding: 0px;width: 36px;"  >
-                                    <button id="btn_search" style="display: inline;width: 36px;height: 36px;padding: 0px;" class="waves-effect waves-teal btn-flat"  ><i class="material-icons">search</i></button>
-                                </td>
-                            </tr>
-                        </table>
-
                     </li>
                     <% _.each( rc.listItems, function( listItem ){ %>
                         <% if ( listItem.viewType == "item") { %>

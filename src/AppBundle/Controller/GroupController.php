@@ -12,6 +12,7 @@ use Symfony\Component\Form\FormError;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use AppBundle\Controller\CSVController;
 
 class GroupController extends BasicController
 {
@@ -22,12 +23,35 @@ class GroupController extends BasicController
     public function indexAction(Request $request)
     {
 
-        //TODO... 1. Pierwsza grupa ma być grupa specjalna: "Wszyscy" nie zapisujemy w bazie tego
-        //przy usuwaniu trzeba zwrócić błąd że nie można usunąć grupy Wszyscy ani nic z niej
-        //TODO... 2. zwrócić ilości kontaktów w każdej grupie
+
+        // TODO: przy usuwaniu trzeba zwrócić błąd że nie można usunąć grupy Wszyscy ani nic z niej
+
 
         $conn = $this->get('database_connection');
-        $groups = $conn->fetchAll('SELECT * FROM Groups');
+
+        $groups = array();
+
+        $groups = $this->getDoctrine()->getRepository('AppDataBundle:Groups')->findAll();
+
+        $allGroup = new Groups();
+        $allGroup->setName("Wszyscy");
+        $allGroup->setId(-1);
+
+        array_unshift($groups, $allGroup);
+
+        foreach($groups as $group)
+        {
+            if ($group->getId()==-1) {
+                $value = $conn->fetchArray("SELECT COUNT(*) FROM Subscribers");
+                $value = $value[0];
+            }
+            else {
+                $id = $group->getId();
+                $value = $conn->fetchArray("SELECT COUNT(*) FROM GroupsSubscribers WHERE GroupsSubscribers.idGroup = '$id'");
+                $value = $value[0];
+            }
+            $group->setNumberOfSubscribers($value);
+        }
 
         $groupFromForm = new Groups();
 
@@ -95,7 +119,6 @@ class GroupController extends BasicController
         $conn = $this->get('database_connection');
         $groups = $conn->fetchAll('SELECT * FROM Groups');
 
-        // replace this example code with whatever you need
         return $this->render(':group:index.html.twig', array(
             'groups' => $groups
         ));
@@ -201,33 +224,27 @@ class GroupController extends BasicController
      * @Method({"GET"})
      */
     public function getSubscribersAction($group_id){
-        //TODO... implement data model
+
+        $list = array();
+        $conn = $this->get('database_connection');
+        if($group_id !=-1) {
+            $list = $conn->fetchAll("
+            SELECT Subscribers.email, Subscribers.id
+            FROM Subscribers
+            INNER JOIN GroupsSubscribers
+            ON Subscribers.id=GroupsSubscribers.idsubscriber
+            WHERE GroupsSubscribers.idgroup = '$group_id'");
+        }
+        else {
+            $list = $conn->fetchAll("
+            SELECT *
+            FROM Subscribers");
+        }
 
         $data = array(
             "success" => 1,
             "data" => array(
-                "list" => array(
-                    array(
-                        "id" => 1,
-                        "email" => "aaa567@bbb.cc"
-                    ),
-                    array(
-                        "id" => 2,
-                        "email" => "aaa123@bbb.cc"
-                    ),
-                    array(
-                        "id" => 3,
-                        "email" => "aaa234@bbb.cc"
-                    ),
-                    array(
-                        "id" => 4,
-                        "email" => "aaa345@bbb.cc"
-                    ),
-                    array(
-                        "id" => 5,
-                        "email" => "aaa456@bbb.cc"
-                    )
-                )
+                "list" =>  $list
             )
         );
 
@@ -252,7 +269,14 @@ class GroupController extends BasicController
     }
 
     private function _deleteSubscribers( $idsToDelete ){
-        //TODO... implement data model
+
+
+        $conn = $this->get('database_connection');
+
+        foreach($idsToDelete as $id) {
+            $conn->exec("DELETE FROM Subscribers WHERE id = '$id' ");
+            $conn->exec("DELETE FROM GroupsSubscribers WHERE idSubscriber = '$id' ");
+        }
 
         $data = array(
             "success" => 1,
@@ -273,7 +297,11 @@ class GroupController extends BasicController
         $request = Request::createFromGlobals();
         $idsToDelete = json_decode( $request->request->get('ids') );
 
-        //TODO... implement data model
+        $conn = $this->get('database_connection');
+
+        foreach($idsToDelete as $id) {
+            $conn->exec("DELETE FROM GroupsSubscribers WHERE idGroup = '$group_id' AND idSubscriber = '$id' ");
+        }
 
         $data = array(
             "success" => 1,
@@ -334,10 +362,32 @@ class GroupController extends BasicController
         $group_name = $request->request->get('group_name');
         $file_name = $request->request->get('file_name');
 
-        //TODO... implement data model
-        //insert group
-        $group_id = 1;
+        $conn = $this->get('database_connection');
+
+        $existingGroup = $conn->fetchAssoc("SELECT * FROM `groups` WHERE groups.name = '$group_name'");
+
+        if (!empty($existingGroup)) {
+            $data = array(
+                "success" => 0,
+                "error" => "Grupa o podanej nazwie istnieje w bazie"
+            );
+            return $this->getJSONResponse($data);
+            //
+        }
+
+        $group = new Groups();
+        $group->setName($group_name);
+
+        $this->getDoctrine()->persist($group);
+        $this->getDoctrine()->flush();
+
+        $group_id = $group->getId();
+
+       // CSVController::addCSVAction(new Request(),$group_id,$file_name);
+
         $group_size = 11;
+
+
 
         if($group_id>0) {
             $data = array(

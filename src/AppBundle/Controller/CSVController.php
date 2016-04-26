@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Controller\GroupController;
 
 use AppDataBundle\Entity\Subscribers;
 
@@ -37,8 +38,8 @@ class CSVController extends Controller
                 elseif (!empty($tempElement)) array_push($newEmails, $tempElement);
             }
         } catch (\Exception $e) {
-            array_push($errors, "Podano błędną ścieżkę do pliku");
-            return $this->ErrorResponse($errors);
+            array_push($errors, "Podano błędną ścieżkę do pliku" + $path);
+            return CSVController::ErrorResponse($errors);
         } finally {
             print_r($newEmails);
             try {
@@ -68,7 +69,7 @@ class CSVController extends Controller
 
         } catch (\Exception $e) {
             array_push($errors, "Błąd połączenia z bazą danych");
-            return $this->ErrorResponse($errors);
+            return CSVController::ErrorResponse($errors);
         }
 
         echo("<br>");
@@ -99,7 +100,7 @@ class CSVController extends Controller
         } catch (\Exception $e) {
             array_push($errors, "Błąd połączenia z bazą danych");
 
-            return $this->ErrorResponse($errors);
+            return CSVController::ErrorResponse($errors);
         }
 
 
@@ -126,7 +127,7 @@ class CSVController extends Controller
             if(empty($group))
             {
                 array_push($errors, "Podana grupa nie istnieje");
-                $this->ErrorResponse($errors);
+                CSVController::ErrorResponse($errors);
             }
 
             foreach ($emailsToAddToGroup as $email) {
@@ -143,12 +144,12 @@ class CSVController extends Controller
 
         } catch (\Exception $e) {
             array_push($errors, "Błąd połączenia z bazą danych");
-            return $this->ErrorResponse($errors);
+            return CSVController::ErrorResponse($errors);
         }
 
         print_r("<br>");
 
-        return $this->ErrorResponse($errors);
+        return CSVController::ErrorResponse($errors);
     }
 
     public function ErrorResponse($errors)
