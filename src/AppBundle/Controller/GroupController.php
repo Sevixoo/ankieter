@@ -3,12 +3,15 @@
 namespace AppBundle\Controller;
 
 use AppDataBundle\Entity\Groups;
+use AppDataBundle\Entity\Groupssubscribers;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Controller\Basic\BasicController;
 use Symfony\Component\Form\FormError;
+use PDO;
+use AppDataBundle\Entity\Subscribers;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -22,11 +25,6 @@ class GroupController extends BasicController
 
     public function indexAction(Request $request)
     {
-
-
-        // TODO: przy usuwaniu trzeba zwrócić błąd że nie można usunąć grupy Wszyscy ani nic z niej
-
-
         $conn = $this->get('database_connection');
 
         $groups = array();
@@ -184,38 +182,6 @@ class GroupController extends BasicController
         return $this->redirectToRoute('group');
     }
 
-    /**
-     * @Route("/api/group/test1", name="test1")
-     * @Method({"GET"})
-     */
-    public function test1Action()
-    {
-        $data = array(
-            "success" => 1,
-            "data" => array(
-                "aaaa",
-                "bbbb"
-            )
-        );
-
-        return $this->getJSONResponse($data);
-    }
-
-    /**
-     * @Route("/api/group/test2/{id}", name="test2")
-     * @Method({"POST"})
-     */
-    public function test2Action($id)
-    {
-        $data = array(
-            "success" => 1,
-            "data" => array(
-                "twoje id" => $id
-            )
-        );
-
-        return $this->getJSONResponse($data);
-    }
     /*================================================================================================================*/
     /*  REST API                                                                                                      */
     /*================================================================================================================*/
@@ -244,7 +210,8 @@ class GroupController extends BasicController
         $data = array(
             "success" => 1,
             "data" => array(
-                "list" =>  $list
+                "list" =>  $list,
+                "badges" => $this->_getActualBadges(),
             )
         );
 
@@ -270,7 +237,6 @@ class GroupController extends BasicController
 
     private function _deleteSubscribers( $idsToDelete ){
 
-
         $conn = $this->get('database_connection');
 
         foreach($idsToDelete as $id) {
@@ -282,7 +248,8 @@ class GroupController extends BasicController
             "success" => 1,
             "data" => array(
                 "deleted_items" => $idsToDelete,
-                "deleted_rows" => count($idsToDelete)
+                "deleted_rows" => count($idsToDelete),
+                "badges" => $this->_getActualBadges(),
             )
         );
 
@@ -296,7 +263,6 @@ class GroupController extends BasicController
     public function removeSubscribersFromGroupAction($group_id){
         $request = Request::createFromGlobals();
         $idsToDelete = json_decode( $request->request->get('ids') );
-
         $conn = $this->get('database_connection');
 
         foreach($idsToDelete as $id) {
@@ -307,7 +273,8 @@ class GroupController extends BasicController
             "success" => 1,
             "data" => array(
                 "removed_items" => $idsToDelete,
-                "removed_rows" => count($idsToDelete)
+                "removed_rows" => count($idsToDelete),
+                "badges" => $this->_getActualBadges(),
             )
         );
 
@@ -328,7 +295,8 @@ class GroupController extends BasicController
             "success" => 1,
             "data" => array(
                 "deleted_items" => array($group_id),
-                "deleted_rows" => $deleted_rows
+                "deleted_rows" => $deleted_rows,
+                "badges" => $this->_getActualBadges(),
             ),
         );
 
@@ -340,11 +308,23 @@ class GroupController extends BasicController
      * @Method({"POST"})
      */
     public function deleteGroupAndSubsAction($group_id){
-        //TODO... implement data model
 
         $conn = $this->get('database_connection');
 
+        if($group_id != -1)
+
+        $subsToDelete = $conn->query("SELECT idSubscriber FROM GroupsSubscribers WHERE idGroup = $group_id")->fetchAll(PDO::FETCH_COLUMN);
+
+        else
+
+        $subsToDelete = $conn->query("SELECT id FROM Subscribers")->fetchAll(PDO::FETCH_COLUMN);
+
+        $this->_deleteSubscribers($subsToDelete);
+
+        if($group_id != -1)
         $deleted_rows =  $conn->exec("DELETE FROM `Groups` WHERE `id` = $group_id");
+
+        else $deleted_rows = 0;
 
         $list = $conn->fetchAll("
         SELECT Subscribers.email, Subscribers.id
@@ -360,8 +340,11 @@ class GroupController extends BasicController
                 "deleted_items" => array($group_id),
                 "deleted_rows" => count(array($group_id)),
                 "list" =>  $list,
+                "badges" => $this->_getActualBadges(),
             )
         );
+
+        if($group_id == -1) $data["data"]["deleted_items"] = [];
 
         return $this->getJSONResponse($data);
     }
@@ -388,7 +371,6 @@ class GroupController extends BasicController
                 "error" => "Grupa o podanej nazwie istnieje w bazie"
             );
             return $this->getJSONResponse($data);
-            //
         }
 
         $group = new Groups();
@@ -399,11 +381,14 @@ class GroupController extends BasicController
 
         $group_id = $group->getId();
 
-       // CSVController::addCSVAction(new Request(),$group_id,$file_name);
+        $csvOutput = array();
 
-        $group_size = 11;
+       if (!empty($file_name))
+       {
+           $csvOutput = $this->_addCSV($group_id, $file_name);
+       }
 
-
+        $group_size = $conn->fetchColumn("SELECT COUNT(*) FROM GroupsSubscribers WHERE idGroup = '$group_id'");
 
         if($group_id>0) {
             $data = array(
@@ -414,7 +399,9 @@ class GroupController extends BasicController
                         "name" => $group_name,
                         "size" => $group_size
                     ),
-                    "import_report" => $this->_importMailsFromCSV($group_id, $file_name)
+ //                   "import_report" => $this->_importMailsFromCSV($group_id, $file_name),
+ //                   "badges" => $this->_getActualBadges(),
+ //                   "csvOutput" => $csvOutput,
                 )
             );
         }else{
@@ -454,40 +441,6 @@ class GroupController extends BasicController
         return $data;
     }
 
-
-    /*
-     * Przykładowo:
-     *
-     * public function updateApplyStateAction(){
-        $p = new PlayersModel( $this->getDoctrine() );
-
-        $data= array(
-            "data" => $p->updateApplyState( $_POST["id_player_tour"] , $_POST["accepted"] , $_POST["active"] )
-        );
-        return $this->getJSONResponse($data);
-        LUB return $this->getJSONResponse($data,Response::HTTP_BAD_REQUEST);// inny kod odp dla błędu
-    }
-     *
-     * wykorzystanie kodów Http
-     *
-     * np: Response::HTTP_OK
-     *
-     *
-     * odp z API zawsze:
-     * code400=>
-     * {
-     *  "success" = 1,
-     *  "data" = $twoje_dane np id dodanego rekordu lub czy został usunięty
-     * }
-     * code!=400
-     * {
-     *  "success" = 0,
-     *  "error" = string
-     *   error_code = int
-     * }
-     * */
-
-
     /**
      * @Route("/api/subscribers/create", name="create_subscribers")
      * @Method({"POST"})
@@ -506,8 +459,6 @@ class GroupController extends BasicController
 
         $existingEmail = $conn->fetchAssoc("SELECT * FROM `Subscribers` WHERE email = '$subscriber_email'");
 
-
-
         if (empty($existingEmail)) {
             $conn->exec("INSERT INTO Subscribers (email) VALUE ('$subscriber_email')");
             $existingEmail = $conn->fetchAssoc("SELECT * FROM Subscribers WHERE email = '$subscriber_email'");
@@ -521,7 +472,8 @@ class GroupController extends BasicController
         SELECT * FROM GroupsSubscribers WHERE idGroup = '$group_id' AND idSubscriber = '$existingEmailID'
         ");
 
-        if (empty($existingConnection) && $group_id >= 0) {
+        if (empty($existingConnection)) {
+            if ($group_id !=-1)
             $conn->exec("INSERT INTO GroupsSubscribers(idGroup,idSubscriber) VALUE ('$group_id', '$existingEmailID')");
             $data = array(
                 "success" => 1,
@@ -545,9 +497,6 @@ class GroupController extends BasicController
 
         }
 
-
-
-
         return $this->getJSONResponse($data);
     }
 
@@ -568,11 +517,64 @@ class GroupController extends BasicController
             $group = $group['id'];
             $size = $conn->fetchColumn("SELECT COUNT(*) FROM GroupsSubscribers WHERE idGroup = '$group'");
             $conn->close();
-
             $badges[] = array('id'=>$group, 'size'=>$size);
         }
-
         return $badges;
     }
 
+    private function  _addCSV($groupID, $fileName)
+    {
+        $path = ("bundles/tmp/images/" . $fileName);
+        $file = fopen($path, "r");
+
+        $tempElement = null;
+        $newEmails = array();
+
+        while (!feof($file)) {
+            $tempElement = fgetcsv($file)[0];
+//                Sprawdzenie poprawności emaili
+//                if (filter_var($tempElement, FILTER_VALIDATE_EMAIL)) {
+//                    array_push($warnings, "Blędny adres e-mail: " + $tempElement + "adres nie zostanie dodany do bazy");
+//                }
+//                elseif (!empty($tempElement))
+            array_push($newEmails, $tempElement);
+        }
+
+        fclose($file);
+
+        $conn = $this->get('database_connection');
+
+        $sql = "SELECT email FROM Subscribers";
+        $existingEmails = $conn->query($sql)->fetchAll(PDO::FETCH_COLUMN);
+
+        $emailsToAdd = array();
+
+
+        foreach ($newEmails as $newEmail) {
+            if (!in_array($newEmail, $existingEmails)) {
+                array_push($emailsToAdd, $newEmail);
+            }
+        }
+
+        foreach ($emailsToAdd as $emailToAdd) {
+            $conn->exec("
+            INSERT INTO Subscribers (email) VALUE ('$emailToAdd')
+            "
+            );
+
+        }
+
+        $subscribersId = array();
+
+        foreach ($newEmails as $newEmail)
+        {
+            array_push($subscribersId, $conn->fetchColumn("SELECT id FROM Subscribers WHERE email = '$newEmail'"));
+        }
+
+
+        foreach($subscribersId as $subscriberId)
+        {
+            $conn->exec("INSERT INTO GroupsSubscribers (idGroup,idSubscriber) VALUE ('$groupID','$subscriberId')");
+        }
+    }
 }

@@ -24,7 +24,7 @@ class CSVController extends Controller
         $newEmails = array();
 
         try {
-            $path = "bundles/tmp/csv/" . $fileName . ".csv";
+            $path = "bundles/tmp/csv/" . $fileName;
             $file = fopen($path, "r");
 
             $tempElement = null;
@@ -41,7 +41,7 @@ class CSVController extends Controller
             array_push($errors, "Podano błędną ścieżkę do pliku" + $path);
             return CSVController::ErrorResponse($errors);
         } finally {
-            print_r($newEmails);
+
             try {
                 fclose($file);
             } catch (\Exception $e) {
@@ -72,9 +72,6 @@ class CSVController extends Controller
             return CSVController::ErrorResponse($errors);
         }
 
-        echo("<br>");
-        print_r($actualEmailsInGroupArray);
-
         $commonPart = array_intersect($newEmails, $actualEmailsInGroupArray);
         echo("<br>");
 
@@ -96,7 +93,6 @@ class CSVController extends Controller
             echo("<br>");
             echo("Wszystkie adresy w bazie:");
 
-            print_r($allExisitngEmails);
         } catch (\Exception $e) {
             array_push($errors, "Błąd połączenia z bazą danych");
 
@@ -106,9 +102,6 @@ class CSVController extends Controller
 
         $emailsToAdd = array_diff($newEmails, array_intersect($newEmails, $allExisitngEmails));
 
-        print_r("<br>");
-        print_r("Adresy do dodania:");
-        print_r($emailsToAdd);
 
         try {
 
@@ -147,14 +140,12 @@ class CSVController extends Controller
             return CSVController::ErrorResponse($errors);
         }
 
-        print_r("<br>");
 
         return CSVController::ErrorResponse($errors);
     }
 
     public function ErrorResponse($errors)
     {
-        if (!empty($errors)) print_r($errors);
         return new Response("");
     }
 }
