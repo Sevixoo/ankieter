@@ -7,17 +7,61 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <style>
+
+        .tabs{
+            overflow-x: hidden !important;
+        }
+
+        .input-field{
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+        h5{
+            margin: 0px !important;
+        }
+        input{
+            margin: 0px !important;
+        }
+        #myForm{
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        #myForm > .active{
+            border: dashed 1px black;
+        }
+
+        .FormField{
+            margin: 10px;
+            padding: 5px;
+        }
+
+
+        .FormField > .FieldConfig{
+            display: none;
+        }
+
+        .FormField:hover > .FieldConfig{
+            display: block;
+        }
+
+        #myForm > .active > .FieldConfig{
+            display: block;
+        }
+
+    </style>
+
+
 {% endblock %}
 
 {% block content%}
 
 <div class="row" style="clear:both;">
 
-    <div class="col s3" style="height: 100%;margin-top: 25px"  >
+    <div style="margin-top: 25px; position: fixed;top: 60px;left: 15px;"  >
         <ul style="color: #03a9f4" class="tabs">
             <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a class="active"  href="#test1">Dodaj pole</a></li>
             <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a href="#test2">Właściwości</a></li>
-            <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a href="#test4">Ustawienia</a></li>
         </ul>
         <div id="test1" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">
 
@@ -27,69 +71,84 @@
                 <a href="#" data-tmpl="TextArea" class="tmpl-tool collection-item">Obszar tekstu<div class="secondary-content"><i class="material-icons">send</i></div> </a>
                 <a href="#" data-tmpl="SelectBox" class="tmpl-tool collection-item">Select<div class="secondary-content"><i class="material-icons">send</i></div> </a>
                 <a href="#" data-tmpl="RadioGroup" class="tmpl-tool collection-item">Grupa radio<div class="secondary-content"><i class="material-icons">send</i></div> </a>
-
-
             </div>
 
         </div>
 
         <div id="test2" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">Test 2</div>
-        <div id="test4" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">Test 4</div>
     </div>
-    <div class="col s1" style="height: 100%;margin-top: 25px"  >
+
+    <div class="col s4" style="height: 100%;margin-top: 25px"  >
     </div>
     <div class="col s8" >
         <div style="clear:both;margin-top: 25px;max-width: 860px;" >
 
-            <form id="myForm" class="col s12" style="background-color: rgba(0, 0, 0, 0.02)" >
+            <form id="myForm" class="col s12" >
 
             </form>
 
             <form id="tmpl" class="col s12" style="display:none; background-color: rgba(0, 0, 0, 0.02)" >
-                <div id="TextField" class="row">
-                    <div class="input-field col s12">
+                <div data-type="TextField" class="row FormField">
+                    <div class="input-field col s9">
                         <input id="text_field" type="text" class="validate">
-                        <label for="text_field">Text</label>
                     </div>
                 </div>
-                <div id="EmailField" class="row">
-                    <div class="input-field col s12">
+                <div data-type="EmailField" class="row FormField">
+                    <div class="input-field col s9">
                         <input id="email" type="email" class="validate">
                         <label for="email">Email</label>
                     </div>
                 </div>
-                <div id="TextArea" class="row">
-                    <div class="input-field col s12">
+                <div data-type="TextArea" class="row FormField">
+                    <div class="input-field col s9">
                         <textarea id="textarea1" class="materialize-textarea"></textarea>
                         <label for="textarea1">Textarea</label>
                     </div>
                 </div>
-                <div id="SelectBox" class="row">
-                    <label>Browser Select</label>
-                    <select class="browser-default">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
+                <div data-type="SelectBox" class="row FormField">
+                    <div class="input-field col s9">
+                        <label>Browser Select</label>
+                        <select class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
                 </div>
-                <div id="RadioGroup" class="row">
-                    <p>
-                        <input name="group1" type="radio" id="test1" />
-                        <label for="test1">Red</label>
-                    </p>
-                    <p>
-                        <input name="group1" type="radio" id="test1" />
-                        <label for="test1">Red</label>
-                    </p>
-                    <p>
-                        <input name="group1" type="radio" id="test1" />
-                        <label for="test1">Red</label>
-                    </p>
+                <div data-type="RadioGroup" class="row FormField">
+                    <div class="input-field col s9">
+                        <p>
+                            <input name="group1" type="radio" id="test1" />
+                            <label for="test1">AAA</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="radio" id="test2" />
+                            <label for="test2">BBB</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="radio" id="test3" />
+                            <label for="test3">CCC</label>
+                        </p>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
+
+    <div id="templates" style="display: none;" >
+        <div data-type="TmplFieldConfig" class="input-field col s3 FieldConfig" >
+            <button href="#" class="  btnUP">UP</button>
+            <button href="#" class="  btnDOWN">DOWN</button>
+            <!--button href="#" class="  btnPROP">PROP</button-->
+        </div>
+
+        <div data-type="TmplFieldHeader" class="FieldHeader" >
+            <h5><span class="title_num" >[Num]</span> <span class="title" >[Title]</span></h5>
+        </div>
+
+    </div>
+
 
 </div>
 
@@ -109,19 +168,65 @@
                 }
             };
 
+            var Form = {
+
+            };
+
             var CreatorModule = {
+                ids:[],
+
                 init: function () {
+                    var sender = this;
                     $('ul.tabs').tabs();
 
                     $('.tmpl-tool').click(function() {
                         tmpl = $(this).attr("data-tmpl");
-                        $('#'+tmpl).clone(true).appendTo( "#myForm" );
+                        var fieldView = $('#tmpl > [data-type='+tmpl+']').clone(true);
+                        sender.genId( fieldView , tmpl );
+                        var editView = $('#templates > [data-type=TmplFieldConfig]').clone(true);
+                        editView.appendTo(fieldView);
+                        var headerView = $('#templates > [data-type=TmplFieldHeader]').clone(true);
+                        headerView.find(".title").html(fieldView.attr("id"));
+                        fieldView.prepend( headerView );
+                        fieldView.appendTo( "#myForm" );
+                        sender.onFormChanged();
                     });
 
                     $(document).ready(function() {
                         $('select').material_select();
                     });
 
+                    $('#templates .btnPROP').click(function() {
+                        var fieldView = $(this).parent().parent();
+                        var id = fieldView.attr("id");
+                        sender.selectField(id);
+                    });
+
+                    $('.FormField').click(function() {
+                        var id = $(this).attr("id");
+                        sender.selectField(id);
+                    });
+
+                },
+                selectField : function( id ){
+                    $("#myForm > .active").removeClass("active");
+                    $("#"+id).addClass("active");
+                },
+                onFormChanged : function(){
+                    var num = 1;
+                    $( "#myForm > .FormField" ).each(function( index ) {
+                        var header = $( this).find(".FieldHeader");
+                        header.find(".title_num").html(num + ")");
+                        num++;
+                    });
+                },
+                genId : function( fieldView , type ){
+                    if(this.ids[type]==null){
+                        this.ids[type] = 0;
+                    }
+                    var id = ++this.ids[type];
+                    fieldView.attr( "id" , type + "_" + id );
+                    fieldView.attr( "data-id" , id );
                 }
             };
             CreatorModule.init();
