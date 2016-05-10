@@ -170,13 +170,18 @@
                     <input type="checkbox" id="isRequired_input" />
                     <label for="isRequired_input">pole wymagane</label>
                 </p>
-                <label>Typ pola</label>
-                <select id="inputType_select" class="browser-default">
-                    <option value="1">text</option>
-                    <option value="2">password</option>
-                    <option value="3">email</option>
-                </select>
             </div>
+        </div>
+        <div data-type="TextFieldSetting" >
+            <div class="row">
+                <p>Pole tekstowe:</p>
+            </div>
+            <label>Typ pola</label>
+            <select id="inputType_select" class="browser-default">
+                <option value="text">text</option>
+                <option value="password">password</option>
+                <option value="email">email</option>
+            </select>
         </div>
     </div>
 
@@ -241,6 +246,11 @@
                         $("#"+id+"").attr("data-required", isChecked?"required":"false" );
                     });
 
+                    $('#inputType_select').change(function () {
+                        var id = $(this).attr("data-id");
+                        $("#"+id).find("input").prop("type",$(this).val());
+                    });
+
                     $(document).ready(function() {
                         $('select').material_select();
                     });
@@ -248,6 +258,8 @@
                     $('.FormField').click(function() {
                         //select tool
                         var id = $(this).attr("id");
+                        var fieldType = $(this).attr("data-type");
+
                         sender.selectField(id);
 
                         $("#btn_settings").click();
@@ -257,6 +269,12 @@
                         var basicFieldSetting = $('#templates > [data-type=BasicFieldSetting]').clone(true);
                         basicFieldSetting.appendTo(tabView);
                         sender.updateBasicSettings($(basicFieldSetting) , id);
+
+                        if(fieldType=="TextField"){
+                            var textFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
+                            textFieldSetting.appendTo(tabView);
+                            sender.updateTextSettings($(textFieldSetting) , id);
+                        }
 
                         Materialize.updateTextFields();
                     });
@@ -279,6 +297,11 @@
                     view.find( "#fieldDesc_input").attr("data-id",id);
                     view.find( "#fieldDesc_input").val( fieldView.find(".desc").html()  );
 
+                },
+                updateTextSettings : function( view , id ){
+                    var fieldView = $("#"+id);
+                    view.find("#inputType_select").val( fieldView.find("input").prop("type") );
+                    view.find("#inputType_select").attr("data-id",id);
                 },
                 selectField : function( id ){
                     $("#myForm > .active").removeClass("active");
