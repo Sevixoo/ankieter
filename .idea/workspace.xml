@@ -39,15 +39,12 @@
       <file leaf-file-name="creator.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/creator.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4190141">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.67077464">
+              <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#3;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,7 +163,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -194,6 +191,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -316,7 +314,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -592,10 +589,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14447807" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14719272" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47836256" sideWeight="0.5021575" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -996,41 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23943663">
           <caret line="394" column="31" selection-start-line="394" selection-start-column="31" selection-end-line="394" selection-end-column="31" />
-          <folding>
-            <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1462713504363" expanded="true" signature="1239:1271" placeholder="SELECT COUNT..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="1427:1505" placeholder="SELECT COUNT..GroupsSubscribers..." />
-            <marker date="1462713504363" expanded="true" signature="3584:3604" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1462713504363" expanded="true" signature="3952:3972" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1462713504363" expanded="true" signature="4380:4400" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1462713504363" expanded="true" signature="4724:4744" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1462713504363" expanded="true" signature="5139:5173" placeholder="DELETE FROM ..." />
-            <marker date="1462713504363" expanded="true" signature="5216:5236" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1462713504363" expanded="true" signature="5977:6206" placeholder="SELECT Subsc..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="6285:6322" placeholder="SELECT * FRO..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="7354:7394" placeholder="DELETE FROM ..." />
-            <marker date="1462713504363" expanded="true" signature="7424:7480" placeholder="DELETE FROM ..." />
-            <marker date="1462713504363" expanded="true" signature="8233:8315" placeholder="DELETE FROM ..." />
-            <marker date="1462713504363" expanded="true" signature="8898:8932" placeholder="DELETE FROM ..." />
-            <marker date="1462713504363" expanded="true" signature="9558:9617" placeholder="SELECT idSub..GroupsSubscribers..." />
-            <marker date="1462713504363" expanded="true" signature="9712:9738" placeholder="SELECT id FR..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="9889:9923" placeholder="DELETE FROM ..." />
-            <marker date="1462713504363" expanded="true" signature="10012:10225" placeholder="SELECT Subsc..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="11135:11191" placeholder="SELECT * FRO..Groups..." />
-            <marker date="1462713504363" expanded="true" signature="11819:11885" placeholder="SELECT COUNT..GroupsSubscribers..." />
-            <marker date="1462713504363" expanded="true" signature="14014:14075" placeholder="SELECT * FRO..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="14142:14201" placeholder="INSERT INTO Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="14253:14312" placeholder="SELECT * FRO..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="14486:14583" placeholder="SELECT * FRO..GroupsSubscribers..." />
-            <marker date="1462713504363" expanded="true" signature="14696:14787" placeholder="INSERT INTO GroupsSubscribers..." />
-            <marker date="1462713504363" expanded="true" signature="15514:15535" placeholder="SELECT id FR..Groups..." />
-            <marker date="1462713504363" expanded="true" signature="15656:15688" placeholder="SELECT COUNT..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="15863:15926" placeholder="SELECT COUNT..GroupsSubscribers..." />
-            <marker date="1462713504363" expanded="true" signature="16808:16837" placeholder="SELECT email..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="17215:17268" placeholder="INSERT INTO Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="17456:17508" placeholder="SELECT id FR..Subscribers..." />
-            <marker date="1462713504363" expanded="true" signature="17609:17696" placeholder="INSERT INTO GroupsSubscribers..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1038,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029929578">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17171717">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,21 +1014,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029929578">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/creator.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4190141">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.67077464">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

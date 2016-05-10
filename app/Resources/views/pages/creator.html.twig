@@ -13,14 +13,14 @@
             overflow-x: hidden !important;
         }
 
-        .input-field{
+        #myForm .input-field{
             margin-top: 0px !important;
             margin-bottom: 0px !important;
         }
         h5{
             margin: 0px !important;
         }
-        input{
+        #myForm input{
             margin: 0px !important;
         }
         #myForm{
@@ -29,6 +29,7 @@
 
         #myForm > .active{
             border: dashed 1px black;
+            padding: 4px;
         }
 
         .FormField{
@@ -61,7 +62,7 @@
     <div style="margin-top: 25px; position: fixed;top: 60px;left: 15px;"  >
         <ul style="color: #03a9f4" class="tabs">
             <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a class="active"  href="#test1">Dodaj pole</a></li>
-            <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a href="#test2">Właściwości</a></li>
+            <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a id="btn_settings" href="#tab_settings">Właściwości</a></li>
         </ul>
         <div id="test1" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">
 
@@ -75,38 +76,42 @@
 
         </div>
 
-        <div id="test2" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">Test 2</div>
+        <div id="tab_settings" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">Test 2</div>
     </div>
 
-    <div class="col s4" style="height: 100%;margin-top: 25px"  >
+    <div class="col s3" style="height: 100%;margin-top: 25px"  >
     </div>
-    <div class="col s8" >
+    <div class="col s9" >
         <div style="clear:both;margin-top: 25px;max-width: 860px;" >
 
-            <form id="myForm" class="col s12" >
+            <form id="myForm" class="col s10" >
 
             </form>
 
+            <div class="col s2" >
+
+            </div>
+
             <form id="tmpl" class="col s12" style="display:none; background-color: rgba(0, 0, 0, 0.02)" >
                 <div data-type="TextField" class="row FormField">
-                    <div class="input-field col s9">
+                    <div class="input-field col s12">
                         <input id="text_field" type="text" class="validate">
                     </div>
                 </div>
                 <div data-type="EmailField" class="row FormField">
-                    <div class="input-field col s9">
+                    <div class="input-field col s12">
                         <input id="email" type="email" class="validate">
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div data-type="TextArea" class="row FormField">
-                    <div class="input-field col s9">
+                    <div class="input-field col s12">
                         <textarea id="textarea1" class="materialize-textarea"></textarea>
                         <label for="textarea1">Textarea</label>
                     </div>
                 </div>
                 <div data-type="SelectBox" class="row FormField">
-                    <div class="input-field col s9">
+                    <div class="input-field col s12">
                         <label>Browser Select</label>
                         <select class="browser-default">
                             <option value="" disabled selected>Choose your option</option>
@@ -117,7 +122,7 @@
                     </div>
                 </div>
                 <div data-type="RadioGroup" class="row FormField">
-                    <div class="input-field col s9">
+                    <div class="input-field col s12">
                         <p>
                             <input name="group1" type="radio" id="test1" />
                             <label for="test1">AAA</label>
@@ -146,7 +151,14 @@
         <div data-type="TmplFieldHeader" class="FieldHeader" >
             <h5><span class="title_num" >[Num]</span> <span class="title" >[Title]</span></h5>
         </div>
-
+        <div data-type="BasicFieldSetting" style="background-color: whitesmoke" >
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="fieldName_input" type="text" class="validate">
+                    <label for="fieldName_input" >Nazwa pola</label>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -183,28 +195,41 @@
                         tmpl = $(this).attr("data-tmpl");
                         var fieldView = $('#tmpl > [data-type='+tmpl+']').clone(true);
                         sender.genId( fieldView , tmpl );
-                        var editView = $('#templates > [data-type=TmplFieldConfig]').clone(true);
-                        editView.appendTo(fieldView);
+                        //var editView = $('#templates > [data-type=TmplFieldConfig]').clone(true);
+                        //editView.appendTo(fieldView);
                         var headerView = $('#templates > [data-type=TmplFieldHeader]').clone(true);
                         headerView.find(".title").html(fieldView.attr("id"));
                         fieldView.prepend( headerView );
                         fieldView.appendTo( "#myForm" );
                         sender.onFormChanged();
+
+
+                        $('#fieldName_input').on('input',function(e){
+                             var text = $(this).val();
+                             var id = $(this).attr("data-id");
+                             $("#"+id+" .title").html(text);
+                        });
+
                     });
 
                     $(document).ready(function() {
                         $('select').material_select();
                     });
 
-                    $('#templates .btnPROP').click(function() {
-                        var fieldView = $(this).parent().parent();
-                        var id = fieldView.attr("id");
-                        sender.selectField(id);
-                    });
 
                     $('.FormField').click(function() {
                         var id = $(this).attr("id");
                         sender.selectField(id);
+
+                        $("#btn_settings").click();
+                        var basicFieldSetting = $('#templates > [data-type=BasicFieldSetting]').clone(true);
+                        var tabView = ("#tab_settings");
+                        $("#tab_settings").html("");
+                        basicFieldSetting.appendTo(tabView);
+
+                        $(basicFieldSetting).find( "#fieldName_input").attr("data-id",id);
+                        $(basicFieldSetting).find( "#fieldName_input").val( $("#"+id + " .title").html()  );
+                        Materialize.updateTextFields();
                     });
 
                 },
