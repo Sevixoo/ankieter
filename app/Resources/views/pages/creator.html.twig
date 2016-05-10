@@ -37,6 +37,9 @@
             padding: 5px;
         }
 
+        [data-required=required] .require{
+            display: inline !important;
+        }
 
         .FormField > .FieldConfig{
             display: none;
@@ -76,7 +79,7 @@
 
         </div>
 
-        <div id="tab_settings" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">Test 2</div>
+        <div id="tab_settings" style="height: 400px;background-color: whitesmoke" class="col s12">Test 2</div>
     </div>
 
     <div class="col s3" style="height: 100%;margin-top: 25px"  >
@@ -149,14 +152,30 @@
         </div>
 
         <div data-type="TmplFieldHeader" class="FieldHeader" >
-            <h5><span class="title_num" >[Num]</span> <span class="title" >[Title]</span></h5>
+            <h5><span class="title_num" >[Num]</span> <span class="title" >[Title]</span><span class="require" style="display:none" >*</span></h5>
+            <p class="desc"></p>
         </div>
-        <div data-type="BasicFieldSetting" style="background-color: whitesmoke" >
+        <div data-type="BasicFieldSetting"  >
             <div class="row">
-                <div class="input-field col s12">
+                <p>ID:<span class="label_fieldID" >[id]</span></p>
+                <div class="input-field ">
                     <input id="fieldName_input" type="text" class="validate">
                     <label for="fieldName_input" >Nazwa pola</label>
                 </div>
+                <div class="input-field ">
+                    <textarea id="fieldDesc_input" class="materialize-textarea"></textarea>
+                    <label for="fieldDesc_input">Opis</label>
+                </div>
+                <p>
+                    <input type="checkbox" id="isRequired_input" />
+                    <label for="isRequired_input">pole wymagane</label>
+                </p>
+                <label>Typ pola</label>
+                <select id="inputType_select" class="browser-default">
+                    <option value="1">text</option>
+                    <option value="2">password</option>
+                    <option value="3">email</option>
+                </select>
             </div>
         </div>
     </div>
@@ -180,10 +199,6 @@
                 }
             };
 
-            var Form = {
-
-            };
-
             var CreatorModule = {
                 ids:[],
 
@@ -192,9 +207,11 @@
                     $('ul.tabs').tabs();
 
                     $('.tmpl-tool').click(function() {
+                        //create tool
                         tmpl = $(this).attr("data-tmpl");
                         var fieldView = $('#tmpl > [data-type='+tmpl+']').clone(true);
                         sender.genId( fieldView , tmpl );
+                        fieldView.attr( "data-required" , "false" );
                         //var editView = $('#templates > [data-type=TmplFieldConfig]').clone(true);
                         //editView.appendTo(fieldView);
                         var headerView = $('#templates > [data-type=TmplFieldHeader]').clone(true);
@@ -203,34 +220,64 @@
                         fieldView.appendTo( "#myForm" );
                         sender.onFormChanged();
 
+                        //
+                    });
 
-                        $('#fieldName_input').on('input',function(e){
-                             var text = $(this).val();
-                             var id = $(this).attr("data-id");
-                             $("#"+id+" .title").html(text);
-                        });
+                    $('#fieldName_input').on('input',function(e){
+                        var text = $(this).val();
+                        var id = $(this).attr("data-id");
+                        $("#"+id+" .title").html(text);
+                    });
 
+                    $('#fieldDesc_input').on('input',function(e){
+                        var text = $(this).val();
+                        var id = $(this).attr("data-id");
+                        $("#"+id+" .desc").html(text);
+                    });
+
+                    $('#isRequired_input').change(function () {
+                        var id = $(this).attr("data-id");
+                        var isChecked = $(this).prop("checked");
+                        $("#"+id+"").attr("data-required", isChecked?"required":"false" );
                     });
 
                     $(document).ready(function() {
                         $('select').material_select();
                     });
 
-
                     $('.FormField').click(function() {
+                        //select tool
                         var id = $(this).attr("id");
                         sender.selectField(id);
 
                         $("#btn_settings").click();
-                        var basicFieldSetting = $('#templates > [data-type=BasicFieldSetting]').clone(true);
-                        var tabView = ("#tab_settings");
-                        $("#tab_settings").html("");
-                        basicFieldSetting.appendTo(tabView);
+                        var tabView = $("#tab_settings");
+                        tabView.html("");
 
-                        $(basicFieldSetting).find( "#fieldName_input").attr("data-id",id);
-                        $(basicFieldSetting).find( "#fieldName_input").val( $("#"+id + " .title").html()  );
+                        var basicFieldSetting = $('#templates > [data-type=BasicFieldSetting]').clone(true);
+                        basicFieldSetting.appendTo(tabView);
+                        sender.updateBasicSettings($(basicFieldSetting) , id);
+
                         Materialize.updateTextFields();
                     });
+
+                },
+                updateBasicSettings : function( view , id ){
+                    var fieldView = $("#"+id);
+
+                    view.find( "#fieldName_input").attr("data-id",id);
+                    view.find( "#fieldName_input").val( fieldView.find(".title").html()  );
+
+                    view.find( ".label_fieldID").html( id );
+
+                    var isRequired = fieldView.attr("data-required") == "required";
+                    view.find( "#isRequired_input").prop('checked', isRequired);
+                    view.find( "#isRequired_input").attr("data-id",id);
+
+                    view.find( "#isRequired_input").attr("data-id",id);
+
+                    view.find( "#fieldDesc_input").attr("data-id",id);
+                    view.find( "#fieldDesc_input").val( fieldView.find(".desc").html()  );
 
                 },
                 selectField : function( id ){
