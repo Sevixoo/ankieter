@@ -64,27 +64,30 @@
 
     <div style="margin-top: 25px; position: fixed;top: 60px;left: 15px;"  >
         <ul style="color: #03a9f4" class="tabs">
-            <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a class="active"  href="#test1">Dodaj pole</a></li>
-            <li style="width: 120px;font-size: 10pt;" class="tab col s3"><a id="btn_settings" href="#tab_settings">Właściwości</a></li>
+            <li style="width: 160px;font-size: 10pt;" class="tab col s3"><a class="active"  href="#test1">Dodaj pole</a></li>
+            <li style="width: 160px;font-size: 10pt;" class="tab col s3"><a id="btn_settings" href="#tab_settings">Właściwości</a></li>
         </ul>
+
         <div id="test1" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">
 
             <div class="collection">
                 <a href="#" data-tmpl="TextField" class="tmpl-tool collection-item">Pole tekstowe<div class="secondary-content"><i class="material-icons">send</i></div> </a>
-                <a href="#" data-tmpl="EmailField" class="tmpl-tool collection-item">Pole email<div class="secondary-content"><i class="material-icons">send</i></div> </a>
                 <a href="#" data-tmpl="TextArea" class="tmpl-tool collection-item">Obszar tekstu<div class="secondary-content"><i class="material-icons">send</i></div> </a>
-                <a href="#" data-tmpl="SelectBox" class="tmpl-tool collection-item">Select<div class="secondary-content"><i class="material-icons">send</i></div> </a>
-                <a href="#" data-tmpl="RadioGroup" class="tmpl-tool collection-item">Grupa radio<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+                <a href="#" data-tmpl="RadioGroup" class="tmpl-tool collection-item">Lista jednokrotnego wyboru<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+                <a href="#" data-tmpl="ListView" class="tmpl-tool collection-item">Lista wielokrotnego wyboru<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+
+                <a href="#" data-tmpl="HeaderSection" class="tmpl-tool collection-item">Sekcja nagłówka<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+
             </div>
 
         </div>
 
-        <div id="tab_settings" style="height: 400px;background-color: whitesmoke" class="col s12">Test 2</div>
+        <div id="tab_settings" style="height: 400px;background-color: whitesmoke;overflow-y: auto;padding-bottom: 10px;" class="col s12">Test 2</div>
     </div>
 
-    <div class="col s3" style="height: 100%;margin-top: 25px"  >
+    <div class="col s4" style="height: 100%;margin-top: 25px"  >
     </div>
-    <div class="col s9" >
+    <div class="col s8" >
         <div style="clear:both;margin-top: 25px;max-width: 860px;" >
 
             <form id="myForm" class="col s10" >
@@ -96,27 +99,24 @@
             </div>
 
             <form id="tmpl" class="col s12" style="display:none; background-color: rgba(0, 0, 0, 0.02)" >
+                <div data-type="HeaderSection" class="row FormField">
+
+                </div>
                 <div data-type="TextField" class="row FormField">
                     <div class="input-field col s12">
-                        <input id="text_field" type="text" class="validate">
-                    </div>
-                </div>
-                <div data-type="EmailField" class="row FormField">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                        <input id="text_field" type="text" placeholder="hint" class="validate uniqueName"  >
                     </div>
                 </div>
                 <div data-type="TextArea" class="row FormField">
                     <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <textarea id="textarea1" class="materialize-textarea uniqueName"></textarea>
                         <label for="textarea1">Textarea</label>
                     </div>
                 </div>
                 <div data-type="SelectBox" class="row FormField">
                     <div class="input-field col s12">
                         <label>Browser Select</label>
-                        <select class="browser-default">
+                        <select class="browser-default uniqueName">
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
@@ -125,17 +125,33 @@
                     </div>
                 </div>
                 <div data-type="RadioGroup" class="row FormField">
-                    <div class="input-field col s12">
+                    <div class="input-field col s12" style="padding-bottom: 10px;">
                         <p>
-                            <input name="group1" type="radio" id="test1" />
+                            <input name="group1" type="radio" id="test1" class="uniqueName sameName" />
                             <label for="test1">AAA</label>
                         </p>
                         <p>
-                            <input name="group1" type="radio" id="test2" />
+                            <input name="group1" type="radio" id="test2" class="uniqueName sameName" />
                             <label for="test2">BBB</label>
                         </p>
                         <p>
-                            <input name="group1" type="radio" id="test3" />
+                            <input name="group1" type="radio" id="test3" class="uniqueName sameName" />
+                            <label for="test3">CCC</label>
+                        </p>
+                    </div>
+                </div>
+                <div data-type="ListView" class="row FormField">
+                    <div class="input-field col s12" style="padding-bottom: 10px;" >
+                        <p>
+                            <input name="group1" type="checkbox" id="test1" class="uniqueName sameName filled-in" />
+                            <label for="test1">AAA</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="checkbox" id="test2" class="uniqueName sameName filled-in" />
+                            <label for="test2">BBB</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="checkbox" id="test3" class="uniqueName sameName filled-in" />
                             <label for="test3">CCC</label>
                         </p>
                     </div>
@@ -145,16 +161,12 @@
     </div>
 
     <div id="templates" style="display: none;" >
-        <div data-type="TmplFieldConfig" class="input-field col s3 FieldConfig" >
-            <button href="#" class="  btnUP">UP</button>
-            <button href="#" class="  btnDOWN">DOWN</button>
-            <!--button href="#" class="  btnPROP">PROP</button-->
-        </div>
 
         <div data-type="TmplFieldHeader" class="FieldHeader" >
             <h5><span class="title_num" >[Num]</span> <span class="title" >[Title]</span><span class="require" style="display:none" >*</span></h5>
             <p class="desc"></p>
         </div>
+
         <div data-type="BasicFieldSetting"  >
             <div class="row">
                 <p>ID:<span class="label_fieldID" >[id]</span></p>
@@ -176,7 +188,11 @@
             <div class="row">
                 <p>Pole tekstowe:</p>
             </div>
-            <label>Typ pola</label>
+            <div class="input-field ">
+                <input id="placeholder_input" type="text" >
+                <label for="placeholder_input" >placeholder</label>
+            </div>
+            <label id="inputType_label" >Typ pola</label>
             <select id="inputType_select" class="browser-default">
                 <option value="text">text</option>
                 <option value="password">password</option>
@@ -224,7 +240,6 @@
                         fieldView.prepend( headerView );
                         fieldView.appendTo( "#myForm" );
                         sender.onFormChanged();
-
                         //
                     });
 
@@ -238,6 +253,13 @@
                         var text = $(this).val();
                         var id = $(this).attr("data-id");
                         $("#"+id+" .desc").html(text);
+                    });
+
+                    $('#placeholder_input').on('input',function(e){
+                        var text = $(this).val();
+                        var id = $(this).attr("data-id");
+                        $("#"+id+" input").prop("placeholder",text);
+                        $("#"+id+" textarea").prop("placeholder",text);
                     });
 
                     $('#isRequired_input').change(function () {
@@ -274,6 +296,10 @@
                             var textFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
                             textFieldSetting.appendTo(tabView);
                             sender.updateTextSettings($(textFieldSetting) , id);
+                        }else if(fieldType=="TextArea"){
+                            var textFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
+                            textFieldSetting.appendTo(tabView);
+                            sender.updateTextAreaSettings($(textFieldSetting) , id);
                         }
 
                         Materialize.updateTextFields();
@@ -302,6 +328,17 @@
                     var fieldView = $("#"+id);
                     view.find("#inputType_select").val( fieldView.find("input").prop("type") );
                     view.find("#inputType_select").attr("data-id",id);
+
+                    view.find("#placeholder_input").val( fieldView.find("input").prop("placeholder") );
+                    view.find("#placeholder_input").attr("data-id",id);
+
+                },
+                updateTextAreaSettings : function( view , id ){
+                    var fieldView = $("#"+id);
+                    view.find("#inputType_select").hide();
+                    view.find("#inputType_label").hide();
+                    view.find("#placeholder_input").val( fieldView.find("textarea").prop("placeholder") );
+                    view.find("#placeholder_input").attr("data-id",id);
                 },
                 selectField : function( id ){
                     $("#myForm > .active").removeClass("active");
@@ -322,6 +359,17 @@
                     var id = ++this.ids[type];
                     fieldView.attr( "id" , type + "_" + id );
                     fieldView.attr( "data-id" , id );
+
+                    fieldView.find(".uniqueName").each(function( index ) {
+                        var mId = type + "_" + id + ":" + index;
+                        fieldView.find( "[for="+$(this).prop("id")+"]").prop("for",mId)  ;
+                        $(this).prop("name",mId);
+                        $(this).prop("id",mId);
+                    });
+
+                    fieldView.find(".sameName").prop("name",type + "_" + id);
+
+
                 }
             };
             CreatorModule.init();
