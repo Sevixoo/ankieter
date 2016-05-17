@@ -1,0 +1,134 @@
+
+{% extends ':layout:no_menu.html.twig' %}
+
+{% block title %}Kreator{% endblock %}
+
+{% block nav %}
+{% endblock %}
+
+{% block stylesheets %}
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+        .tabs{
+            overflow-x: hidden !important;
+        }
+
+        #myForm .input-field{
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+        h5{
+            margin: 0px !important;
+        }
+        #myForm input{
+            margin: 0px !important;
+        }
+        #myForm{
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        #myForm > .active{
+            border: dashed 1px black;
+            padding: 4px;
+        }
+
+        .FormField{
+            margin: 10px;
+            padding: 5px;
+        }
+
+        [data-required=required] .require{
+            display: inline !important;
+        }
+
+        .FormField > .FieldConfig{
+            display: none;
+        }
+
+        .FormField:hover > .FieldConfig{
+            display: block;
+        }
+
+        #myForm > .active > .FieldConfig{
+            display: block;
+        }
+
+        .settingsInput{
+            margin: 0 !important;
+            padding: 0 !important;
+            display: block !important;
+            height: 1.5rem !important;
+            border-bottom-width: 0px !important;
+        }
+
+        input{
+            height: 2rem;
+        }
+
+    </style>
+
+
+{% endblock %}
+
+{% block content%}
+
+<div class="row" style="clear:both;">
+
+    <div class="col s8 offset-s3" >
+        <div style="clear:both;margin-top: 25px" >
+            <form id="myForm" class="col s10" >
+                {{ template_html |raw }}
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Structure modal_delete_subscribers -->
+    <div id="modal_loader" style="width: 280px;height: 145px;" class="modal">
+        <div class="modal-content">
+            <div style="width: 25px;margin: auto;margin-top: 25px " >
+                <div  class="preloader-wrapper small active  ">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+    <script type="text/javascript" >
+        $(document).ready(function(){
+
+            var API_HOST = "{{ url('api_host') }}";
+            var SERVER = {
+                ROUTER : {
+                    TEST1 : API_HOST + "/group/test1",
+                    TEST2 : API_HOST + "/group/test2/{id}",
+                    SAVE_TEMPLATE : API_HOST + "/creator/save",
+                    VIEW_TEMPLATE : API_HOST + "/templates/view/"
+                }
+            };
+
+            var CreatorModule =  {};
+        });
+    </script>
+{% endblock %}
+

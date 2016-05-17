@@ -31,6 +31,20 @@ class CreatorController extends BasicController{
     }
 
     /**
+     *  @Route("/api/templates/view/{template_id}", name="view_templates")
+     *    @Method({"GET"})
+     */
+    public function viewTemplateAction($template_id){
+        $conn = $this->get('database_connection');
+        $template = $conn->fetchAssoc("SELECT * FROM `Templates` WHERE `id` = $template_id");
+
+        return $this->render(':pages:form_view.html.twig', array(
+            "template_id" => $template_id,
+            "template_html" => $template['fields_schema']
+        ));
+    }
+
+    /**
      * @Route("/api/creator/save", name="save_creator")
      * @Method({"POST"})
      */
@@ -38,29 +52,46 @@ class CreatorController extends BasicController{
     {
         $request = Request::createFromGlobals();
         $template_id = $request->request->get('template_id');
-        $template_html = $request->request->get('template_html');
+        $template_html = trim($request->request->get('template_html'));
+        $name = $request->request->get('name');
 
         $conn = $this->get('database_connection');
         $creator_id = 1;
-        $name = "";
 
-        if() {
+        if($template_id<=0) {
             $sql = "INSERT INTO `Templates`(`id`, `name`, `creator_id`, `fields_schema`, `output_schema`, `create_date`)
-                VALUES (null,\"$name\",$creator_id,\"$template_html\",\"\",NOW())";
+                VALUES (null,\"$name\",$creator_id, ".$conn->quote($template_html)." ,\"\",NOW())";
+            $conn->exec($sql);
+            $template_id = $conn->lastInsertId();
+        }else{
+            $sql = "UPDATE `Templates` SET
+                `name`=\"$name\",
+                `creator_id`=$creator_id,`fields_schema`=".$conn->quote($template_html).",
+                `output_schema`=\"\"
+                WHERE `id` = " .$template_id ;
 
-            if (empty($existingEmail)) {
-                $conn->exec("INSERT INTO Subscribers (email) VALUE ('$subscriber_email')");
-                $existingEmail = $conn->fetchAssoc("SELECT * FROM Subscribers WHERE email = '$subscriber_email'");
+            $ret = $conn->exec($sql);
+            if($ret==0){
+                $data = array(
+                    "success" => 0,
+                    "error" => "UPDATE ERROR",
+                    "debug" => array(
+                        "sql" => $sql
+                    )
+                );
+                return $this->getJSONResponse($data);
             }
         }
 
         $data = array(
             "success" => 1,
             "data" => array(
-                "template_id" => 1
+                "template_id" => $template_id
+            ),
+            "debug" => array(
+                "sql" => $sql
             )
         );
-
 
         return $this->getJSONResponse($data);
     }

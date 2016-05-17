@@ -269,7 +269,8 @@
                 ROUTER : {
                     TEST1 : API_HOST + "/group/test1",
                     TEST2 : API_HOST + "/group/test2/{id}",
-                    SAVE_TEMPLATE : API_HOST + "/creator/save"
+                    SAVE_TEMPLATE : API_HOST + "/creator/save",
+                    VIEW_TEMPLATE : API_HOST + "/templates/view/"
                 }
             };
 
@@ -299,7 +300,7 @@
                     });
 
                     $(".actionSave").click(function() {
-                        CreatorModule.saveTemplate( CreatorModule.TEMPLATE_ID , "" );
+                        CreatorModule.saveTemplate( CreatorModule.TEMPLATE_ID , $("#myForm").html() , "name" );
                     });
 
                     $(".actionView").click(function() {
@@ -537,12 +538,13 @@
                 onError : function(msg){
                     Materialize.toast( msg , 4000 , 'red darken-3' );
                 },
-                saveTemplate : function(template_id,template_html){
+                saveTemplate : function(template_id,template_html,name){
                     AnkieterApi.REST.post({
                         url : SERVER.ROUTER.SAVE_TEMPLATE,
-                        url_data:{
+                        data:{
                             template_id:template_id,
-                            template_html:template_html
+                            template_html:template_html,
+                            name:name
                         },onResult : function(data){
                             CreatorModule.TEMPLATE_ID = data.template_id;
                             Materialize.toast( "Szablon zapisany" , 4000 , 'green darken-3' );
@@ -554,6 +556,9 @@
                 viewTemplate : function(template_id){
                     if(template_id < 0){
                         CreatorModule.onError("Najpierw zapisz szablon");
+                    }else{
+                        var win = window.open(SERVER.ROUTER.VIEW_TEMPLATE + template_id, '_blank');
+                        win.focus();
                     }
                 }
             };
