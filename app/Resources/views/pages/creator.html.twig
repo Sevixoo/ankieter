@@ -53,6 +53,18 @@
             display: block;
         }
 
+        .settingsInput{
+            margin: 0 !important;
+            padding: 0 !important;
+            display: block !important;
+            height: 1.5rem !important;
+            border-bottom-width: 0px !important;
+        }
+
+        input{
+            height: 2rem;
+        }
+
     </style>
 
 
@@ -128,15 +140,15 @@
                     <div class="input-field col s12" style="padding-bottom: 10px;">
                         <p>
                             <input name="group1" type="radio" id="test1" class="uniqueName sameName" />
-                            <label for="test1">AAA</label>
+                            <label data-value="aaa" for="test1">AAA</label>
                         </p>
                         <p>
                             <input name="group1" type="radio" id="test2" class="uniqueName sameName" />
-                            <label for="test2">BBB</label>
+                            <label data-value="bbb" for="test2">BBB</label>
                         </p>
                         <p>
                             <input name="group1" type="radio" id="test3" class="uniqueName sameName" />
-                            <label for="test3">CCC</label>
+                            <label data-value="ccc" for="test3">CCC</label>
                         </p>
                     </div>
                 </div>
@@ -144,15 +156,15 @@
                     <div class="input-field col s12" style="padding-bottom: 10px;" >
                         <p>
                             <input name="group1" type="checkbox" id="test1" class="uniqueName sameName filled-in" />
-                            <label for="test1">AAA</label>
+                            <label data-value="aaa" for="test1">AAA</label>
                         </p>
                         <p>
                             <input name="group1" type="checkbox" id="test2" class="uniqueName sameName filled-in" />
-                            <label for="test2">BBB</label>
+                            <label data-value="bbb" for="test2">BBB</label>
                         </p>
                         <p>
                             <input name="group1" type="checkbox" id="test3" class="uniqueName sameName filled-in" />
-                            <label for="test3">CCC</label>
+                            <label data-value="ccc" for="test3">CCC</label>
                         </p>
                     </div>
                 </div>
@@ -199,8 +211,48 @@
                 <option value="email">email</option>
             </select>
         </div>
+        <div data-type="ListSetting" >
+            <div class="row">
+                <p>Pole listowe:</p>
+            </div>
+            <label >Opcje</label>
+            <ul class="collection optionsList" style="margin-bottom:0;" >
+                <li class="collection-item optListItem">
+                    <div class="row" style="margin-bottom: 0px;margin-bottom: -5px;">
+                        <div class="left">
+                            <input type="text" placeholder="Nazwa opcji"  class="settingsInput optLabel" >
+                        </div>
+                        <div class="right">
+                            <a href="#" class="secondary-content optDel"><i class="material-icons ">clear</i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="collection" style="margin-top:0;" >
+                <a href="#" class="collection-item addListItem">+Dodaj</a>
+            </ul>
+        </div>
     </div>
 
+
+    <!-- Modal Structure modal_delete_subscribers -->
+    <div id="modal_loader" style="width: 280px;height: 145px;" class="modal">
+        <div class="modal-content">
+            <div style="width: 25px;margin: auto;margin-top: 25px " >
+                <div  class="preloader-wrapper small active  ">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 
@@ -217,10 +269,12 @@
                 ROUTER : {
                     TEST1 : API_HOST + "/group/test1",
                     TEST2 : API_HOST + "/group/test2/{id}",
+                    SAVE_TEMPLATE : API_HOST + "/creator/save"
                 }
             };
 
             var CreatorModule = {
+                TEMPLATE_ID: -1,
                 ids:[],
 
                 init: function () {
@@ -231,7 +285,7 @@
                         //create tool
                         tmpl = $(this).attr("data-tmpl");
                         var fieldView = $('#tmpl > [data-type='+tmpl+']').clone(true);
-                        sender.genId( fieldView , tmpl );
+                        var id = sender.genId( fieldView , tmpl );
                         fieldView.attr( "data-required" , "false" );
                         //var editView = $('#templates > [data-type=TmplFieldConfig]').clone(true);
                         //editView.appendTo(fieldView);
@@ -240,7 +294,16 @@
                         fieldView.prepend( headerView );
                         fieldView.appendTo( "#myForm" );
                         sender.onFormChanged();
+                        sender.goToByScroll(id);
                         //
+                    });
+
+                    $(".actionSave").click(function() {
+                        CreatorModule.saveTemplate( CreatorModule.TEMPLATE_ID , "" );
+                    });
+
+                    $(".actionView").click(function() {
+                        CreatorModule.viewTemplate( CreatorModule.TEMPLATE_ID );
                     });
 
                     $('#fieldName_input').on('input',function(e){
@@ -273,6 +336,33 @@
                         $("#"+id).find("input").prop("type",$(this).val());
                     });
 
+                    $("[data-type=ListSetting] .addListItem").click(function() {
+                        var id = $(this).attr("data-id");
+                        var fieldType = $("#"+id).attr("data-type");
+                        console.log("id" + id);
+                        console.log("fieldType" + fieldType);
+                        sender.addListItem( id , fieldType );
+                        sender.goToByScroll(id);
+                        sender.onClickSelectField( id , fieldType , sender );
+                    });
+
+                    $("[data-type=ListSetting] .optDel").click(function() {
+                        var id = $(this).attr("data-id");
+                        var fid = $(this).attr("data-field-id");
+                        var fieldType = $("#"+fid).attr("data-type");
+                        console.log("id" + id);
+                        $("#"+id).parent().remove();
+                        sender.refreshIds( fid );
+                        sender.goToByScroll(fid);
+                        sender.onClickSelectField( fid , fieldType , sender );
+                    });
+
+                    $("[data-type=ListSetting] .optLabel").on('input',function(e){
+                        var text = $(this).val();
+                        var id = $(this).attr("data-id");
+                        $("label[for="+id+"]").html(text);
+                    });
+
                     $(document).ready(function() {
                         $('select').material_select();
                     });
@@ -281,30 +371,83 @@
                         //select tool
                         var id = $(this).attr("id");
                         var fieldType = $(this).attr("data-type");
-
-                        sender.selectField(id);
-
-                        $("#btn_settings").click();
-                        var tabView = $("#tab_settings");
-                        tabView.html("");
-
-                        var basicFieldSetting = $('#templates > [data-type=BasicFieldSetting]').clone(true);
-                        basicFieldSetting.appendTo(tabView);
-                        sender.updateBasicSettings($(basicFieldSetting) , id);
-
-                        if(fieldType=="TextField"){
-                            var textFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
-                            textFieldSetting.appendTo(tabView);
-                            sender.updateTextSettings($(textFieldSetting) , id);
-                        }else if(fieldType=="TextArea"){
-                            var textFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
-                            textFieldSetting.appendTo(tabView);
-                            sender.updateTextAreaSettings($(textFieldSetting) , id);
-                        }
-
-                        Materialize.updateTextFields();
+                        sender.onClickSelectField( id , fieldType , sender );
                     });
 
+                },
+                onClickSelectField : function( id , fieldType , sender ){
+                    sender.selectField(id);
+
+                    $("#btn_settings").click();
+                    var tabView = $("#tab_settings");
+                    tabView.html("");
+
+                    var basicFieldSetting = $('#templates > [data-type=BasicFieldSetting]').clone(true);
+                    basicFieldSetting.appendTo(tabView);
+                    sender.updateBasicSettings($(basicFieldSetting) , id);
+
+                    if(fieldType=="TextField"){
+                        var textFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
+                        textFieldSetting.appendTo(tabView);
+                        sender.updateTextSettings($(textFieldSetting) , id);
+                    }else if(fieldType=="TextArea"){
+                        var areaFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
+                        areaFieldSetting.appendTo(tabView);
+                        sender.updateTextAreaSettings($(areaFieldSetting) , id);
+                    }else if(fieldType=="SelectBox"){
+
+                    }else if(fieldType=="RadioGroup"){
+                        var listSetting = $('#templates > [data-type=ListSetting]').clone(true);
+                        listSetting.appendTo(tabView);
+                        sender.updateListSettings($(listSetting) , id , fieldType);
+                    }else if(fieldType=="ListView"){
+                        var listSetting = $('#templates > [data-type=ListSetting]').clone(true);
+                        listSetting.appendTo(tabView);
+                        sender.updateListSettings($(listSetting) , id , fieldType);
+                    }
+
+                    Materialize.updateTextFields();
+                },
+                addListItem : function( id , fieldType ){
+                    var fieldView = $("#"+id);
+                    var input = fieldView.find(".input-field");
+                    var view;
+                    if( fieldType == "RadioGroup"  ){
+                        view = '<p>'+
+                                    '<input name="group1" type="radio" id="test3" class="uniqueName sameName" />'+
+                                    '<label data-value="ccc" for="test3"></label>'+
+                                '</p>';
+                    }else if( fieldType == "ListView"  ){
+                        view = '<p>'+
+                                    '<input name="group1" type="checkbox" id="test2" class="uniqueName sameName filled-in" />'+
+                                    '<label data-value="bbb" for="test2"></label>'+
+                                '</p>';
+                    }
+                    input.append(view);
+                    this.refreshIds(id);
+                },
+                updateListSettings : function( view , id , fieldType ){
+                    var fieldView = $("#"+id);
+
+                    var optList =  view.find( ".optionsList");
+                    var addListItem =  view.find( ".addListItem");
+                    var optListItem =  view.find( ".optListItem").clone(true);
+
+                    addListItem.attr( "data-id" , id );
+                    optList.html("");
+
+                    //if( fieldType == "RadioGroup" || fieldType == "ListView" ){}
+                    fieldView.find( "label" ).each(function( index ) {
+                        var item = optListItem.clone(true);
+                        //item.html( $(this).html() );
+                        item.find(".optLabel").val( $(this).html() );
+                        item.find(".optLabel").attr("data-id",$(this).prop("for"));
+                        item.find(".optDel").attr("data-id",$(this).prop("for"));
+                        item.find(".optDel").attr("data-field-id",id);
+                        item.appendTo(optList);
+                    });
+
+                    //addListItem.appendTo(optList);
                 },
                 updateBasicSettings : function( view , id ){
                     var fieldView = $("#"+id);
@@ -361,7 +504,7 @@
                     fieldView.attr( "data-id" , id );
 
                     fieldView.find(".uniqueName").each(function( index ) {
-                        var mId = type + "_" + id + ":" + index;
+                        var mId = type + "_" + id + "x" + index;
                         fieldView.find( "[for="+$(this).prop("id")+"]").prop("for",mId)  ;
                         $(this).prop("name",mId);
                         $(this).prop("id",mId);
@@ -369,7 +512,49 @@
 
                     fieldView.find(".sameName").prop("name",type + "_" + id);
 
+                    return type + "_" + id;
+                },
+                refreshIds : function( id  ){
+                    var fieldView = $("#"+id);
 
+                    fieldView.find(".uniqueName").each(function( index ) {
+                        var mId = id + "x" + index;
+                        fieldView.find( "[for="+$(this).prop("id")+"]").prop("for",mId)  ;
+                        $(this).prop("name",mId);
+                        $(this).prop("id",mId);
+                    });
+
+                    fieldView.find(".sameName").prop( "name",id );
+                },
+                goToByScroll : function (id){
+                    // Remove "link" from the ID
+                    id = id.replace("link", "");
+                    // Scroll
+                    $('html,body').animate({
+                                scrollTop: $("#"+id).offset().top},
+                            'slow');
+                },
+                onError : function(msg){
+                    Materialize.toast( msg , 4000 , 'red darken-3' );
+                },
+                saveTemplate : function(template_id,template_html){
+                    AnkieterApi.REST.post({
+                        url : SERVER.ROUTER.SAVE_TEMPLATE,
+                        url_data:{
+                            template_id:template_id,
+                            template_html:template_html
+                        },onResult : function(data){
+                            CreatorModule.TEMPLATE_ID = data.template_id;
+                            Materialize.toast( "Szablon zapisany" , 4000 , 'green darken-3' );
+                        },
+                        onError : CreatorModule.onError,
+                        loaderModal : "#modal_loader"
+                    });
+                },
+                viewTemplate : function(template_id){
+                    if(template_id < 0){
+                        CreatorModule.onError("Najpierw zapisz szablon");
+                    }
                 }
             };
             CreatorModule.init();
