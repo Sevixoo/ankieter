@@ -1,0 +1,379 @@
+
+{% extends ':layout:no_menu.html.twig' %}
+
+{% block title %}Wyświl ankietę do użytkowników{% endblock %}
+
+{% block stylesheets %}
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+        .tabs{
+            overflow-x: hidden !important;
+        }
+
+        #myForm .input-field{
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+        h5{
+            margin: 0px !important;
+        }
+        #myForm input{
+            margin: 0px !important;
+        }
+        #myForm{
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        #myForm > .active{
+            border: dashed 1px black;
+            padding: 4px;
+        }
+
+        .FormField{
+            margin: 10px;
+            padding: 5px;
+        }
+
+        [data-required=required] .require{
+            display: inline !important;
+        }
+
+        .FormField > .FieldConfig{
+            display: none;
+        }
+
+        .FormField:hover > .FieldConfig{
+            display: block;
+        }
+
+        #myForm > .active > .FieldConfig{
+            display: block;
+        }
+
+    </style>
+
+
+{% endblock %}
+
+{% block content%}
+
+<div class="row" style="clear:both;">
+
+    <div style="margin-top: 25px; position: fixed;top: 60px;left: 15px;"  >
+        <ul style="color: #03a9f4" class="tabs">
+            <li style="width: 160px;font-size: 10pt;" class="tab col s3"><a class="active"  href="#test1">Dodaj pole</a></li>
+            <li style="width: 160px;font-size: 10pt;" class="tab col s3"><a id="btn_settings" href="#tab_settings">Właściwości</a></li>
+        </ul>
+
+        <div id="test1" style="height: 400px;background-color: rgba(182, 30, 0, 0.59)" class="col s12">
+
+            <div class="collection">
+                <a href="#" data-tmpl="TextField" class="tmpl-tool collection-item">Pole tekstowe<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+                <a href="#" data-tmpl="TextArea" class="tmpl-tool collection-item">Obszar tekstu<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+                <a href="#" data-tmpl="RadioGroup" class="tmpl-tool collection-item">Lista jednokrotnego wyboru<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+                <a href="#" data-tmpl="ListView" class="tmpl-tool collection-item">Lista wielokrotnego wyboru<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+
+                <a href="#" data-tmpl="HeaderSection" class="tmpl-tool collection-item">Sekcja nagłówka<div class="secondary-content"><i class="material-icons">send</i></div> </a>
+
+            </div>
+
+        </div>
+
+        <div id="tab_settings" style="height: 400px;background-color: whitesmoke;overflow-y: auto;padding-bottom: 10px;" class="col s12">Test 2</div>
+    </div>
+
+    <div class="col s4" style="height: 100%;margin-top: 25px"  >
+    </div>
+    <div class="col s8" >
+        <div style="clear:both;margin-top: 25px;max-width: 860px;" >
+
+            <form id="myForm" class="col s10" >
+
+            </form>
+
+            <div class="col s2" >
+
+            </div>
+
+            <form id="tmpl" class="col s12" style="display:none; background-color: rgba(0, 0, 0, 0.02)" >
+                <div data-type="HeaderSection" class="row FormField">
+
+                </div>
+                <div data-type="TextField" class="row FormField">
+                    <div class="input-field col s12">
+                        <input id="text_field" type="text" placeholder="hint" class="validate uniqueName"  >
+                    </div>
+                </div>
+                <div data-type="TextArea" class="row FormField">
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" class="materialize-textarea uniqueName"></textarea>
+                        <label for="textarea1">Textarea</label>
+                    </div>
+                </div>
+                <div data-type="SelectBox" class="row FormField">
+                    <div class="input-field col s12">
+                        <label>Browser Select</label>
+                        <select class="browser-default uniqueName">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div data-type="RadioGroup" class="row FormField">
+                    <div class="input-field col s12" style="padding-bottom: 10px;">
+                        <p>
+                            <input name="group1" type="radio" id="test1" class="uniqueName sameName" />
+                            <label for="test1">AAA</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="radio" id="test2" class="uniqueName sameName" />
+                            <label for="test2">BBB</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="radio" id="test3" class="uniqueName sameName" />
+                            <label for="test3">CCC</label>
+                        </p>
+                    </div>
+                </div>
+                <div data-type="ListView" class="row FormField">
+                    <div class="input-field col s12" style="padding-bottom: 10px;" >
+                        <p>
+                            <input name="group1" type="checkbox" id="test1" class="uniqueName sameName filled-in" />
+                            <label for="test1">AAA</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="checkbox" id="test2" class="uniqueName sameName filled-in" />
+                            <label for="test2">BBB</label>
+                        </p>
+                        <p>
+                            <input name="group1" type="checkbox" id="test3" class="uniqueName sameName filled-in" />
+                            <label for="test3">CCC</label>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="templates" style="display: none;" >
+
+        <div data-type="TmplFieldHeader" class="FieldHeader" >
+            <h5><span class="title_num" >[Num]</span> <span class="title" >[Title]</span><span class="require" style="display:none" >*</span></h5>
+            <p class="desc"></p>
+        </div>
+
+        <div data-type="BasicFieldSetting"  >
+            <div class="row">
+                <p>ID:<span class="label_fieldID" >[id]</span></p>
+                <div class="input-field ">
+                    <input id="fieldName_input" type="text" class="validate">
+                    <label for="fieldName_input" >Nazwa pola</label>
+                </div>
+                <div class="input-field ">
+                    <textarea id="fieldDesc_input" class="materialize-textarea"></textarea>
+                    <label for="fieldDesc_input">Opis</label>
+                </div>
+                <p>
+                    <input type="checkbox" id="isRequired_input" />
+                    <label for="isRequired_input">pole wymagane</label>
+                </p>
+            </div>
+        </div>
+        <div data-type="TextFieldSetting" >
+            <div class="row">
+                <p>Pole tekstowe:</p>
+            </div>
+            <div class="input-field ">
+                <input id="placeholder_input" type="text" >
+                <label for="placeholder_input" >placeholder</label>
+            </div>
+            <label id="inputType_label" >Typ pola</label>
+            <select id="inputType_select" class="browser-default">
+                <option value="text">text</option>
+                <option value="password">password</option>
+                <option value="email">email</option>
+            </select>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+    <script type="text/javascript" >
+        $(document).ready(function(){
+
+            var API_HOST = "{{ url('api_host') }}";
+            var SERVER = {
+                ROUTER : {
+                    TEST1 : API_HOST + "/group/test1",
+                    TEST2 : API_HOST + "/group/test2/{id}",
+                }
+            };
+
+            var CreatorModule = {
+                ids:[],
+
+                init: function () {
+                    var sender = this;
+                    $('ul.tabs').tabs();
+
+                    $('.tmpl-tool').click(function() {
+                        //create tool
+                        tmpl = $(this).attr("data-tmpl");
+                        var fieldView = $('#tmpl > [data-type='+tmpl+']').clone(true);
+                        sender.genId( fieldView , tmpl );
+                        fieldView.attr( "data-required" , "false" );
+                        //var editView = $('#templates > [data-type=TmplFieldConfig]').clone(true);
+                        //editView.appendTo(fieldView);
+                        var headerView = $('#templates > [data-type=TmplFieldHeader]').clone(true);
+                        headerView.find(".title").html(fieldView.attr("id"));
+                        fieldView.prepend( headerView );
+                        fieldView.appendTo( "#myForm" );
+                        sender.onFormChanged();
+                        //
+                    });
+
+                    $('#fieldName_input').on('input',function(e){
+                        var text = $(this).val();
+                        var id = $(this).attr("data-id");
+                        $("#"+id+" .title").html(text);
+                    });
+
+                    $('#fieldDesc_input').on('input',function(e){
+                        var text = $(this).val();
+                        var id = $(this).attr("data-id");
+                        $("#"+id+" .desc").html(text);
+                    });
+
+                    $('#placeholder_input').on('input',function(e){
+                        var text = $(this).val();
+                        var id = $(this).attr("data-id");
+                        $("#"+id+" input").prop("placeholder",text);
+                        $("#"+id+" textarea").prop("placeholder",text);
+                    });
+
+                    $('#isRequired_input').change(function () {
+                        var id = $(this).attr("data-id");
+                        var isChecked = $(this).prop("checked");
+                        $("#"+id+"").attr("data-required", isChecked?"required":"false" );
+                    });
+
+                    $('#inputType_select').change(function () {
+                        var id = $(this).attr("data-id");
+                        $("#"+id).find("input").prop("type",$(this).val());
+                    });
+
+                    $(document).ready(function() {
+                        $('select').material_select();
+                    });
+
+                    $('.FormField').click(function() {
+                        //select tool
+                        var id = $(this).attr("id");
+                        var fieldType = $(this).attr("data-type");
+
+                        sender.selectField(id);
+
+                        $("#btn_settings").click();
+                        var tabView = $("#tab_settings");
+                        tabView.html("");
+
+                        var basicFieldSetting = $('#templates > [data-type=BasicFieldSetting]').clone(true);
+                        basicFieldSetting.appendTo(tabView);
+                        sender.updateBasicSettings($(basicFieldSetting) , id);
+
+                        if(fieldType=="TextField"){
+                            var textFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
+                            textFieldSetting.appendTo(tabView);
+                            sender.updateTextSettings($(textFieldSetting) , id);
+                        }else if(fieldType=="TextArea"){
+                            var textFieldSetting = $('#templates > [data-type=TextFieldSetting]').clone(true);
+                            textFieldSetting.appendTo(tabView);
+                            sender.updateTextAreaSettings($(textFieldSetting) , id);
+                        }
+
+                        Materialize.updateTextFields();
+                    });
+
+                },
+                updateBasicSettings : function( view , id ){
+                    var fieldView = $("#"+id);
+
+                    view.find( "#fieldName_input").attr("data-id",id);
+                    view.find( "#fieldName_input").val( fieldView.find(".title").html()  );
+
+                    view.find( ".label_fieldID").html( id );
+
+                    var isRequired = fieldView.attr("data-required") == "required";
+                    view.find( "#isRequired_input").prop('checked', isRequired);
+                    view.find( "#isRequired_input").attr("data-id",id);
+
+                    view.find( "#isRequired_input").attr("data-id",id);
+
+                    view.find( "#fieldDesc_input").attr("data-id",id);
+                    view.find( "#fieldDesc_input").val( fieldView.find(".desc").html()  );
+
+                },
+                updateTextSettings : function( view , id ){
+                    var fieldView = $("#"+id);
+                    view.find("#inputType_select").val( fieldView.find("input").prop("type") );
+                    view.find("#inputType_select").attr("data-id",id);
+
+                    view.find("#placeholder_input").val( fieldView.find("input").prop("placeholder") );
+                    view.find("#placeholder_input").attr("data-id",id);
+
+                },
+                updateTextAreaSettings : function( view , id ){
+                    var fieldView = $("#"+id);
+                    view.find("#inputType_select").hide();
+                    view.find("#inputType_label").hide();
+                    view.find("#placeholder_input").val( fieldView.find("textarea").prop("placeholder") );
+                    view.find("#placeholder_input").attr("data-id",id);
+                },
+                selectField : function( id ){
+                    $("#myForm > .active").removeClass("active");
+                    $("#"+id).addClass("active");
+                },
+                onFormChanged : function(){
+                    var num = 1;
+                    $( "#myForm > .FormField" ).each(function( index ) {
+                        var header = $( this).find(".FieldHeader");
+                        header.find(".title_num").html(num + ")");
+                        num++;
+                    });
+                },
+                genId : function( fieldView , type ){
+                    if(this.ids[type]==null){
+                        this.ids[type] = 0;
+                    }
+                    var id = ++this.ids[type];
+                    fieldView.attr( "id" , type + "_" + id );
+                    fieldView.attr( "data-id" , id );
+
+                    fieldView.find(".uniqueName").each(function( index ) {
+                        var mId = type + "_" + id + ":" + index;
+                        fieldView.find( "[for="+$(this).prop("id")+"]").prop("for",mId)  ;
+                        $(this).prop("name",mId);
+                        $(this).prop("id",mId);
+                    });
+
+                    fieldView.find(".sameName").prop("name",type + "_" + id);
+
+
+                }
+            };
+            CreatorModule.init();
+        });
+    </script>
+{% endblock %}
+
