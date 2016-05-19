@@ -354,6 +354,11 @@
                         GroupModule.addGroupGroup( $('#input_modal_add_group').val() , $('#img_modal_add_group').attr( "data-filename") );
                     });
 
+
+                    $('#confirm_modal_import_csv').click(function() {
+                        GroupModule.importFromCSV(groupList.getSelectedItem().id, $('#img_modal_import_csv').attr("data-filename"));
+                    });
+
                     $("#confirm_action_modal_add_subscriber").click(function() {
                         GroupModule.addSubsctiber( $('#input_modal_add_subscriber').val() , groupList.getSelectedItem().id );
                     });
@@ -406,6 +411,7 @@
                         url : SERVER.ROUTER.DEL_SUBSCRIBERS,
                         data:{ ids: JSON.stringify( toDelete ) },
                         onResult : function(data){
+                            groupList.setGroupSizes(data.created.badges);
                             subscriberList.deleteFromList(data.deleted_items);
                             GroupModule.initSubscribersModels();
                             subscriberList.hideLoader();
@@ -422,6 +428,7 @@
                         url_data : { group_id : group_id },
                         data:{ ids:JSON.stringify( toDelete ) },
                         onResult : function(data){
+                            groupList.setGroupSizes(data.badges);
                             subscriberList.deleteFromList(data.removed_items);
                             GroupModule.initSubscribersModels();
                             subscriberList.hideLoader();
@@ -469,6 +476,7 @@
                         url : SERVER.ROUTER.DEL_GROUP_AND_SUBS,
                         url_data:{ group_id:group_id },
                         onResult : function(data){
+                            groupList.setGroupSizes(data.badges);
                             groupList.deleteFromList(data.deleted_items);
                             subscriberList.clearList();
                             subscriberList.hideLoader();
@@ -487,6 +495,7 @@
                             group_id:group_id
                         },
                         onResult : function(data){
+                            groupList.setGroupSizes(data.created.badges);
                             subscriberList.addData(data.created.id , data.created.email);
                             subscriberList.hideLoader();
                             GroupModule.initSubscribersModels();
@@ -496,6 +505,27 @@
                     });
                 },
                 loadSubscribersFromCSV : function(){
+
+                },
+                importFromCSV : function( group_id , file_name ){
+                    console.log("group_id " + group_id );
+                    console.log("file_name " + file_name  );
+
+                    AnkieterApi.REST.post({
+                        url : SERVER.ROUTER.IMPORT_CSV,
+                        url_data : {
+                            group_id : group_id
+                        },
+                        data:{
+                            file_name:file_name
+                        },
+                        onResult : function(data){
+                            GroupModule.loadSubscribers(group_id);
+                            GroupModule.initSubscribersModels();
+                        },
+                        onError : GroupModule.onError,
+                        loaderModal : "#modal_loader"
+                    });
 
                 }
             };
@@ -510,6 +540,45 @@
         }
 
         $(function () {
+
+            $('#file_modal_import_csv').fileupload({
+                dataType: 'json',
+                add: function (e, data) {
+
+                    $(this).attr( "data-url" , "" );
+
+                    data.submit();
+                    $('#progress_modal_import_csv').css( "display" , "block" );
+                },
+                done: function (e, data) {
+                    console.log( data.result );
+                    if( data.result.success == 1 ){
+                        src = "{{ asset('bundles/images/icon_csv.png') }}";
+                        $("#img_modal_import_csv").attr( "src" , src );
+                        $("#img_modal_import_csv").attr( "data-filename" , data.result.file.name );
+                        if( picture_box_onfileuploaded )
+                            picture_box_onfileuploaded(src);
+                    }else{
+                        notyfiError(data.result.file.error);
+                    }
+
+                    $('#progress_modal_import_csv').delay( 500 ).fadeOut( 800 , function() {
+                        $('#progress_modal_import_csv .determinate').css('width','0%' );
+                    });
+
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    $('#progress_modal_import_csv .determinate').css(
+                            'width',
+                            progress + '%'
+                    );
+                },
+                acceptFileTypes : "/(\.|\/)(csv)$/i",
+                maxFileSize : 1500000
+            });
+
+            //---------------------------------------------
 
             $('#file_modal_add_group').fileupload({
                 dataType: 'json',
@@ -547,19 +616,12 @@
                 acceptFileTypes : "/(\.|\/)(csv)$/i",
                 maxFileSize : 1500000
             });
+
+            //---------------------------------------------
         });
 
         var avatarsUrl = "{{ asset('bundles/tmp/images/') }}";
         var imagesUrl = "{{ asset('bundles/tmp/images/') }}";
-        //------------------------------------------------------------------------------------
-        function picture_upload_clear(){
-            $("#img_modal_add_group").attr( "src" , "{{ asset('bundles/images/icon_csv_import.png') }}" );
-        }
-        //------------------------------------------------------------------------------------
-        function picture_upload_setData( data ){
-            $("#img_modal_add_group").attr( "src" , "{{ asset('bundles/images/icon_csv.png') }}" );
-        }
-        //------------------------------------------------------------------------------------
 
 
     </script>

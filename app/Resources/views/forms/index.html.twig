@@ -1,0 +1,74 @@
+
+{% extends ':layout:base.html.twig' %}
+
+{% block title %}Grupy{% endblock %}
+
+{% block stylesheets %}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style type="text/css" media="screen">
+
+    a:link {
+        color:black;
+    }
+
+    a:visited {
+        color:black;
+    }
+
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+</style>
+
+{% endblock %}
+
+{% block content%}
+
+    <table class="highlight">
+        <thead>
+        <tr>
+            <th>Nazwa </th>
+            <th>Data utworzenia</th>
+            <th>Data zakończenia</th>
+            <th>Data planowanego zakończenia</th>
+            <th>Szablon</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for form in forms %}
+
+
+        <tr
+                {% if form['is_active'] == false %}
+                style = "color:darkgray"
+                {% endif %}
+        >
+            <td>{{ form['formName'] }}</td>
+            <td>{{ form['create_date'] }}</td>
+            <td>{{ form['deadline'] }}</td>
+            <td>{{ form['end_date'] }}</td>
+            <td>{{ form['templateName'] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+{% endblock %}
+
