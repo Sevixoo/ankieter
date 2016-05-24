@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" />
     </list>
     <list id="7c12036a-d440-411a-8473-1248aee2ea4a" name="New changelist" comment="New changelist" />
     <list id="71194f9c-039f-4157-b543-f4f93489d785" name="Test2" comment="Test2" />
@@ -1227,7 +1226,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464104021669</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Ankiety">
+      <created>1464104281706</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1464104281706</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
