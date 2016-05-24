@@ -12,11 +12,16 @@ class FormController extends Controller
      * @Route("/forms", name="forms")
      */
 
+    /*
+     * isActive:
+     *  1 wystartowana / można zatrzymać
+     */
+
     public function indexAction(){
         $conn = $this->get('database_connection');
 
-        $forms = $conn->fetchAll("SELECT Forms.id, Forms.deadline, Forms.is_active, Forms.name AS formName, Forms.create_date, Forms.end_date,
-                                  Templates.name AS templateName
+        $forms = $conn->fetchAll("SELECT Forms.id AS formId, Forms.deadline, Forms.is_active, Forms.name AS formName, Forms.create_date, Forms.end_date,
+                                  Templates.name AS templateName, Templates.id AS templateId
                                   FROM Forms
                                   LEFT JOIN Templates ON Forms.template_id = Templates.id
                                   ORDER BY Forms.is_active DESC, Forms.create_date
@@ -66,4 +71,27 @@ class FormController extends Controller
 
         return $this->indexAction();
     }
+
+    /**
+     * @Route("/forms/stop_form/{id}", name="stop_form")
+     */
+    public function stopFormAction(){
+
+        $conn = $this->get('database_connection');
+        $doctrine = $this->getDoctrine();
+        $request = Request::createFromGlobals();
+
+        $end_date = $request->request->get('end_date');
+        $start_date = $request->request->get('start_date');
+        $template_id = $request->request->get('template');
+        $name = $request->request->get('form_name');
+
+        $sql = "INSERT INTO `Forms`(`id`, `create_date`, `end_date`, `deadline`, `template_version`, `is_active`, `template_id`, `name`,`start_date`)
+            VALUES (null,NOW(),\"$end_date\",\"\",1,0,$template_id,\"$name\",\"$start_date\" )";
+
+        $conn->exec($sql);
+
+        return $this->indexAction();
+    }
+
 }

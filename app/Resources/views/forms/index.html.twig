@@ -33,7 +33,7 @@
 
 {% block content%}
 
-    <table class="highlight">
+    <table class="highlight centered">
         <thead>
         <tr>
             <th>Nazwa </th>
@@ -41,6 +41,7 @@
             <th>Data zakończenia</th>
             <th>Data planowanego zakończenia</th>
             <th>Szablon</th>
+            <th>Akcje</th>
         </tr>
         </thead>
 
@@ -59,6 +60,23 @@
             <td>{{ form['deadline'] }}</td>
             <td>{{ form['end_date'] }}</td>
             <td>{{ form['templateName'] }}</td>
+            <td>
+                {% if form['is_active'] == true %}
+                    <a href="{{ path('stop_form',{'id' : form['formId']}) }}">
+                        <i class="small material-icons">pause</i>
+                    </a>
+                {% else %}
+                    <a href="{{ path('get_form_result',{'id' : form['formId']}) }}">
+                        <i class="small material-icons">pause</i>
+                    </a>
+
+                {% endif %}
+
+                <a target="_blank" href="{{ path('view_templates', {'template_id' : form['templateId']})}}">
+                    <i class="small material-icons">visibility</i>
+                </a>
+            </td>
+
         </tr>
         {% endfor %}
         </tbody>
