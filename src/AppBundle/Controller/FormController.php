@@ -75,7 +75,23 @@ class FormController extends Controller
     /**
      * @Route("/forms/stop_form/{id}", name="stop_form")
      */
-    public function stopFormAction(){
+    public function stopFormAction($id){
+
+        $conn = $this->get('database_connection');
+
+        $sql = "UPDATE Forms
+                SET is_active = '0'
+                WHERE Forms.id = '$id'";
+
+        $conn->exec($sql);
+
+        return $this->indexAction();
+    }
+
+    /**
+     * @Route("/forms/get_form_result/{id}", name="get_form_result")
+     */
+    public function getFormResultAction($id){
 
         $conn = $this->get('database_connection');
         $doctrine = $this->getDoctrine();
