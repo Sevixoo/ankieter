@@ -22,6 +22,8 @@ class MailController extends Controller
             ->setContentType("text/html");
         $this->get('mailer')->send($message);
 
+
+        //eturn $this->render(':forms:index.html.twig');
         return $this->redirectToRoute('homepage');
     }
 

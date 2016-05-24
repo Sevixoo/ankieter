@@ -8,10 +8,11 @@ parameters:
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 
-    mailer_transport:  smtp
-    mailer_host:       s43.linuxpl.com
-    mailer_user:       radasp34
-    mailer_password:   bkcty6182
+    mailer_transport:   smtp
+    mailer_user:        ankieter@radasp34.ayz.pl
+    mailer_password:    ankieter
+    mailer_host:        mail.radasp34.ayz.pl
+    mailer_port:        587
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
