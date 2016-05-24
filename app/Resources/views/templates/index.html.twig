@@ -32,9 +32,43 @@
 {% endblock %}
 
 {% block content%}
+<div class="" style="margin-top:25px;margin-left: 50px" >
+    <h5>Szablony</h5>
+
+    <table class="highlight centered">
+        <thead>
+        <tr>
+            <th>Nazwa </th>
+            <th>Data utworzenia</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for template in templates %}
 
 
+            <tr >
+                <td>{{ template.name }}</td>
+                <td>{{ template.create_date }}</td>
+                <td>
+                        <a href="#">
+                            <i class="small material-icons">delete</i>
+                        </a>
+                        <a target="_blank" href="{{ path('view_templates', {'template_id' : template.id })}}">
+                            <i class="small material-icons">visibility</i>
+                        </a>
+                        <a href="#">
+                            <i class="small material-icons">edit</i>
+                        </a>
+                </td>
 
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
 
 
