@@ -13,10 +13,16 @@ class TemplateController extends Controller
      * @Route("/templates", name="templates")
      */
 
-    public function indexAction()
-    {
+    public function indexAction(){
+        $conn = $this->get('database_connection');
+        $doctrine = $this->getDoctrine();
 
-        return $this->render('templates/index.html.twig', array( ) );
+        $templates = $conn->fetchAll("SELECT * FROM Templates ORDER BY Templates.create_date DESC");
+
+
+        return $this->render('templates/index.html.twig', array(
+            'templates' => $templates
+        ) );
     }
 
 
