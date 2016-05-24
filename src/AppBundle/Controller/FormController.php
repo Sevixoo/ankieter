@@ -71,7 +71,7 @@ class FormController extends Controller
 
         $conn->exec($sql);
 
-        return $this->indexAction();
+        return $this->redirectToRoute('forms');
     }
 
     /**
@@ -87,7 +87,7 @@ class FormController extends Controller
 
         $conn->exec($sql);
 
-        return $this->indexAction();
+        return $this->redirectToRoute('forms');
     }
 
     /**
@@ -95,21 +95,8 @@ class FormController extends Controller
      */
     public function getFormResultAction($id){
 
-        $conn = $this->get('database_connection');
-        $doctrine = $this->getDoctrine();
-        $request = Request::createFromGlobals();
 
-        $end_date = $request->request->get('end_date');
-        $start_date = $request->request->get('start_date');
-        $template_id = $request->request->get('template');
-        $name = $request->request->get('form_name');
-
-        $sql = "INSERT INTO `Forms`(`id`, `create_date`, `end_date`, `deadline`, `template_version`, `is_active`, `template_id`, `name`,`start_date`)
-            VALUES (null,NOW(),\"$end_date\",\"\",1,0,$template_id,\"$name\",\"$start_date\" )";
-
-        $conn->exec($sql);
-
-        return $this->indexAction();
+        return $this->redirectToRoute('forms');
     }
 
 }
