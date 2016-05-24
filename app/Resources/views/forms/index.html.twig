@@ -41,7 +41,6 @@
             <th>Nazwa </th>
             <th>Data utworzenia</th>
             <th>Data zakończenia</th>
-            <th>Data planowanego zakończenia</th>
             <th>Szablon</th>
             <th>Akcje</th>
         </tr>
@@ -59,8 +58,13 @@
         >
             <td>{{ form['formName'] }}</td>
             <td>{{ form['create_date'] }}</td>
-            <td>{{ form['deadline'] }}</td>
-            <td>{{ form['end_date'] }}</td>
+            <td>
+                {% if form['is_active'] == true %}
+                    {{ form['deadline'] }}
+                {% else %}
+                    {{ form['end_date'] }}
+                {% endif %}
+            </td>
             <td>{{ form['templateName'] }}</td>
             <td>
                 {% if form['is_active'] == true %}
@@ -69,8 +73,12 @@
                     </a>
                 {% else %}
                     <a href="{{ path('get_form_result',{'id' : form['formId']}) }}">
+<<<<<<< HEAD
                         <i class="small material-icons">file_download
                         </i>
+=======
+                        <i class="small material-icons">file_download</i>
+>>>>>>> origin/master
                     </a>
 
                 {% endif %}
