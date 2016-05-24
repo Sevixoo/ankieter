@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
     </list>
     <list id="7c12036a-d440-411a-8473-1248aee2ea4a" name="New changelist" comment="New changelist" />
     <list id="71194f9c-039f-4157-b543-f4f93489d785" name="Test2" comment="Test2" />
@@ -57,12 +55,11 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.16129">
-              <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+            <state vertical-scroll-proportion="-14.290322">
+              <caret line="71" column="53" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
               <folding>
                 <element signature="e#13#35#0#Twig" expanded="false" />
-                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <marker date="1464102868247" expanded="true" signature="487:2013" placeholder="{% block content...%}" />
+                <marker date="1464103645273" expanded="true" signature="487:2098" placeholder="{% block content...%}" />
               </folding>
             </state>
           </provider>
@@ -71,18 +68,19 @@
       <file leaf-file-name="FormController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40876946">
-              <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.82808024">
+              <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
               <folding>
                 <element signature="e#40#97#0#PHP" expanded="true" />
                 <element signature="e#1023#1046#0#PHP" expanded="true" />
-                <marker date="1464103228799" expanded="true" signature="497:926" placeholder="SELECT Forms... Forms" />
-                <marker date="1464103228799" expanded="true" signature="1344:1403" placeholder="SELECT * FRO... Templates" />
-                <marker date="1464103228799" expanded="true" signature="2153:2381" placeholder="INSERT INTO `Forms`... " />
-                <marker date="1464103228799" expanded="true" signature="2640:2727" placeholder="UPDATE Forms... " />
-                <marker date="1464103228799" expanded="true" signature="2646:2705" placeholder="INSERT INTO Forms.is_active... " />
-                <marker date="1464103228799" expanded="true" signature="2646:2727" placeholder="INSERT INTO Forms.is_active... " />
-                <marker date="1464103228799" expanded="true" signature="3323:3551" placeholder="INSERT INTO `Forms`... " />
+                <marker date="1464103645269" expanded="true" signature="497:926" placeholder="SELECT Forms... Forms" />
+                <marker date="1464103645269" expanded="true" signature="1344:1403" placeholder="SELECT * FRO... Templates" />
+                <marker date="1464103645269" expanded="true" signature="2235:2495" placeholder="INSERT INTO `Forms`... " />
+                <marker date="1464103645269" expanded="true" signature="2493:2495" placeholder="INSERT INTO `Forms`... " />
+                <marker date="1464103645269" expanded="true" signature="2754:2841" placeholder="UPDATE Forms... " />
+                <marker date="1464103645269" expanded="true" signature="2760:2819" placeholder="INSERT INTO Forms.is_active... " />
+                <marker date="1464103645269" expanded="true" signature="2760:2841" placeholder="INSERT INTO Forms.is_active... " />
+                <marker date="1464103645269" expanded="true" signature="3437:3665" placeholder="INSERT INTO `Forms`... " />
               </folding>
             </state>
           </provider>
@@ -856,12 +854,11 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/Ankieter.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Resources/views/forms/create_form.html.twig</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Resources/views/forms/index.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Resources/views/parts/side_menu.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Resources/views/pages/creator.html.twig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Resources/views/templates/index.html.twig</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Controller/FormController.php</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -870,8 +867,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Resources/views/forms/create_form.html.twig</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/Resources/views/templates/index.html.twig</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -1214,19 +1209,25 @@
       <option name="project" value="LOCAL" />
       <updated>1464102569336</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Ankiety">
+      <created>1464103482217</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1464103482217</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19667739" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47836256" sideWeight="0.5021575" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1327334" sideWeight="0.4978425" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.53543305" sideWeight="0.4978425" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22983257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2664509" sideWeight="0.50479615" order="2" side_tool="true" content_ui="tabs" />
@@ -1660,30 +1661,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.16129">
-          <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+        <state vertical-scroll-proportion="-14.290322">
+          <caret line="71" column="53" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
           <folding>
             <element signature="e#13#35#0#Twig" expanded="false" />
-            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-            <marker date="1464102868247" expanded="true" signature="487:2013" placeholder="{% block content...%}" />
+            <marker date="1464103645273" expanded="true" signature="487:2098" placeholder="{% block content...%}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40876946">
-          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.82808024">
+          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
             <element signature="e#1023#1046#0#PHP" expanded="true" />
-            <marker date="1464103228799" expanded="true" signature="497:926" placeholder="SELECT Forms... Forms" />
-            <marker date="1464103228799" expanded="true" signature="1344:1403" placeholder="SELECT * FRO... Templates" />
-            <marker date="1464103228799" expanded="true" signature="2153:2381" placeholder="INSERT INTO `Forms`... " />
-            <marker date="1464103228799" expanded="true" signature="2640:2727" placeholder="UPDATE Forms... " />
-            <marker date="1464103228799" expanded="true" signature="2646:2705" placeholder="INSERT INTO Forms.is_active... " />
-            <marker date="1464103228799" expanded="true" signature="2646:2727" placeholder="INSERT INTO Forms.is_active... " />
-            <marker date="1464103228799" expanded="true" signature="3323:3551" placeholder="INSERT INTO `Forms`... " />
+            <marker date="1464103645269" expanded="true" signature="497:926" placeholder="SELECT Forms... Forms" />
+            <marker date="1464103645269" expanded="true" signature="1344:1403" placeholder="SELECT * FRO... Templates" />
+            <marker date="1464103645269" expanded="true" signature="2235:2495" placeholder="INSERT INTO `Forms`... " />
+            <marker date="1464103645269" expanded="true" signature="2493:2495" placeholder="INSERT INTO `Forms`... " />
+            <marker date="1464103645269" expanded="true" signature="2754:2841" placeholder="UPDATE Forms... " />
+            <marker date="1464103645269" expanded="true" signature="2760:2819" placeholder="INSERT INTO Forms.is_active... " />
+            <marker date="1464103645269" expanded="true" signature="2760:2841" placeholder="INSERT INTO Forms.is_active... " />
+            <marker date="1464103645269" expanded="true" signature="3437:3665" placeholder="INSERT INTO `Forms`... " />
           </folding>
         </state>
       </provider>
