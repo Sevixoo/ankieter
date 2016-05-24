@@ -1,0 +1,131 @@
+
+{% extends ':layout:base.html.twig' %}
+
+{% block title %}Przeprowadź ankiete{% endblock %}
+
+{% block stylesheets %}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style type="text/css" media="screen">
+    a:link {
+        color:black;
+    }
+
+    a:visited {
+        color:black;
+    }
+
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+</style>
+
+{% endblock %}
+
+{% block content%}
+    <div class="" style="margin-top:25px;" >
+
+        <form class="col s8" method="POST" action="{{ path("new_form") }}" style="margin-left: 50px;" >
+            <h5>Przeprowadź ankiete</h5>
+
+            <div class="row" style="margin-top: 20px;" >
+                <div class="input-field col s12">
+                    <input name="form_name" required="required" placeholder="Nazwa ankiety" id="form_name" type="text" class="validate">
+                    <label for="form_name">Nazwa ankiety</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <p style="margin-top: 0px;" >Szablon ankiety</p>
+                    <select required="required" name="template" id="template" class="browser-default" >
+                        <option value="" disabled selected>Wybierz szablon</option>
+                        {% for template in templates %}
+                            <option value="{{ template.id }}">{{ template.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="start_date">Data rozpoczęcia</label>
+                    <input placeholder="ręczne rozpoczęcie" id="start_date" name="start_date" type="date" class="datepicker">
+                </div>
+                <div class="input-field col s6">
+                    <label for="end_date">Data zakończenia</label>
+                    <input placeholder="ręczne zakończenia" id="end_date" name="end_date" type="date" class="datepicker">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <p style="margin-top: 0px;" >Przypomnienia o ankiecie</p>
+                    <select name="notify" id="notify" class="browser-default" >
+                        <option value="-1" selected>Brak</option>
+                        <option value="1">codzienne</option>
+                        <option value="2">co dwa dni</option>
+                        <option value="3">co cztery dni</option>
+                        <option value="4">co tydzień</option>
+                        <option value="5">co miesiąc</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <p style="margin-top: 0px;" >Grupa docelowa</p>
+                <div class="input-field col s12" >
+                    <ul id="groupList" class="row collection" style="margin-bottom: 0px;" >
+                        <li class="collection-header " style="background-color: rgba(0, 0, 0, 0.11)" >
+                            <h6 style="padding: 5px;padding-left:10px; display: block;float: left">Grupy</h6>
+                            <div style="clear: both" />
+                        </li>
+                        <div id="groupList_container" style="overflow: auto;height: 300px" >
+                            {% for group in groups %}
+                                <div class="collection-item" data-id="{{ group.id }}" data-name="{{ group.name }}" style="padding: 5px;height: 35px; cursor: pointer;" >
+                                    <input class="filled-in" name="g{{ group.id }}" type="checkbox" id="g{{ group.id }}" />
+                                    <label style="width: 80%; top: 0rem;left: 0.75rem;" for="g{{ group.id }}" >{{ group.name }}</label>
+                                    <span class="badge" style="float: right;position: static !important;" >{{ group.numberOfSubscribers }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Wyślij
+                <i class="material-icons right">send</i>
+            </button>
+
+        </form>
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+
+    <script>
+
+        $(document).ready(function() {
+            $('select').material_select();
+
+            $('.datepicker').pickadate({
+                selectMonths: true, // Creates a dropdown to control month
+                selectYears: 15 // Creates a dropdown of 15 years to control year
+            });
+
+
+        });
+
+    </script>
+
+{% endblock %}
+

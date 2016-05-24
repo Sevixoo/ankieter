@@ -12,8 +12,7 @@ class FormController extends Controller
      * @Route("/forms", name="forms")
      */
 
-    public function indexAction(Request $request)
-    {
+    public function indexAction(){
         $conn = $this->get('database_connection');
 
         $forms = $conn->fetchAll("SELECT Forms.id, Forms.deadline, Forms.is_active, Forms.name AS formName, Forms.create_date, Forms.end_date,
@@ -29,5 +28,42 @@ class FormController extends Controller
         );
     }
 
+    /**
+     * @Route("/forms/create", name="create_form")
+     */
+    public function createFormAction($errors = null){
+        $conn = $this->get('database_connection');
+        $doctrine = $this->getDoctrine();
 
+        $templates = $conn->fetchAll("SELECT * FROM Templates ORDER BY Templates.create_date DESC");
+
+        $groups = GroupController::getGroups($conn,$doctrine);
+
+        return $this->render('forms/create_form.html.twig', array(
+            'groups' => $groups,
+            'templates' => $templates,
+            'error' => $errors
+        ) );
+    }
+
+    /**
+     * @Route("/forms/new_form", name="new_form")
+     */
+    public function newFormAction(){
+        $conn = $this->get('database_connection');
+        $doctrine = $this->getDoctrine();
+        $request = Request::createFromGlobals();
+
+        $end_date = $request->request->get('end_date');
+        $start_date = $request->request->get('start_date');
+        $template_id = $request->request->get('template');
+        $name = $request->request->get('form_name');
+
+        $sql = "INSERT INTO `Forms`(`id`, `create_date`, `end_date`, `deadline`, `template_version`, `is_active`, `template_id`, `name`,`start_date`)
+            VALUES (null,NOW(),\"$end_date\",\"\",1,0,$template_id,\"$name\",\"$start_date\" )";
+
+        $conn->exec($sql);
+
+        return $this->indexAction();
+    }
 }

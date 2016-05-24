@@ -19,17 +19,10 @@ use AppBundle\Controller\CSVController;
 
 class GroupController extends BasicController
 {
-    /**
-     * @Route("/group", name="group")
-     */
-
-    public function indexAction(Request $request)
-    {
-        $conn = $this->get('database_connection');
-
+    public static function getGroups( $conn , $doctrine ){
         $groups = array();
 
-        $groups = $this->getDoctrine()->getRepository('AppDataBundle:Groups')->findAll();
+        $groups = $doctrine->getRepository('AppDataBundle:Groups')->findAll();
 
         $allGroup = new Groups();
         $allGroup->setName("Wszyscy");
@@ -51,8 +44,24 @@ class GroupController extends BasicController
             $group->setNumberOfSubscribers($value);
         }
 
-        $groupFromForm = new Groups();
 
+
+        return $groups;
+    }
+
+
+    /**
+     * @Route("/group", name="group")
+     */
+
+    public function indexAction(Request $request)
+    {
+        $conn = $this->get('database_connection');
+        $doctrine = $this->getDoctrine();
+
+        $groups = GroupController::getGroups($conn,$doctrine);
+
+        $groupFromForm = new Groups();
         $form = $this->createFormBuilder($groupFromForm)
             ->add('name', TextType::class, array('label' => 'Nazwa'))
             ->add('save', SubmitType::class, array('label' => 'ok', 'attr' => array('class' => 'modal-action modal-close waves-effect waves-green btn-flat')))
