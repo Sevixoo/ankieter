@@ -87,9 +87,7 @@
                 <a href="#" data-tmpl="TextArea" class="tmpl-tool collection-item">Obszar tekstu<div class="secondary-content"><i class="material-icons">send</i></div> </a>
                 <a href="#" data-tmpl="RadioGroup" class="tmpl-tool collection-item">Lista jednokrotnego wyboru<div class="secondary-content"><i class="material-icons">send</i></div> </a>
                 <a href="#" data-tmpl="ListView" class="tmpl-tool collection-item">Lista wielokrotnego wyboru<div class="secondary-content"><i class="material-icons">send</i></div> </a>
-
                 <a href="#" data-tmpl="HeaderSection" class="tmpl-tool collection-item">Sekcja nagłówka<div class="secondary-content"><i class="material-icons">send</i></div> </a>
-
             </div>
 
         </div>
@@ -99,8 +97,18 @@
 
     <div class="col s4" style="height: 100%;margin-top: 25px"  >
     </div>
-    <div class="col s8" >
-        <div style="clear:both;margin-top: 25px;max-width: 860px;" >
+    <div class="col s8" style="margin-top: 25px;max-width: 860px;" >
+
+        <div class="row" >
+            <div class="input-field col s10">
+                <input placeholder="Nazwa ankiety" id="form_name" name="form_name" type="text" class="validate">
+                <label for="form_name">Nazwa ankiety</label>
+            </div>
+        </div>
+
+        <div class="row" style="clear:both;" >
+
+
 
             <form id="myForm" class="col s10" >
 
@@ -280,6 +288,12 @@
 
                 init: function () {
                     var sender = this;
+
+                    d = new Date();
+                    var datestring = ("0" + d.getDate()).slice(-2) + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" +
+                            d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+                    $("#form_name").val("Nowa ankieta - " + datestring);
+
                     $('ul.tabs').tabs();
 
                     $('.tmpl-tool').click(function() {
@@ -300,7 +314,7 @@
                     });
 
                     $(".actionSave").click(function() {
-                        CreatorModule.saveTemplate( CreatorModule.TEMPLATE_ID , $("#myForm").html() , "name" );
+                        CreatorModule.saveTemplate( CreatorModule.TEMPLATE_ID , $("#myForm").html() , $("#form_name").val() );
                     });
 
                     $(".actionView").click(function() {

@@ -33,7 +33,7 @@
 {% block content%}
     <div class="" style="margin-top:25px;" >
 
-        <form class="col s8" method="POST" action="{{ path("new_form") }}" style="margin-left: 50px;" >
+        <form class="col s8" method="POST" action="{{ path("new_form") }}" style="margin-left: 50px;margin-bottom: 100px;" >
             <h5>Przeprowadź ankiete</h5>
 
             <div class="row" style="margin-top: 20px;" >
@@ -56,20 +56,18 @@
             </div>
 
             <div class="row">
-                <div class="input-field col s6">
+                <!--div class="input-field col s6">
                     <label for="start_date">Data rozpoczęcia</label>
                     <input placeholder="ręczne rozpoczęcie" id="start_date" name="start_date" type="date" class="datepicker">
-                </div>
+                </div-->
                 <div class="input-field col s6">
                     <label for="end_date">Data zakończenia</label>
-                    <input placeholder="ręczne zakończenia" id="end_date" name="end_date" type="date" class="datepicker">
+                    <input placeholder="ręczne zakończenie" id="end_date" name="end_date" type="date" class="datepicker">
                 </div>
-            </div>
 
-            <div class="row">
                 <div class="input-field col s6">
                     <p style="margin-top: 0px;" >Przypomnienia o ankiecie</p>
-                    <select name="notify" id="notify" class="browser-default" >
+                    <select name="notify_type" id="notify_type" class="browser-default" >
                         <option value="-1" selected>Brak</option>
                         <option value="1">codzienne</option>
                         <option value="2">co dwa dni</option>
@@ -119,7 +117,8 @@
 
             $('.datepicker').pickadate({
                 selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15 // Creates a dropdown of 15 years to control year
+                selectYears: 15, // Creates a dropdown of 15 years to control year
+                format: 'yyyy-mm-dd'
             });
 
 

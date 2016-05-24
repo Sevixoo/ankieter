@@ -59,13 +59,15 @@ class FormController extends Controller
         $doctrine = $this->getDoctrine();
         $request = Request::createFromGlobals();
 
-        $end_date = $request->request->get('end_date');
-        $start_date = $request->request->get('start_date');
+        $deadline = $request->request->get('end_date') + " 00:00:00";
+        $start_date = "";//$request->request->get('start_date');
         $template_id = $request->request->get('template');
         $name = $request->request->get('form_name');
+        $notify_type = $request->request->get('notify_type');
 
-        $sql = "INSERT INTO `Forms`(`id`, `create_date`, `end_date`, `deadline`, `template_version`, `is_active`, `template_id`, `name`,`start_date`)
-            VALUES (null,NOW(),\"$end_date\",\"\",1,0,$template_id,\"$name\",\"$start_date\" )";
+
+        $sql = "INSERT INTO `Forms`(`id`, `create_date`, `end_date`, `deadline`, `template_version`, `is_active`, `template_id`, `name`,`start_date` , `notify_type` )
+            VALUES (null,NOW(),null,\"$deadline\",1,1,$template_id,\"$name\",\"$start_date\" , $notify_type )";
 
         $conn->exec($sql);
 
