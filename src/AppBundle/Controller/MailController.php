@@ -16,7 +16,7 @@ class MailController extends Controller
 
         $message = \Swift_Message::newInstance()
             ->setSubject('Hello Email')
-            ->setFrom('send@example.com')
+            ->setFrom('ankieter@radasp34.ayz.pl')
             ->setTo('zychu312@gmail.com')
             ->setBody('<h1>Hello World</h1>')
             ->setContentType("text/html");

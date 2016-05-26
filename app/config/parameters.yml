@@ -11,7 +11,7 @@ parameters:
     mailer_transport:   smtp
     mailer_user:        ankieter@radasp34.ayz.pl
     mailer_password:    ankieter
-    mailer_host:        mail.radasp34.ayz.pl
+    mailer_host:        s43.linuxpl.com
     mailer_port:        587
 
     # A secret key that's used to generate certain security-related tokens
