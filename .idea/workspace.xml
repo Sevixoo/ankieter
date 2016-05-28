@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/forms/form_view_error.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/forms/form_view_success.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/forms/outputs.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Ankieter.iml" afterPath="$PROJECT_DIR$/.idea/Ankieter.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/creator.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/creator.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/pages/form_view.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/pages/form_view.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php" />
     </list>
     <list id="7c12036a-d440-411a-8473-1248aee2ea4a" name="New changelist" comment="New changelist" />
     <list id="71194f9c-039f-4157-b543-f4f93489d785" name="Test2" comment="Test2" />
@@ -40,25 +48,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <file leaf-file-name="FormController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5347222">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding />
+            <state vertical-scroll-proportion="-0.34290844">
+              <caret line="220" column="25" selection-start-line="220" selection-start-column="25" selection-end-line="220" selection-end-column="25" />
+              <folding>
+                <element signature="e#40#97#0#PHP" expanded="true" />
+                <element signature="e#1076#1099#0#PHP" expanded="true" />
+                <element signature="e#1758#1783#0#PHP" expanded="true" />
+                <element signature="e#2233#2262#0#PHP" expanded="true" />
+                <element signature="e#4651#4685#0#PHP" expanded="true" />
+                <element signature="e#4904#4940#0#PHP" expanded="true" />
+                <element signature="e#5978#6006#0#PHP" expanded="true" />
+                <element signature="e#7976#8004#0#PHP" expanded="true" />
+                <marker date="1464451920090" expanded="true" signature="550:979" placeholder="SELECT Forms..Forms..." />
+                <marker date="1464451920090" expanded="true" signature="1321:1411" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464451920090" expanded="true" signature="1321:1665" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464451920090" expanded="true" signature="1321:1682" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464451920090" expanded="true" signature="1321:1726" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464451920090" expanded="true" signature="1827:1845" placeholder="/** * @Route..." />
+                <marker date="1464451920090" expanded="true" signature="2076:2135" placeholder="SELECT * FRO..Templates..." />
+                <marker date="1464451920090" expanded="true" signature="2967:3227" placeholder="INSERT INTO `Forms`..." />
+                <marker date="1464451920090" expanded="true" signature="3318:3504" placeholder="SELECT DISTI..GroupsSubscribers..." />
+                <marker date="1464451920090" expanded="true" signature="3665:3854" placeholder="INSERT INTO `FormOutputs`..." />
+                <marker date="1464451920090" expanded="true" signature="4137:4224" placeholder="UPDATE Forms..." />
+                <marker date="1464451920090" expanded="true" signature="8868:8902" placeholder="UPDATE `Form..." />
+                <marker date="1464451920090" expanded="true" signature="8868:8903" placeholder="UPDATE `Form..." />
+                <marker date="1464451920090" expanded="true" signature="8868:8934" placeholder="UPDATE `Form..." />
+                <marker date="1464451920090" expanded="true" signature="8868:8939" placeholder="UPDATE `Form..." />
+                <marker date="1464451920090" expanded="true" signature="9152:9302" placeholder="SELECT * FRO..FormOutputs..." />
+                <marker date="1464451920090" expanded="true" signature="9476:9515" placeholder="SELECT * FRO..Templates..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreatorController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php">
+      <file leaf-file-name="outputs.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/outputs.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7096774">
-              <caret line="33" column="73" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="73" />
+            <state vertical-scroll-proportion="-12.923077">
+              <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
               <folding>
-                <marker date="1463503392232" expanded="true" signature="1141:1180" placeholder="SELECT * FRO... Templates" />
-                <marker date="1463503392232" expanded="true" signature="1886:2084" placeholder="INSERT INTO `Templates`... " />
-                <marker date="1463503392232" expanded="true" signature="2203:2417" placeholder="UPDATE `Temp... " />
+                <element signature="e#13#35#0#Twig" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,57 +99,71 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+            <state vertical-scroll-proportion="-14.230769">
+              <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
+      <file leaf-file-name="TemplateController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="132" column="7" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
               <folding>
-                <element signature="e#40#97#0#PHP" expanded="true" />
-                <marker date="1464106288593" expanded="true" signature="497:926" placeholder="SELECT Forms... Forms" />
-                <marker date="1464106288593" expanded="true" signature="1344:1403" placeholder="SELECT * FRO... Templates" />
-                <marker date="1464106288593" expanded="true" signature="2235:2495" placeholder="INSERT INTO `Forms`... " />
-                <marker date="1464106288593" expanded="true" signature="2493:2495" placeholder="INSERT INTO `Forms`... " />
+                <element signature="e#531#558#0#PHP" expanded="true" />
+                <element signature="e#945#973#0#PHP" expanded="true" />
+                <marker date="1464429951185" expanded="true" signature="437:496" placeholder="SELECT * FRO..Templates..." />
+                <marker date="1464429951185" expanded="true" signature="860:899" placeholder="SELECT * FRO..Templates..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <file leaf-file-name="form_view.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/form_view.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+            <state vertical-scroll-proportion="-11.615385">
+              <caret line="141" column="46" selection-start-line="141" selection-start-column="46" selection-end-line="141" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
+      <file leaf-file-name="CreatorController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.806452">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
               <folding>
-                <element signature="e#40#97#0#PHP" expanded="true" />
+                <marker date="1464434734285" expanded="true" signature="1513:1742" placeholder="INSERT INTO `Templates`..." />
+                <marker date="1464434734285" expanded="true" signature="1513:1778" placeholder="INSERT INTO `Templates`..." />
+                <marker date="1464434734285" expanded="true" signature="1513:1790" placeholder="INSERT INTO `Templates`..." />
+                <marker date="1464434734285" expanded="true" signature="1513:1793" placeholder="INSERT INTO `Templates`..." />
+                <marker date="1464434734285" expanded="true" signature="1912:2127" placeholder="UPDATE `Temp..." />
+                <marker date="1464434734285" expanded="true" signature="1912:2228" placeholder="UPDATE `Temp..." />
+                <marker date="1464434734285" expanded="true" signature="1912:2240" placeholder="UPDATE `Temp..." />
+                <marker date="1464434734285" expanded="true" signature="1912:2271" placeholder="UPDATE `Temp..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
+      <file leaf-file-name="creator.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/creator.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="115" column="11" selection-start-line="111" selection-start-column="6" selection-end-line="115" selection-end-column="11" />
-              <folding />
+            <state vertical-scroll-proportion="290.46155">
+              <caret line="135" column="33" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="33" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#4;n#form#1;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#5;n#form#1;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#h5#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#3;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#3;n#div#3;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#div#3;n#div#3;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,16 +196,11 @@
       <command text="composer update" />
       <command text="s composer update" />
       <command text="s cache:clear" />
-      <command text="s swiftmailer:spool:send" />
-      <command text="s cache:clear" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -193,14 +234,20 @@
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sendFormToUsers.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/parts/panel_nav.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout/simple.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/group/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/forms/forms,html.twig.html" />
         <option value="$PROJECT_DIR$/app/Resources/views/parts/side_menu.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/forms/form_view_error.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/forms/form_view_success.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/creator.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/forms/outputs.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/pages/form_view.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
       </list>
     </option>
   </component>
@@ -253,10 +300,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1050" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1378" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -297,7 +344,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter2" />
+              <option name="myItemId" value="ankieter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -307,7 +354,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter2" />
+              <option name="myItemId" value="ankieter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -321,7 +368,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter2" />
+              <option name="myItemId" value="ankieter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -339,7 +386,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter2" />
+              <option name="myItemId" value="ankieter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -361,34 +408,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter2" />
+              <option name="myItemId" value="ankieter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Changed Files">
           <PATH>
@@ -857,7 +887,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -887,17 +916,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ankieter\web\bundles\tmp\images" />
-      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\layout" />
-      <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ankieter\app\Resources\views\forms" />
       <recent name="C:\xampp\htdocs\ankieter2\app\Resources\views\pages" />
       <recent name="C:\xampp\htdocs\ankieter\web\bundles\images" />
       <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\group" />
       <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
-      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\auth" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ankieter\web\bundles\tmp\images" />
+      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\layout" />
+      <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.GroupsController">
@@ -1178,31 +1207,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464104281706</updated>
     </task>
-    <task id="LOCAL-00039" summary="Ankiety">
-      <created>1464106305672</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1464106305672</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Ankiety">
-      <created>1464120786129</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1464120786129</updated>
-    </task>
-    <option name="localTasksCounter" value="41" />
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20471597" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26479515" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47836256" sideWeight="0.5021575" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31573033" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.01912261" sideWeight="0.4978425" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.017684888" sideWeight="0.4978425" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22983257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2664509" sideWeight="0.50479615" order="2" side_tool="true" content_ui="tabs" />
@@ -1211,6 +1227,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3160855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1288,33 +1305,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/tmp/images/IMG_20160405_002730.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/tmp/images/l-9310.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/tmp/images/29de992683_pije_.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/tmp/images/5e5b771582_wiecej_z_wami.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/bundles/tmp/images/jrujk.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1331,21 +1321,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="36.19355">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="136.54839">
-          <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5980926">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1398,13 +1373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Basic/BasicController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1468,6 +1436,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1891892">
           <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1534,36 +1503,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7096774">
-          <caret line="33" column="73" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="73" />
-          <folding>
-            <marker date="1463503392232" expanded="true" signature="1141:1180" placeholder="SELECT * FRO... Templates" />
-            <marker date="1463503392232" expanded="true" signature="1886:2084" placeholder="INSERT INTO `Templates`... " />
-            <marker date="1463503392232" expanded="true" signature="2203:2417" placeholder="UPDATE `Temp... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/phrase.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2682927">
           <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1589,73 +1532,215 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26198632">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7671233">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/templates/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.390681">
+          <caret line="58" column="105" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.576923">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321918">
+          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/form_view_success.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09139785">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/form_view_error.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51792115">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="e#13#38#0#Twig" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20415878">
+          <caret line="1006" column="72" selection-start-line="1006" selection-start-column="72" selection-end-line="1006" selection-end-column="72" />
+          <folding>
+            <marker date="1460315499668" expanded="true" signature="17180:17223" placeholder="DELETE FROM ..." />
+            <marker date="1460315499668" expanded="true" signature="20394:20448" placeholder="INSERT INTO ${$tableExpression}..." />
+            <marker date="1460315499668" expanded="true" signature="20513:20674" placeholder="INSERT INTO ${$tableExpression}..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Basic/BasicController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2437276">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/RedirectResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34767026">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <folding>
+            <marker date="1460315433418" expanded="true" signature="2257:2495" placeholder="..." />
+            <marker date="1460315433418" expanded="true" signature="2268:2416" placeholder="..." />
+            <marker date="1460315433418" expanded="true" signature="2427:2487" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39426523">
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding>
+            <element signature="e#531#558#0#PHP" expanded="true" />
+            <element signature="e#945#973#0#PHP" expanded="true" />
+            <marker date="1464429951185" expanded="true" signature="437:496" placeholder="SELECT * FRO..Templates..." />
+            <marker date="1464429951185" expanded="true" signature="860:899" placeholder="SELECT * FRO..Templates..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CreatorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+          <folding>
+            <marker date="1464434734285" expanded="true" signature="1513:1742" placeholder="INSERT INTO `Templates`..." />
+            <marker date="1464434734285" expanded="true" signature="1513:1778" placeholder="INSERT INTO `Templates`..." />
+            <marker date="1464434734285" expanded="true" signature="1513:1790" placeholder="INSERT INTO `Templates`..." />
+            <marker date="1464434734285" expanded="true" signature="1513:1793" placeholder="INSERT INTO `Templates`..." />
+            <marker date="1464434734285" expanded="true" signature="1912:2127" placeholder="UPDATE `Temp..." />
+            <marker date="1464434734285" expanded="true" signature="1912:2228" placeholder="UPDATE `Temp..." />
+            <marker date="1464434734285" expanded="true" signature="1912:2240" placeholder="UPDATE `Temp..." />
+            <marker date="1464434734285" expanded="true" signature="1912:2271" placeholder="UPDATE `Temp..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/outputs.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.923077">
+          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+          <folding>
+            <element signature="e#13#35#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/creator.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="290.46155">
+          <caret line="135" column="33" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#4;n#form#1;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#form#1;n#div#2;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#h5#0;n#div#0;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#3;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#3;n#div#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#div#3;n#div#3;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+        <state vertical-scroll-proportion="-14.230769">
+          <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/pages/form_view.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.615385">
+          <caret line="141" column="46" selection-start-line="141" selection-start-column="46" selection-end-line="141" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="7" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
+        <state vertical-scroll-proportion="-0.34290844">
+          <caret line="220" column="25" selection-start-line="220" selection-start-column="25" selection-end-line="220" selection-end-column="25" />
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1464106288593" expanded="true" signature="497:926" placeholder="SELECT Forms... Forms" />
-            <marker date="1464106288593" expanded="true" signature="1344:1403" placeholder="SELECT * FRO... Templates" />
-            <marker date="1464106288593" expanded="true" signature="2235:2495" placeholder="INSERT INTO `Forms`... " />
-            <marker date="1464106288593" expanded="true" signature="2493:2495" placeholder="INSERT INTO `Forms`... " />
+            <element signature="e#1076#1099#0#PHP" expanded="true" />
+            <element signature="e#1758#1783#0#PHP" expanded="true" />
+            <element signature="e#2233#2262#0#PHP" expanded="true" />
+            <element signature="e#4651#4685#0#PHP" expanded="true" />
+            <element signature="e#4904#4940#0#PHP" expanded="true" />
+            <element signature="e#5978#6006#0#PHP" expanded="true" />
+            <element signature="e#7976#8004#0#PHP" expanded="true" />
+            <marker date="1464451920090" expanded="true" signature="550:979" placeholder="SELECT Forms..Forms..." />
+            <marker date="1464451920090" expanded="true" signature="1321:1411" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464451920090" expanded="true" signature="1321:1665" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464451920090" expanded="true" signature="1321:1682" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464451920090" expanded="true" signature="1321:1726" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464451920090" expanded="true" signature="1827:1845" placeholder="/** * @Route..." />
+            <marker date="1464451920090" expanded="true" signature="2076:2135" placeholder="SELECT * FRO..Templates..." />
+            <marker date="1464451920090" expanded="true" signature="2967:3227" placeholder="INSERT INTO `Forms`..." />
+            <marker date="1464451920090" expanded="true" signature="3318:3504" placeholder="SELECT DISTI..GroupsSubscribers..." />
+            <marker date="1464451920090" expanded="true" signature="3665:3854" placeholder="INSERT INTO `FormOutputs`..." />
+            <marker date="1464451920090" expanded="true" signature="4137:4224" placeholder="UPDATE Forms..." />
+            <marker date="1464451920090" expanded="true" signature="8868:8902" placeholder="UPDATE `Form..." />
+            <marker date="1464451920090" expanded="true" signature="8868:8903" placeholder="UPDATE `Form..." />
+            <marker date="1464451920090" expanded="true" signature="8868:8934" placeholder="UPDATE `Form..." />
+            <marker date="1464451920090" expanded="true" signature="8868:8939" placeholder="UPDATE `Form..." />
+            <marker date="1464451920090" expanded="true" signature="9152:9302" placeholder="SELECT * FRO..FormOutputs..." />
+            <marker date="1464451920090" expanded="true" signature="9476:9515" placeholder="SELECT * FRO..Templates..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80840546">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config_prod.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="11" selection-start-line="111" selection-start-column="6" selection-end-line="115" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.806452">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-          <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5347222">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>

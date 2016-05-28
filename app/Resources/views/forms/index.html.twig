@@ -78,6 +78,10 @@
 
                 {% endif %}
 
+                <a href="{{ path('outputs',{'id' : form['formId']}) }}">
+                    <i class="small material-icons">group</i>
+                </a>
+
                 <a target="_blank" href="{{ path('view_templates', {'template_id' : form['templateId']})}}">
                     <i class="small material-icons">visibility</i>
                 </a>

@@ -19,6 +19,7 @@
         #myForm .input-field{
             margin-top: 0px !important;
             margin-bottom: 0px !important;
+            padding-bottom: 25px !important;
         }
         h5{
             margin: 0px !important;
@@ -28,11 +29,6 @@
         }
         #myForm{
             background-color: rgba(0, 0, 0, 0.02);
-        }
-
-        #myForm > .active{
-            border: dashed 1px black;
-            padding: 4px;
         }
 
         .FormField{
@@ -79,11 +75,27 @@
 
     <div class="col s8 offset-s3" >
         <div style="clear:both;margin-top: 25px" >
-            <form id="myForm" class="col s10" method="post" action="{{ path( 'send_form' , {'token' : token } ) }}" >
+            <form id="myForm" class="col s10" method="post" style="padding: 25px;"
+                    {% if token != false  %}
+                        action="{{ path( 'form_output' , {'token' : token } ) }}"
+                    {% endif  %}
+            >
+
                 {{ template_html |raw }}
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                </button>
+
+                {% if isEdit == true %}
+                    <input type="hidden" value="true" name="isEdit" >
+                {% endif %}
+
+                {% if token != false %}
+                    <button class="btn waves-effect waves-light" type="submit" name="submit" value="submit" >Wyślij
+                        <i class="material-icons right">send</i>
+                    </button>
+                {% else %}
+                    <a href="#" class="btn waves-effect waves-light"  name="action">Wyślij
+                        <i class="material-icons right">send</i>
+                    </a>
+                {% endif %}
             </form>
         </div>
     </div>
@@ -117,6 +129,19 @@
     <script type="text/javascript" >
         $(document).ready(function(){
 
+            var data = [];
+            var errors = [];
+
+            {% if data is defined %}
+                console.log( '{{ data |raw }}' );
+                data = JSON.parse( '{{ data |raw }}' );
+            {% endif %}
+
+            {% if errors is defined %}
+                console.log( '{{ errors |raw }}' );
+                errors = JSON.parse('{{ errors |raw }}');
+            {% endif %}
+
             var API_HOST = "{{ url('api_host') }}";
             var SERVER = {
                 ROUTER : {
@@ -126,6 +151,32 @@
                     VIEW_TEMPLATE : API_HOST + "/templates/view/"
                 }
             };
+
+
+            for( x in data  ){
+                var item = data[x];
+                for( key in item  ){
+                    var fieldView = $( "#"+key );
+
+                    var type = fieldView.attr("data-type");
+
+                    if(type == "ListView"){
+                        var vals = item[key];
+                        console.log(vals);
+                        for( i in vals ){
+                            $("input#"+key+"x"+(vals[i]-1)+"").click();
+                        }
+                    }else if(type == "RadioGroup"){
+                        $("input#"+key+"x"+(item[key]-1)).click();
+                    }else if(type == "TextArea"){
+                        $("textarea[name=" + key + "]").val(item[key]);
+                    }else{
+                        $("input[name=" + key + "]").val(item[key]);
+                    }
+                }
+            }
+
+            Materialize.updateTextFields();
 
             var CreatorModule =  {};
         });

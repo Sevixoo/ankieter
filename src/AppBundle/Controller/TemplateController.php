@@ -25,6 +25,20 @@ class TemplateController extends Controller
         ) );
     }
 
+    /**
+     *  @Route("/api/templates/view/{template_id}", name="view_templates")
+     */
+    public function viewTemplateAction($template_id){
+        $conn = $this->get('database_connection');
+        $template = $conn->fetchAssoc("SELECT * FROM `Templates` WHERE `id` = $template_id");
+
+        return $this->render(':pages:form_view.html.twig', array(
+            "token" => false,
+            "title" => $template['name'],
+            "template_id" => $template_id,
+            "template_html" => $template['fields_schema']
+        ));
+    }
 
 
 }

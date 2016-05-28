@@ -5,8 +5,9 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Controller\Basic\BasicController;
 
-class FormController extends Controller
+class FormController extends BasicController
 {
     /**
      * @Route("/forms", name="forms")
@@ -29,8 +30,26 @@ class FormController extends Controller
        // print_r($forms);
 
 
-        return $this->render('forms/index.html.twig', array('forms' => $forms)
-        );
+        return $this->render('forms/index.html.twig', array('forms' => $forms));
+    }
+
+
+    /**
+     * @Route("/forms/outputs/{page}", name="outputs")
+     */
+    public function outputsAction($page = 0){
+        $conn = $this->get('database_connection');
+
+        $sql = "SELECT * , FormOutputs.id as output_id , Templates.name as templateName FROM `FormOutputs`
+                JOIN Forms ON Forms.id = form_id
+                JOIN Templates ON Forms.template_id = Templates.id
+                JOIN Subscribers ON FormOutputs.subscriber_id = Subscribers.id
+                WHERE Forms.id = 29
+                LIMIT ".(50*$page).",50";
+
+        $outputs = $conn->fetchAll($sql);
+
+        return $this->render('forms/outputs.html.twig', array('outputs' => $outputs));
     }
 
     /**
@@ -114,54 +133,156 @@ class FormController extends Controller
         return $this->redirectToRoute('forms');
     }
 
+
+    /**
+     * @Route("/forms/error/{message}", name="form_error")
+     */
+    public function formErrorAction($message){
+        return $this->render(':forms:form_view_error.html.twig', array(
+            "message" => $message
+        ));
+    }
+
+    /**
+     * @Route("/forms/success/{message}", name="form_success")
+     */
+    public function formSuccessAction($message){
+        return $this->render(':forms:form_view_success.html.twig', array(
+            "message" => $message
+        ));
+    }
+
+    /**
+     * @Route("/forms/edit/{token}", name="form_edit")
+     */
+    public function formEditAction($token){
+        $conn = $this->get('database_connection');
+        $userOutput = $this->_getUserByToken($conn,$token);
+        if( $userOutput == null ){
+            return $this->redirectToRoute( "form_error" , array('message'=>"Nie znaleziono użytkownika") );
+        }
+        $template = $this->_getTemplateById($conn,$userOutput['template_id']);
+        if( $template == null ){
+            return $this->redirectToRoute( "form_error" , array('message'=>"Nie znaleziono szablonu") );
+        }
+
+        $template_id = $userOutput['template_id'];
+
+        $pageData = array(
+            "isEdit" => true,
+            "data" => $userOutput['output'],
+            "token" => $token,
+            "title" => $template['name'],
+            "template_id" => $template_id,
+            "template_html" => $template['fields_schema']
+        );
+
+        return $this->render(':pages:form_view.html.twig', $pageData );
+    }
+
     /**
      * @Route("/forms/output/{token}", name="form_output")
      */
     public function formOutputAction($token){
         $conn = $this->get('database_connection');
-        $doctrine = $this->getDoctrine();
-        $request = Request::createFromGlobals();
 
-        $sql = "SELECT * FROM `FormOutputs`
-                JOIN Forms ON Forms.id = form_id
-                WHERE `token` =  \"$token\"";
+        $userOutput = $this->_getUserByToken($conn,$token);
+        $isEdit = isset($_POST['isEdit']);
 
-        $user = $conn->fetchAssoc($sql);
-        $template_id = $user['template_id'];
 
-        $template = $conn->fetchAssoc("SELECT * FROM `Templates` WHERE `id` = $template_id");
+        if( $userOutput == null ){
+            return $this->redirectToRoute( "form_error" , array('message'=>"Nie znaleziono użytkownika") );
+        }
+        if( $userOutput['output'] != null && !$isEdit ){
+            return $this->redirectToRoute( "form_error" , array('message'=>"Formularz został już wypełniony") );
+        }
+        $template = $this->_getTemplateById($conn,$userOutput['template_id']);
 
-        return $this->render(':pages:form_view.html.twig', array(
+        if( $template == null ){
+            return $this->redirectToRoute( "form_error" , array('message'=>"Nie znaleziono szablonu") );
+        }
+
+        $template_id = $userOutput['template_id'];
+
+        $pageData = array(
+            "isEdit" => false,
             "token" => $token,
             "title" => $template['name'],
             "template_id" => $template_id,
             "template_html" => $template['fields_schema']
-        ));
+        );
+
+        if( isset( $_POST['submit'] ) ){
+
+            $output = $this->_validateForm( json_decode( $template['json_shema'] , true));
+
+            if(count($output['errors'])==0){
+                $ret = $this->_insertFormOutput( $conn , $userOutput , json_encode( $output['data'] ) );
+                if($ret){
+                    if(!$isEdit) {
+                        return $this->redirectToRoute("form_success", array('message' => "Formularz został wysłany"));
+                    }
+                }else{
+                    return $this->redirectToRoute( "form_error" , array('message'=>"Błąd aplikacji") );
+                }
+            }
+
+            $pageData['errors']= json_encode($output['errors']);
+            $pageData['data']= json_encode($output['data']);
+        }
+
+        return $this->render(':pages:form_view.html.twig', $pageData );
     }
 
-    /**
-     * @Route("/forms/send/{token}", name="send_form")
-     */
-    public function sendFormAction($token){
-        $conn = $this->get('database_connection');
-        $doctrine = $this->getDoctrine();
-        $request = Request::createFromGlobals();
+    private function _validateForm( $schema ){
+        $data = array();
+        $errors = array();
 
-        $sql = "SELECT * FROM `FormOutputs`
+        foreach( $schema as $k => $v ){
+            $name = $v['name'];
+            if( isset($_POST[$name]) && !empty($_POST[$name]) ){
+                $data[]= array(
+                    $name => $_POST[$name]
+                );
+            }else if($v['required']=="required"){
+                $errors[]= array(
+                    $name => "Pole wymagane"
+                );
+            }else{
+                $data[]= array(
+                    $name => ""
+                );
+            }
+        }
+
+        $errors = array(
+            'errors' => $errors,
+            'data' => $data
+        );
+
+        return $errors;
+    }
+
+    private function _insertFormOutput( $conn , $userOutput , $output ){
+        try {
+            $sql = "UPDATE `FormOutputs` SET `output`=".$conn->quote($output)." WHERE `id`=".$userOutput['output_id'];
+            return $conn->exec($sql);
+        }catch (\Exception $ex){
+            return false;
+        }
+    }
+
+    private function _getUserByToken( $conn, $token ){
+        $sql = "SELECT * , FormOutputs.id as output_id FROM `FormOutputs`
                 JOIN Forms ON Forms.id = form_id
                 WHERE `token` =  \"$token\"";
         $user = $conn->fetchAssoc($sql);
-        $template_id = $user['template_id'];
+        return $user;
+    }
 
+    private function _getTemplateById( $conn, $template_id ){
         $template = $conn->fetchAssoc("SELECT * FROM `Templates` WHERE `id` = $template_id");
-
-        return $this->render(':pages:form_view.html.twig', array(
-            "token" => $token,
-            "title" => $template['name'],
-            "template_id" => $template_id,
-            "template_html" => $template['fields_schema']
-        ));
-
+        return $template;
     }
 
     function gen_uuid() {

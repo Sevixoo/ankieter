@@ -1,0 +1,80 @@
+
+{% extends ':layout:base.html.twig' %}
+
+{% block title %}Ankiety{% endblock %}
+
+{% block stylesheets %}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style type="text/css" media="screen">
+
+    a:link {
+        color:black;
+    }
+
+    a:visited {
+        color:black;
+    }
+
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+</style>
+
+{% endblock %}
+
+{% block content%}
+<div class="" style="margin-top:25px;margin-left: 50px" >
+    <h5>Ankiety</h5>
+
+    <table class="highlight centered">
+        <thead>
+        <tr>
+            <th>Email</th>
+            <th>Wysłany email</th>
+            <th>Szablon</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {% for output in outputs %}
+
+
+        <tr
+                {% if output['output'] != null %}
+                    style = "color:darkgray"
+                {% endif %}
+        >
+            <td>{{ output['email'] }}</td>
+            <td>{{ output['last_mail_send_time'] }}</td>
+            <td>{{ output['templateName'] }}</td>
+
+            <td>
+                <a target="_blank" href="{{ path('form_edit', {'token' :  output['token']})}}">
+                    <i class="small material-icons">edit</i>
+                </a>
+            </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+{% endblock %}
+

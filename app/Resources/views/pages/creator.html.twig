@@ -105,10 +105,14 @@
                 <label for="form_name">Nazwa ankiety</label>
             </div>
         </div>
+        <div class="row" >
+            <div class="input-field col s10">
+                <textarea id="form_desc" name="form_desc" class="materialize-textarea"></textarea>
+                <label for="form_desc">Opis ankiety</label>
+            </div>
+        </div>
 
         <div class="row" style="clear:both;" >
-
-
 
             <form id="myForm" class="col s10" >
 
@@ -124,19 +128,19 @@
                 </div>
                 <div data-type="TextField" class="row FormField">
                     <div class="input-field col s12">
-                        <input id="text_field" type="text" placeholder="hint" class="validate uniqueName"  >
+                        <input id="text_field" type="text" placeholder="hint" class="validate uniqueName sameName"  >
                     </div>
                 </div>
                 <div data-type="TextArea" class="row FormField">
                     <div class="input-field col s12">
-                        <textarea id="textarea1" class="materialize-textarea uniqueName"></textarea>
-                        <label for="textarea1">Textarea</label>
+                        <textarea id="textarea1" class="materialize-textarea uniqueName sameName"></textarea>
+                        <!--label for="textarea1">Textarea</label-->
                     </div>
                 </div>
                 <div data-type="SelectBox" class="row FormField">
                     <div class="input-field col s12">
                         <label>Browser Select</label>
-                        <select class="browser-default uniqueName">
+                        <select class="browser-default uniqueName sameName">
                             <option value="" disabled selected>Choose your option</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
@@ -147,15 +151,15 @@
                 <div data-type="RadioGroup" class="row FormField">
                     <div class="input-field col s12" style="padding-bottom: 10px;">
                         <p>
-                            <input name="group1" type="radio" id="test1" class="uniqueName sameName" />
+                            <input name="group1" type="radio" id="test1" class="uniqueName sameName option" />
                             <label data-value="aaa" for="test1">AAA</label>
                         </p>
                         <p>
-                            <input name="group1" type="radio" id="test2" class="uniqueName sameName" />
+                            <input name="group1" type="radio" id="test2" class="uniqueName sameName option" />
                             <label data-value="bbb" for="test2">BBB</label>
                         </p>
                         <p>
-                            <input name="group1" type="radio" id="test3" class="uniqueName sameName" />
+                            <input name="group1" type="radio" id="test3" class="uniqueName sameName option" />
                             <label data-value="ccc" for="test3">CCC</label>
                         </p>
                     </div>
@@ -163,15 +167,15 @@
                 <div data-type="ListView" class="row FormField">
                     <div class="input-field col s12" style="padding-bottom: 10px;" >
                         <p>
-                            <input name="group1" type="checkbox" id="test1" class="uniqueName sameName filled-in" />
+                            <input name="group1" type="checkbox" id="test1" class="uniqueName sameName filled-in option" />
                             <label data-value="aaa" for="test1">AAA</label>
                         </p>
                         <p>
-                            <input name="group1" type="checkbox" id="test2" class="uniqueName sameName filled-in" />
+                            <input name="group1" type="checkbox" id="test2" class="uniqueName sameName filled-in option" />
                             <label data-value="bbb" for="test2">BBB</label>
                         </p>
                         <p>
-                            <input name="group1" type="checkbox" id="test3" class="uniqueName sameName filled-in" />
+                            <input name="group1" type="checkbox" id="test3" class="uniqueName sameName filled-in option" />
                             <label data-value="ccc" for="test3">CCC</label>
                         </p>
                     </div>
@@ -314,7 +318,13 @@
                     });
 
                     $(".actionSave").click(function() {
-                        CreatorModule.saveTemplate( CreatorModule.TEMPLATE_ID , $("#myForm").html() , $("#form_name").val() );
+                        CreatorModule.saveTemplate(
+                                CreatorModule.TEMPLATE_ID ,
+                                $("#myForm").html() ,
+                                $("#form_name").val() ,
+                                CreatorModule.genTemplateJSON(),
+                                $("#form_desc").val()
+                        );
                     });
 
                     $(".actionView").click(function() {
@@ -510,36 +520,49 @@
                         num++;
                     });
                 },
-                genId : function( fieldView , type ){
-                    if(this.ids[type]==null){
+                genId : function( fieldView , type ) {
+                    if (this.ids[type] == null) {
                         this.ids[type] = 0;
                     }
                     var id = ++this.ids[type];
-                    fieldView.attr( "id" , type + "_" + id );
-                    fieldView.attr( "data-id" , id );
+                    fieldView.attr("id", type + "_" + id);
+                    fieldView.attr("data-id", id);
 
-                    fieldView.find(".uniqueName").each(function( index ) {
+                    fieldView.find(".uniqueName").each(function (index) {
                         var mId = type + "_" + id + "x" + index;
-                        fieldView.find( "[for="+$(this).prop("id")+"]").prop("for",mId)  ;
-                        $(this).prop("name",mId);
-                        $(this).prop("id",mId);
+                        fieldView.find("[for=" + $(this).prop("id") + "]").prop("for", mId);
+                        $(this).prop("name", mId);
+                        $(this).prop("id", mId);
+                        if(type == "ListView" || type == "RadioGroup"){
+                            $(this).prop("value",index+1);
+                        }
                     });
-
-                    fieldView.find(".sameName").prop("name",type + "_" + id);
-
+                    if (type == "ListView") {
+                        fieldView.find(".sameName").prop("name", type + "_" + id + "[]");
+                    }else{
+                        fieldView.find(".sameName").prop("name", type + "_" + id);
+                    }
                     return type + "_" + id;
                 },
                 refreshIds : function( id  ){
                     var fieldView = $("#"+id);
+                    var type = fieldView.attr("data-type");
 
                     fieldView.find(".uniqueName").each(function( index ) {
                         var mId = id + "x" + index;
                         fieldView.find( "[for="+$(this).prop("id")+"]").prop("for",mId)  ;
                         $(this).prop("name",mId);
                         $(this).prop("id",mId);
+                        if(type == "ListView" || type == "RadioGroup"){
+                            $(this).prop("value",index+1);
+                        }
                     });
 
-                    fieldView.find(".sameName").prop( "name",id );
+                    if (type == "ListView") {
+                        fieldView.find(".sameName").prop("name", id + "[]");
+                    }else{
+                        fieldView.find(".sameName").prop("name", id);
+                    }
                 },
                 goToByScroll : function (id){
                     // Remove "link" from the ID
@@ -552,13 +575,15 @@
                 onError : function(msg){
                     Materialize.toast( msg , 4000 , 'red darken-3' );
                 },
-                saveTemplate : function(template_id,template_html,name){
+                saveTemplate : function(template_id,template_html,name,template_json,form_desc){
                     AnkieterApi.REST.post({
                         url : SERVER.ROUTER.SAVE_TEMPLATE,
                         data:{
                             template_id:template_id,
                             template_html:template_html,
-                            name:name
+                            template_json:template_json,
+                            name:name,
+                            form_desc:form_desc
                         },onResult : function(data){
                             CreatorModule.TEMPLATE_ID = data.template_id;
                             Materialize.toast( "Szablon zapisany" , 4000 , 'green darken-3' );
@@ -574,6 +599,37 @@
                         var win = window.open(SERVER.ROUTER.VIEW_TEMPLATE + template_id, '_blank');
                         win.focus();
                     }
+                },
+                genTemplateJSON : function(){
+                    var fields = [];
+
+                    $("#myForm").find(".FormField").each(function( index ) {
+                        var fieldView = $(this);
+                        var obj = {
+                            name : fieldView.attr("id"),
+                            title : fieldView.find("span.title").html(),
+                            desc : fieldView.find("p.desc").html(),
+                            type : fieldView.attr("data-type"),
+                            required : fieldView.attr("data-required")
+                        };
+
+                        var options = [];
+
+                        fieldView.find(".option").each(function (index) {
+                            var input = $(this);
+                            var label = fieldView.find("[for=" + input.prop("id") + "]");
+
+                            options.push({
+                                name : label.html(),
+                                value : input.val()
+                            });
+                        });
+
+                        obj['options'] = options;
+
+                        fields.push(obj);
+                    });
+                    return JSON.stringify( fields );
                 }
             };
             CreatorModule.init();

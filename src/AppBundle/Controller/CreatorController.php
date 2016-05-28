@@ -31,20 +31,6 @@ class CreatorController extends BasicController{
     }
 
     /**
-     *  @Route("/api/templates/view/{template_id}", name="view_templates")
-     *    @Method({"GET"})
-     */
-    public function viewTemplateAction($template_id){
-        $conn = $this->get('database_connection');
-        $template = $conn->fetchAssoc("SELECT * FROM `Templates` WHERE `id` = $template_id");
-
-        return $this->render(':pages:form_view.html.twig', array(
-            "template_id" => $template_id,
-            "template_html" => $template['fields_schema']
-        ));
-    }
-
-    /**
      * @Route("/api/creator/save", name="save_creator")
      * @Method({"POST"})
      */
@@ -53,21 +39,26 @@ class CreatorController extends BasicController{
         $request = Request::createFromGlobals();
         $template_id = $request->request->get('template_id');
         $template_html = trim($request->request->get('template_html'));
+        $template_json = trim($request->request->get('template_json'));
+        $form_desc =  $request->request->get('form_desc');
         $name = $request->request->get('name');
 
         $conn = $this->get('database_connection');
         $creator_id = 1;
 
         if($template_id<=0) {
-            $sql = "INSERT INTO `Templates`(`id`, `name`, `creator_id`, `fields_schema`, `output_schema`, `create_date`)
-                VALUES (null,\"$name\",$creator_id, ".$conn->quote($template_html)." ,\"\",NOW())";
+            $sql = "INSERT INTO `Templates`(`id`, `name`, `creator_id`, `fields_schema`, `output_schema`, `create_date` , `json_shema` , `form_desc` )
+                VALUES (null,\"$name\",$creator_id, ".$conn->quote($template_html)." ,\"\",NOW() , ".$conn->quote($template_json)." ,\"$form_desc\" )";
             $conn->exec($sql);
             $template_id = $conn->lastInsertId();
         }else{
             $sql = "UPDATE `Templates` SET
                 `name`=\"$name\",
                 `creator_id`=$creator_id,`fields_schema`=".$conn->quote($template_html).",
-                `output_schema`=\"\"
+                `output_schema`=\"\",
+                `json_shema`=".$conn->quote($template_json).",
+                `create_date`=NOW(),
+                `form_desc`= \"$form_desc\"
                 WHERE `id` = " .$template_id ;
 
             $ret = $conn->exec($sql);
