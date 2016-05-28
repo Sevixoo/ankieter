@@ -1,7 +1,7 @@
 
 {% extends ':layout:no_menu.html.twig' %}
 
-{% block title %}Kreator{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block nav %}
 {% endblock %}
@@ -79,7 +79,7 @@
 
     <div class="col s8 offset-s3" >
         <div style="clear:both;margin-top: 25px" >
-            <form id="myForm" class="col s10" method="post" >
+            <form id="myForm" class="col s10" method="post" action="{{ path( 'send_form' , {'token' : token } ) }}" >
                 {{ template_html |raw }}
                 <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>

@@ -81,8 +81,8 @@ class FormController extends Controller
         foreach($users as $u){
             $UUID = $this->gen_uuid();
             $id = $u['id'];
-            $sql = "INSERT INTO `FormOutputs`(`id`, `subscriber_id`, `form_id`, `token`, `output`, `pre_output`)
-                    VALUES (null,$id,$form_id,\"$UUID\",null,null)";
+            $sql = "INSERT INTO `FormOutputs`(`id`, `subscriber_id`, `form_id`, `token`, `output`, `pre_output` , `last_mail_send_time` )
+                    VALUES (null,$id,$form_id,\"$UUID\",null,null,null)";
             $conn->exec($sql);
         }
 
@@ -114,6 +114,55 @@ class FormController extends Controller
         return $this->redirectToRoute('forms');
     }
 
+    /**
+     * @Route("/forms/output/{token}", name="form_output")
+     */
+    public function formOutputAction($token){
+        $conn = $this->get('database_connection');
+        $doctrine = $this->getDoctrine();
+        $request = Request::createFromGlobals();
+
+        $sql = "SELECT * FROM `FormOutputs`
+                JOIN Forms ON Forms.id = form_id
+                WHERE `token` =  \"$token\"";
+
+        $user = $conn->fetchAssoc($sql);
+        $template_id = $user['template_id'];
+
+        $template = $conn->fetchAssoc("SELECT * FROM `Templates` WHERE `id` = $template_id");
+
+        return $this->render(':pages:form_view.html.twig', array(
+            "token" => $token,
+            "title" => $template['name'],
+            "template_id" => $template_id,
+            "template_html" => $template['fields_schema']
+        ));
+    }
+
+    /**
+     * @Route("/forms/send/{token}", name="send_form")
+     */
+    public function sendFormAction($token){
+        $conn = $this->get('database_connection');
+        $doctrine = $this->getDoctrine();
+        $request = Request::createFromGlobals();
+
+        $sql = "SELECT * FROM `FormOutputs`
+                JOIN Forms ON Forms.id = form_id
+                WHERE `token` =  \"$token\"";
+        $user = $conn->fetchAssoc($sql);
+        $template_id = $user['template_id'];
+
+        $template = $conn->fetchAssoc("SELECT * FROM `Templates` WHERE `id` = $template_id");
+
+        return $this->render(':pages:form_view.html.twig', array(
+            "token" => $token,
+            "title" => $template['name'],
+            "template_id" => $template_id,
+            "template_html" => $template['fields_schema']
+        ));
+
+    }
 
     function gen_uuid() {
         return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
