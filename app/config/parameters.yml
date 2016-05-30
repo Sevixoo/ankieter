@@ -13,6 +13,9 @@ parameters:
     mailer_password:    ankieter
     mailer_host:        s43.linuxpl.com
     mailer_port:        587
+    mailer_spool_type:  file
+    mailer_spool_path:  %kernel.cache_dir%/swiftmailer/spool
+
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt

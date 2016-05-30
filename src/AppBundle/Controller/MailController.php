@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
+
 class MailController extends Controller
 {
     /**
@@ -23,8 +24,28 @@ class MailController extends Controller
         $this->get('mailer')->send($message);
 
 
-        //eturn $this->render(':forms:index.html.twig');
+        return $this->render('default/index.html.twig');
+        //return $this->redirectToRoute('homepage');
+    }
+
+    /**
+     * @Route("/flush_mails", name="flush_mails")
+     */
+
+    public function flushMailsAction(){
+
+        $mailer = $this->get('mailer');
+        $spool = $mailer->getTransport()->getSpool();
+        $transport = $this->get('swiftmailer.transport.real');
+
+        $spool->setMessageLimit(100);
+        $spool->flushQueue($transport);
+
         return $this->redirectToRoute('homepage');
     }
 
+
+
 }
+
+
