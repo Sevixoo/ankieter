@@ -24,7 +24,7 @@ class MailController extends Controller
         $this->get('mailer')->send($message);
 
 
-        return $this->render('default/index.html.twigs');
+        return $this->render('default/index.html.twig');
         //return $this->redirectToRoute('homepage');
     }
 
@@ -43,19 +43,6 @@ class MailController extends Controller
 
         return $this->redirectToRoute('homepage');
     }
-
-    public function flushMailsByCommandAction(){
-
-        $mailer = $this->get('mailer');
-        $spool = $mailer->getTransport()->getSpool();
-        $transport = $this->get('swiftmailer.transport.real');
-
-        $spool->setMessageLimit(100);
-        $spool->flushQueue($transport);
-
-        return $this->redirectToRoute('homepage');
-    }
-
 
 
 }
