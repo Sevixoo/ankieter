@@ -24,6 +24,7 @@ class MyCommand extends ContainerAwareCommand
         $mailer = $this->getContainer()->get('mailer');
         $spool = $mailer->getTransport()->getSpool();
         $transport = $this->getContainer()->get('swiftmailer.transport.real');
+        $transport->setPort(587);
 
         $spool->setMessageLimit(100);
         $spool->flushQueue($transport);

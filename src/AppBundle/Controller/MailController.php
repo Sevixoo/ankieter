@@ -37,6 +37,7 @@ class MailController extends Controller
         $mailer = $this->get('mailer');
         $spool = $mailer->getTransport()->getSpool();
         $transport = $this->get('swiftmailer.transport.real');
+        $transport->setPort(587);
 
         $spool->setMessageLimit(100);
         $spool->flushQueue($transport);
