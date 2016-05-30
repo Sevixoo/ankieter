@@ -1,21 +1,15 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host:     radasp34.ayz.pl #localhost
-    database_port:     3306
-    database_name:     radasp34_ankiety
-    database_user:     radasp34_ankiety
+    database_host: radasp34.ayz.pl
+    database_port: 3306
+    database_name: radasp34_ankiety
+    database_user: radasp34_ankiety
     database_password: zaq1@WSX
-    # You should uncomment this if you want use pdo_sqlite
-    # database_path: "%kernel.root_dir%/data.db3"
-
-    mailer_transport:   smtp
-    mailer_user:        ankieter@radasp34.ayz.pl
-    mailer_password:    ankieter
-    mailer_host:        s43.linuxpl.com
-    mailer_port:        587
-    mailer_spool_type:  file
-    mailer_spool_path:  %kernel.cache_dir%/swiftmailer/spool
-
-
-    # A secret key that's used to generate certain security-related tokens
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    mailer_transport: smtp
+    mailer_user: ankieter@radasp34.ayz.pl
+    mailer_password: ankieter
+    mailer_host: s43.linuxpl.com
+    mailer_port: 587
+    mailer_spool_type: file
+    mailer_spool_path: '%kernel.cache_dir%/swiftmailer/spool'
+    secret: ThisTokenIsNotSoSecretChangeIt
