@@ -89,11 +89,9 @@
       <file leaf-file-name="MyCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Command/MyCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6764706">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-              <folding>
-                <element signature="e#35#100#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-0.49632353">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1154,7 +1152,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464648506223</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="myCommand">
+      <created>1464704247246</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1464704247246</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1647,11 +1651,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Command/MyCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6764706">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding>
-            <element signature="e#35#100#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-0.49632353">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
