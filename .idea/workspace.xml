@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Ankieter.iml" afterPath="$PROJECT_DIR$/.idea/Ankieter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TemplateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
     </list>
     <list id="7c12036a-d440-411a-8473-1248aee2ea4a" name="New changelist" comment="New changelist" />
     <list id="71194f9c-039f-4157-b543-f4f93489d785" name="Test2" comment="Test2" />
@@ -50,19 +45,19 @@
               <caret line="178" column="50" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="50" />
               <folding>
                 <element signature="e#40#97#0#PHP" expanded="true" />
-                <marker date="1464684113594" expanded="true" signature="550:979" placeholder="SELECT Forms..Forms..." />
-                <marker date="1464684113594" expanded="true" signature="1321:1411" placeholder="SELECT * , F..FormOutputs..." />
-                <marker date="1464684113594" expanded="true" signature="1321:1665" placeholder="SELECT * , F..FormOutputs..." />
-                <marker date="1464684113594" expanded="true" signature="1321:1682" placeholder="SELECT * , F..FormOutputs..." />
-                <marker date="1464684113594" expanded="true" signature="1321:1726" placeholder="SELECT * , F..FormOutputs..." />
-                <marker date="1464684113594" expanded="true" signature="2076:2135" placeholder="SELECT * FRO..Templates..." />
-                <marker date="1464684113594" expanded="true" signature="2967:3227" placeholder="INSERT INTO `Forms`..." />
-                <marker date="1464684113594" expanded="true" signature="3318:3504" placeholder="SELECT DISTI..GroupsSubscribers..." />
-                <marker date="1464684113594" expanded="true" signature="3665:3854" placeholder="INSERT INTO `FormOutputs`..." />
-                <marker date="1464684113594" expanded="true" signature="4137:4224" placeholder="UPDATE Forms..." />
-                <marker date="1464684113594" expanded="true" signature="8681:8752" placeholder="UPDATE `Form..." />
-                <marker date="1464684113594" expanded="true" signature="8965:9115" placeholder="SELECT * , F..FormOutputs..." />
-                <marker date="1464684113594" expanded="true" signature="9289:9328" placeholder="SELECT * FRO..Templates..." />
+                <marker date="1464705145965" expanded="true" signature="550:979" placeholder="SELECT Forms..Forms..." />
+                <marker date="1464705145965" expanded="true" signature="1321:1411" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464705145965" expanded="true" signature="1321:1665" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464705145965" expanded="true" signature="1321:1682" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464705145965" expanded="true" signature="1321:1726" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464705145965" expanded="true" signature="2076:2135" placeholder="SELECT * FRO..Templates..." />
+                <marker date="1464705145965" expanded="true" signature="2967:3227" placeholder="INSERT INTO `Forms`..." />
+                <marker date="1464705145965" expanded="true" signature="3318:3504" placeholder="SELECT DISTI..GroupsSubscribers..." />
+                <marker date="1464705145965" expanded="true" signature="3665:3854" placeholder="INSERT INTO `FormOutputs`..." />
+                <marker date="1464705145965" expanded="true" signature="4137:4224" placeholder="UPDATE Forms..." />
+                <marker date="1464705145965" expanded="true" signature="8681:8752" placeholder="UPDATE `Form..." />
+                <marker date="1464705145965" expanded="true" signature="8965:9115" placeholder="SELECT * , F..FormOutputs..." />
+                <marker date="1464705145965" expanded="true" signature="9289:9328" placeholder="SELECT * FRO..Templates..." />
               </folding>
             </state>
           </provider>
@@ -74,18 +69,28 @@
             <state vertical-scroll-proportion="-21.423077">
               <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
               <folding>
-                <marker date="1464687593716" expanded="true" signature="1651:1837" placeholder="SELECT * , F..Forms..." />
-                <marker date="1464687593716" expanded="true" signature="2591:2735" placeholder="SELECT Templ..Forms..." />
+                <marker date="1464705145963" expanded="true" signature="1651:1837" placeholder="SELECT * , F..Forms..." />
+                <marker date="1464705145963" expanded="true" signature="2591:2735" placeholder="SELECT Templ..Forms..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26198632">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4760274">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,8 +112,8 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
               <folding>
-                <marker date="1464683396386" expanded="true" signature="437:496" placeholder="SELECT * FRO..Templates..." />
-                <marker date="1464683396386" expanded="true" signature="860:899" placeholder="SELECT * FRO..Templates..." />
+                <marker date="1464705145967" expanded="true" signature="437:496" placeholder="SELECT * FRO..Templates..." />
+                <marker date="1464705145967" expanded="true" signature="860:899" placeholder="SELECT * FRO..Templates..." />
               </folding>
             </state>
           </provider>
@@ -166,7 +171,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout/base.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/widget/ListView.js" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/AppDataBundle/Entity/Subscribers.php" />
         <option value="$PROJECT_DIR$/src/AppDataBundle/Entity/Groups.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
@@ -194,6 +198,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/forms/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
       </list>
     </option>
   </component>
@@ -1268,13 +1273,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="80" selection-start-line="8" selection-start-column="80" selection-end-line="8" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Authentication/AuthenticationUtils.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9695817">
@@ -1598,8 +1596,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
           <folding>
-            <marker date="1464683396386" expanded="true" signature="437:496" placeholder="SELECT * FRO..Templates..." />
-            <marker date="1464683396386" expanded="true" signature="860:899" placeholder="SELECT * FRO..Templates..." />
+            <marker date="1464705145967" expanded="true" signature="437:496" placeholder="SELECT * FRO..Templates..." />
+            <marker date="1464705145967" expanded="true" signature="860:899" placeholder="SELECT * FRO..Templates..." />
           </folding>
         </state>
       </provider>
@@ -1618,19 +1616,19 @@
           <caret line="178" column="50" selection-start-line="178" selection-start-column="8" selection-end-line="178" selection-end-column="50" />
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1464684113594" expanded="true" signature="550:979" placeholder="SELECT Forms..Forms..." />
-            <marker date="1464684113594" expanded="true" signature="1321:1411" placeholder="SELECT * , F..FormOutputs..." />
-            <marker date="1464684113594" expanded="true" signature="1321:1665" placeholder="SELECT * , F..FormOutputs..." />
-            <marker date="1464684113594" expanded="true" signature="1321:1682" placeholder="SELECT * , F..FormOutputs..." />
-            <marker date="1464684113594" expanded="true" signature="1321:1726" placeholder="SELECT * , F..FormOutputs..." />
-            <marker date="1464684113594" expanded="true" signature="2076:2135" placeholder="SELECT * FRO..Templates..." />
-            <marker date="1464684113594" expanded="true" signature="2967:3227" placeholder="INSERT INTO `Forms`..." />
-            <marker date="1464684113594" expanded="true" signature="3318:3504" placeholder="SELECT DISTI..GroupsSubscribers..." />
-            <marker date="1464684113594" expanded="true" signature="3665:3854" placeholder="INSERT INTO `FormOutputs`..." />
-            <marker date="1464684113594" expanded="true" signature="4137:4224" placeholder="UPDATE Forms..." />
-            <marker date="1464684113594" expanded="true" signature="8681:8752" placeholder="UPDATE `Form..." />
-            <marker date="1464684113594" expanded="true" signature="8965:9115" placeholder="SELECT * , F..FormOutputs..." />
-            <marker date="1464684113594" expanded="true" signature="9289:9328" placeholder="SELECT * FRO..Templates..." />
+            <marker date="1464705145965" expanded="true" signature="550:979" placeholder="SELECT Forms..Forms..." />
+            <marker date="1464705145965" expanded="true" signature="1321:1411" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464705145965" expanded="true" signature="1321:1665" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464705145965" expanded="true" signature="1321:1682" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464705145965" expanded="true" signature="1321:1726" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464705145965" expanded="true" signature="2076:2135" placeholder="SELECT * FRO..Templates..." />
+            <marker date="1464705145965" expanded="true" signature="2967:3227" placeholder="INSERT INTO `Forms`..." />
+            <marker date="1464705145965" expanded="true" signature="3318:3504" placeholder="SELECT DISTI..GroupsSubscribers..." />
+            <marker date="1464705145965" expanded="true" signature="3665:3854" placeholder="INSERT INTO `FormOutputs`..." />
+            <marker date="1464705145965" expanded="true" signature="4137:4224" placeholder="UPDATE Forms..." />
+            <marker date="1464705145965" expanded="true" signature="8681:8752" placeholder="UPDATE `Form..." />
+            <marker date="1464705145965" expanded="true" signature="8965:9115" placeholder="SELECT * , F..FormOutputs..." />
+            <marker date="1464705145965" expanded="true" signature="9289:9328" placeholder="SELECT * FRO..Templates..." />
           </folding>
         </state>
       </provider>
@@ -1648,16 +1646,24 @@
         <state vertical-scroll-proportion="-21.423077">
           <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
           <folding>
-            <marker date="1464687593716" expanded="true" signature="1651:1837" placeholder="SELECT * , F..Forms..." />
-            <marker date="1464687593716" expanded="true" signature="2591:2735" placeholder="SELECT Templ..Forms..." />
+            <marker date="1464705145963" expanded="true" signature="1651:1837" placeholder="SELECT * , F..Forms..." />
+            <marker date="1464705145963" expanded="true" signature="2591:2735" placeholder="SELECT Templ..Forms..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26198632">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4760274">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
