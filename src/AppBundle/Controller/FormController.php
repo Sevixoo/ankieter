@@ -127,7 +127,7 @@ class FormController extends BasicController
 
 
     /**
-     * @Route("/forms/error/{message}", name="form_error")
+     * @Route("/forms/send/error/{message}", name="form_error")
      */
     public function formErrorAction($message){
         return $this->render(':forms:form_view_error.html.twig', array(
@@ -136,7 +136,7 @@ class FormController extends BasicController
     }
 
     /**
-     * @Route("/forms/success/{message}", name="form_success")
+     * @Route("/forms/send/success/{message}", name="form_success")
      */
     public function formSuccessAction($message){
         return $this->render(':forms:form_view_success.html.twig', array(
@@ -173,7 +173,7 @@ class FormController extends BasicController
     }
 
     /**
-     * @Route("/forms/output/{token}", name="form_output")
+     * @Route("/forms/send/output/{token}", name="form_output")
      */
     public function formOutputAction($token){
         $conn = $this->get('database_connection');

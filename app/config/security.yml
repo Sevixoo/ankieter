@@ -30,6 +30,10 @@ security:
             pattern:   ^/flush_mails*
             anonymous: ~
 
+        send:
+            pattern:   ^/forms/send*
+            anonymous: ~
+
         main:
             pattern:    ^/
             provider: our_db_provider
