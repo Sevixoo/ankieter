@@ -5,7 +5,6 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use AppBundle\Controller\MailController;
-use \HttpRequest;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -27,7 +26,7 @@ class MyCommand extends ContainerAwareCommand
         $transport = $this->getContainer()->get('swiftmailer.transport.real');
         $transport->setPort(587);
 
-        $r = new HttpRequest('http://example.com/feed.rss', HttpRequest::METH_GET);
+        $r = new \HttpRequest('http://example.com/feed.rss', \HttpRequest::METH_GET);
         $r->send();
 
 
