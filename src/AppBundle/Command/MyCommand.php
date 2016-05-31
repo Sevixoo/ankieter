@@ -26,9 +26,15 @@ class MyCommand extends ContainerAwareCommand
         $transport = $this->getContainer()->get('swiftmailer.transport.real');
         $transport->setPort(587);
 
-        $r = new \HttpRequest('http://example.com/feed.rss', \HttpRequest::METH_GET);
-        $r->send();
-
+        $url = "http://ankieta.radasp34.ayz.pl/web/flush_mails";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, TRUE);
+        curl_setopt($ch, CURLOPT_NOBODY, TRUE); // remove body
+        $head = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        var_dump($head);
 
         $spool->setMessageLimit(100);
         $spool->flushQueue($transport);
