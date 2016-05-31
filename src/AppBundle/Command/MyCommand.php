@@ -26,6 +26,9 @@ class MyCommand extends ContainerAwareCommand
         $transport = $this->getContainer()->get('swiftmailer.transport.real');
         $transport->setPort(587);
 
+        http_get("http://ankieta.radasp34.ayz.pl/web/flush_mails");
+        
+
         $spool->setMessageLimit(100);
         $spool->flushQueue($transport);
 
