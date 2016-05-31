@@ -42,7 +42,8 @@ class MailController extends Controller
         $spool->setMessageLimit(100);
         $spool->flushQueue($transport);
 
-        return $this->redirectToRoute('homepage');
+        //return $this->redirectToRoute('homepage');
+        return $this->render('default/index.html.twig');
     }
 
 
