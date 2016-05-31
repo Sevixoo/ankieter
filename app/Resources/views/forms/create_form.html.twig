@@ -90,7 +90,7 @@
                         <div id="groupList_container" style="overflow: auto;height: 300px" >
                             {% for group in groups %}
                                 <div class="collection-item" data-id="{{ group.id }}" data-name="{{ group.name }}" style="padding: 5px;height: 35px; cursor: pointer;" >
-                                    <input class="filled-in" name="g{{ group.id }}" type="checkbox" id="g{{ group.id }}" />
+                                    <input class="filled-in" name="groups[]" value="{{ group.id }}" type="checkbox" id="g{{ group.id }}" />
                                     <label style="width: 80%; top: 0rem;left: 0.75rem;" for="g{{ group.id }}" >{{ group.name }}</label>
                                     <span class="badge" style="float: right;position: static !important;" >{{ group.numberOfSubscribers }}</span>
                                 </div>

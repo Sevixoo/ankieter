@@ -35,16 +35,16 @@ class FormController extends BasicController
 
 
     /**
-     * @Route("/forms/outputs/{page}", name="outputs")
+     * @Route("/forms/outputs/{form_id}/{page}", name="outputs")
      */
-    public function outputsAction($page = 0){
+    public function outputsAction( $form_id , $page = 0){
         $conn = $this->get('database_connection');
 
         $sql = "SELECT * , FormOutputs.id as output_id , Templates.name as templateName FROM `FormOutputs`
                 JOIN Forms ON Forms.id = form_id
                 JOIN Templates ON Forms.template_id = Templates.id
                 JOIN Subscribers ON FormOutputs.subscriber_id = Subscribers.id
-                WHERE Forms.id = 29
+                WHERE Forms.id = $form_id
                 LIMIT ".(50*$page).",50";
 
         $outputs = $conn->fetchAll($sql);
@@ -92,9 +92,22 @@ class FormController extends BasicController
 
         $form_id = $conn->lastInsertId();
 
-        $sql = "SELECT DISTINCT Subscribers.id , Subscribers.email FROM `GroupsSubscribers`
+        $this->trace($_POST);
+        $groups = implode( "," , $_POST['groups'] );
+
+        $in_array = false;
+        foreach($_POST['groups'] as $item)
+            if($item == -1 || $item == "-1")$in_array = true;
+
+
+        if( !$in_array ) {
+            $sql = "SELECT DISTINCT Subscribers.id , Subscribers.email FROM `GroupsSubscribers`
                 JOIN Subscribers ON Subscribers.id = idSubscriber
-                WHERE `idGroup` IN (181,170)";
+                WHERE `idGroup` IN ( $groups )";
+        }else{
+            $sql = "SELECT Subscribers.id , Subscribers.email FROM `Subscribers`";
+        }
+
         $users= $conn->fetchAll($sql);
 
         foreach($users as $u){
@@ -102,6 +115,8 @@ class FormController extends BasicController
             $id = $u['id'];
             $sql = "INSERT INTO `FormOutputs`(`id`, `subscriber_id`, `form_id`, `token`, `output`, `pre_output` , `last_mail_send_time` )
                     VALUES (null,$id,$form_id,\"$UUID\",null,null,null)";
+
+            ///$UUID
             $conn->exec($sql);
         }
 
