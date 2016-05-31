@@ -27,11 +27,11 @@ security:
                 anonymous: ~
 
         mails:
-            pattern:   ^/flush_mails/.*
-            security:  false
+            pattern:   ^/flush_mails*
+            anonymous: ~
 
         main:
-            pattern:    ^/(?!/flush_mails/)
+            pattern:    ^/
             provider: our_db_provider
             form_login:
                 login_path: /login
