@@ -124,14 +124,6 @@ class FormController extends BasicController
         return $this->redirectToRoute('forms');
     }
 
-    /**
-     * @Route("/forms/get_form_result/{id}", name="get_form_result")
-     */
-    public function getFormResultAction($id){
-
-
-        return $this->redirectToRoute('forms');
-    }
 
 
     /**

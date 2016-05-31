@@ -34,6 +34,7 @@ class TemplateController extends Controller
 
         return $this->render(':pages:form_view.html.twig', array(
             "token" => false,
+            "isEdit" => false,
             "title" => $template['name'],
             "template_id" => $template_id,
             "template_html" => $template['fields_schema']
