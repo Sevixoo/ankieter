@@ -26,7 +26,7 @@ class MyCommand extends ContainerAwareCommand
         $transport = $this->getContainer()->get('swiftmailer.transport.real');
         $transport->setPort(587);
 
-        $url = "http://ankieta.radasp34.ayz.pl/web/flush_mails";
+        $url = "http://ankieta.radasp34.ayz.pl/web/flush_mails" ;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HEADER, TRUE);
