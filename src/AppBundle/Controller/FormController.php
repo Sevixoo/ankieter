@@ -181,7 +181,6 @@ class FormController extends BasicController
         $userOutput = $this->_getUserByToken($conn,$token);
         $isEdit = isset($_POST['isEdit']);
 
-
         if( $userOutput == null ){
             return $this->redirectToRoute( "form_error" , array('message'=>"Nie znaleziono użytkownika") );
         }
