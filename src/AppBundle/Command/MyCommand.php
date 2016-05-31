@@ -28,7 +28,7 @@ class MyCommand extends ContainerAwareCommand
 
         $spool->setMessageLimit(100);
         $spool->flushQueue($transport);
-
+        
         $output->writeln('Flush');
     }
 }
