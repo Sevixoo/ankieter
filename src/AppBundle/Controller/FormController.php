@@ -118,6 +118,33 @@ class FormController extends BasicController
 
             ///$UUID
             $conn->exec($sql);
+
+            $link = "http://ankieta.radasp34.ayz.pl/web/forms/output/" . $UUID;
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Ankieta')
+                ->setFrom('ankieter@radasp34.ayz.pl')
+                ->setTo($u['email'])
+                ->setBody('<a href="' . $link . '"LINK</a>')
+                ->setContentType("text/html");
+            $this->get('mailer')->send($message);
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Ankieta')
+                ->setFrom('ankieter@radasp34.ayz.pl')
+                ->setTo('zychu312@gmail.com')
+                ->setBody(
+
+                    $this->renderView(
+                        'mails/newForm.html.twig',
+                        array('link' => $link)
+                    ),
+                    'text/html'
+                )
+                ->setContentType("text/html");
+            $this->get('mailer')->send($message);
+
+
         }
 
         return $this->redirectToRoute('forms');
