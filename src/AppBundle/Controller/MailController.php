@@ -91,33 +91,33 @@ class MailController extends Controller
         $conn = $this->get('database_connection');
         $mailer = $this->get('mailer');
 
-//        foreach($emailsToSendReminder as $item)
-//        {
-//            $link = "http://ankieta.radasp34.ayz.pl/web/forms/output/" . $item['token'];
-//
-//            $message = \Swift_Message::newInstance()
-//                ->setSubject('Ankieta')
-//                ->setFrom('ankieter@radasp34.ayz.pl')
-//                ->setTo('zychu312@gmail.com')
-//                // ->setTo($item['email')
-//                ->setBody(
-//
-//                    $this->renderView(
-//                        'mails/reminderForm.html.twig',
-//                        array('link' => $link)
-//                    ),
-//                    'text/html'
-//                )
-//                ->setContentType("text/html");
-//            $mailer->send($message);
-//
-//            $token = $item['token'];
-//
-//            $sql = "UPDATE FormOutputs SET last_mail_send_time = CURDATE() WHERE token = '$token'";
-//
-//            $conn->exec($sql);
-//
-//        }
+        foreach($emailsToSendReminder as $item)
+        {
+            $link = "http://ankieta.radasp34.ayz.pl/web/forms/output/" . $item['token'];
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Ankieta')
+                ->setFrom('ankieter@radasp34.ayz.pl')
+                //->setTo('zychu312@gmail.com')
+                 ->setTo($item['email'])
+                ->setBody(
+
+                    $this->renderView(
+                        'mails/reminderForm.html.twig',
+                        array('link' => $link)
+                    ),
+                    'text/html'
+                )
+                ->setContentType("text/html");
+            $mailer->send($message);
+
+            $token = $item['token'];
+
+            $sql = "UPDATE FormOutputs SET last_mail_send_time = CURDATE() WHERE token = '$token'";
+
+            $conn->exec($sql);
+
+        }
 
 
         $mailer = $this->get('mailer');

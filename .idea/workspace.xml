@@ -121,16 +121,17 @@
       <file leaf-file-name="MailController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7660891">
-              <caret line="119" column="11" selection-start-line="93" selection-start-column="8" selection-end-line="119" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.9022277">
+              <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
               <folding>
-                <element signature="e#3594#3619#1#PHP" expanded="true" />
-                <marker date="1465320017550" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
-                <marker date="1465320017550" expanded="true" signature="3161:3229" placeholder="UPDATE FormO... " />
-                <marker date="1465320017550" expanded="true" signature="3161:3230" placeholder="UPDATE FormO... " />
-                <marker date="1465320017550" expanded="true" signature="3161:3231" placeholder="UPDATE FormO... " />
-                <marker date="1465320017550" expanded="true" signature="3161:3232" placeholder="UPDATE FormO... " />
-                <marker date="1465320017550" expanded="true" signature="3161:3238" placeholder="UPDATE FormO... " />
+                <element signature="e#2821#2851#0#PHP" expanded="true" />
+                <element signature="e#3541#3566#1#PHP" expanded="true" />
+                <marker date="1465320636578" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
+                <marker date="1465320636578" expanded="true" signature="3116:3184" placeholder="UPDATE FormO... " />
+                <marker date="1465320636578" expanded="true" signature="3116:3185" placeholder="UPDATE FormO... " />
+                <marker date="1465320636578" expanded="true" signature="3116:3186" placeholder="UPDATE FormO... " />
+                <marker date="1465320636578" expanded="true" signature="3116:3187" placeholder="UPDATE FormO... " />
+                <marker date="1465320636578" expanded="true" signature="3116:3193" placeholder="UPDATE FormO... " />
               </folding>
             </state>
           </provider>
@@ -1089,12 +1090,6 @@
       <option name="number" value="Default" />
       <updated>1457995149641</updated>
     </task>
-    <task id="LOCAL-00011" summary="aass">
-      <created>1460327579424</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1460327579424</updated>
-    </task>
     <task id="LOCAL-00012" summary="Aktualny">
       <created>1460492484990</created>
       <option name="number" value="00012" />
@@ -1383,7 +1378,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465319630939</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="myCommand">
+      <created>1465320021965</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1465320021965</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1904,16 +1905,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7660891">
-          <caret line="119" column="11" selection-start-line="93" selection-start-column="8" selection-end-line="119" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.9022277">
+          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
           <folding>
-            <element signature="e#3594#3619#1#PHP" expanded="true" />
-            <marker date="1465320017550" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
-            <marker date="1465320017550" expanded="true" signature="3161:3229" placeholder="UPDATE FormO... " />
-            <marker date="1465320017550" expanded="true" signature="3161:3230" placeholder="UPDATE FormO... " />
-            <marker date="1465320017550" expanded="true" signature="3161:3231" placeholder="UPDATE FormO... " />
-            <marker date="1465320017550" expanded="true" signature="3161:3232" placeholder="UPDATE FormO... " />
-            <marker date="1465320017550" expanded="true" signature="3161:3238" placeholder="UPDATE FormO... " />
+            <element signature="e#2821#2851#0#PHP" expanded="true" />
+            <element signature="e#3541#3566#1#PHP" expanded="true" />
+            <marker date="1465320636578" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
+            <marker date="1465320636578" expanded="true" signature="3116:3184" placeholder="UPDATE FormO... " />
+            <marker date="1465320636578" expanded="true" signature="3116:3185" placeholder="UPDATE FormO... " />
+            <marker date="1465320636578" expanded="true" signature="3116:3186" placeholder="UPDATE FormO... " />
+            <marker date="1465320636578" expanded="true" signature="3116:3187" placeholder="UPDATE FormO... " />
+            <marker date="1465320636578" expanded="true" signature="3116:3193" placeholder="UPDATE FormO... " />
           </folding>
         </state>
       </provider>
