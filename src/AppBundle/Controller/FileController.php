@@ -58,14 +58,19 @@ class FileController extends BasicController
                 WHERE Forms.id = ".$form_id;
             $form = $conn->fetchAssoc($sql);
 
+            $titles = $this->getTitles( $form['json_shema'] );
             $headers = $this->getHeaders( $form['json_shema'] );
+            $names = $this->getIdsShema( $form['json_shema'] );
 
             // Add the header of the CSV file
+            fputcsv($handle, $titles ,';');
             fputcsv($handle, $headers ,';');
 
-            /*$results = $this->connection->query("Replace this with your query");
+            $results = $conn->fetchAll("SELECT * FROM `FormOutputs` WHERE `form_id` = $form_id AND `output` IS NOT NULL");
+
+
             // Add the data queried from database
-            while($row = $results->fetch()) {
+            /*while($row = $results->fetch()) {
                 fputcsv(
                     $handle, // The file pointer
                     array($row['name'], $row['surname'], $row['age'], $row['sex']), // The fields
@@ -90,11 +95,50 @@ class FileController extends BasicController
         return $response;
     }
 
+    private function getIdsShema( $schema ){
+        $array = array();
+        $array []= 0;
+        $schema = json_decode( $schema , true );
+        foreach( $schema as $k => $v ) {
+            if (count($v['options']) > 0) {
+                foreach ($v['options'] as $kk => $vv) {
+                    $array[] = $v['name'];
+                }
+            } else {
+                $array[] = $v['name'];
+            }
+        }
+        return $array;
+    }
+
+    private function getTitles( $schema ){
+        $array = array();
+        $array []= "titles";
+        $schema = json_decode( $schema , true );
+        foreach( $schema as $k => $v ) {
+            if (count($v['options']) > 0) {
+                foreach ($v['options'] as $kk => $vv) {
+                    $array[] = $v['title'];
+                }
+            } else {
+                $array[] = $v['title'];
+            }
+        }
+        return $array;
+    }
+
     private function getHeaders( $schema ){
         $array = array();
+        $array []= "options";
         $schema = json_decode( $schema , true );
-        foreach( $schema as $k => $v ){
-            $array[]=  $v['title'];
+        foreach( $schema as $k => $v ) {
+            if (count($v['options']) > 0) {
+                foreach ($v['options'] as $kk => $vv) {
+                    $array[] = $vv["name"];
+                }
+            } else {
+                $array[] = $v['title'];
+            }
         }
         return $array;
     }
