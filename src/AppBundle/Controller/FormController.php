@@ -119,7 +119,7 @@ class FormController extends BasicController
             ///$UUID
             $conn->exec($sql);
 
-            $link = "http://ankieta.radasp34.ayz.pl/web/forms/output/" . $UUID;
+            $link = "http://ankieta.radasp34.ayz.pl/web/forms/send/output/" . $UUID;
 
             $message = \Swift_Message::newInstance()
                 ->setSubject('Ankieta')
