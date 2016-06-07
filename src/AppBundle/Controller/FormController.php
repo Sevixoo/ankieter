@@ -142,7 +142,15 @@ class FormController extends BasicController
                     'text/html'
                 )
                 ->setContentType("text/html");
+
+
             $this->get('mailer')->send($message);
+
+            $token = $u['token'];
+
+            $sql = "UPDATE FormOutputs SET last_mail_send_time = CURDATE() WHERE token = '$token'";
+
+            $conn->exec($sql);
 
 
         }

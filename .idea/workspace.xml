@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Ankieter.iml" afterPath="$PROJECT_DIR$/.idea/Ankieter.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/mails/reminderForm.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" />
     </list>
     <list id="7c12036a-d440-411a-8473-1248aee2ea4a" name="New changelist" comment="New changelist" />
     <list id="71194f9c-039f-4157-b543-f4f93489d785" name="Test2" comment="Test2" />
@@ -39,69 +42,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <file leaf-file-name="GroupController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.8638614">
+              <caret line="418" column="46" selection-start-line="418" selection-start-column="46" selection-end-line="418" selection-end-column="46" />
               <folding>
-                <element signature="e#40#97#0#PHP" expanded="true" />
-                <marker date="1464710645836" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
-                <marker date="1464710645836" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
-                <marker date="1464710645836" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
-                <marker date="1464710645836" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
-                <marker date="1464710645836" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
-                <marker date="1464710645836" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
-                <marker date="1464710645836" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
-                <marker date="1464710645836" expanded="true" signature="5502:5589" placeholder="UPDATE Forms... " />
-                <marker date="1464710645836" expanded="true" signature="10060:10131" placeholder="UPDATE `Form... " />
-                <marker date="1464710645836" expanded="true" signature="10344:10494" placeholder="SELECT * , F... FormOutputs" />
-                <marker date="1464710645836" expanded="true" signature="10668:10707" placeholder="SELECT * FRO... Templates" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newForm.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/mails/newForm.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MailController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.625">
-              <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
-              <folding>
-                <element signature="e#40#97#0#PHP" expanded="true" />
-                <marker date="1464715230148" expanded="true" signature="1164:1631" placeholder="SELECT Subsc... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CSVController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CSVController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding>
-                <marker date="1461705778802" expanded="true" signature="1677:1889" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="1124:1156" placeholder="SELECT COUNT... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="1312:1390" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="3771:3791" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="4139:4159" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="4567:4587" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="4911:4931" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="5326:5360" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="5403:5423" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="6164:6393" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="6472:6509" placeholder="SELECT * FRO... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="7541:7581" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="7611:7667" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="8420:8502" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="9085:9119" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="9745:9804" placeholder="SELECT idSub... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="9899:9925" placeholder="SELECT id FR... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="10076:10110" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="10199:10412" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="11322:11378" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="12006:12072" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="14199:14260" placeholder="SELECT * FRO... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="14327:14386" placeholder="INSERT INTO Subscribers... " />
+                <marker date="1465312600289" expanded="true" signature="14438:14497" placeholder="SELECT * FRO... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="14671:14768" placeholder="SELECT * FRO... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="15194:15285" placeholder="INSERT INTO GroupsSubscribers... " />
+                <marker date="1465312600289" expanded="true" signature="16012:16033" placeholder="SELECT id FR... Groups" />
+                <marker date="1465312600289" expanded="true" signature="16154:16186" placeholder="SELECT COUNT... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="16361:16424" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="17237:17266" placeholder="SELECT email... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="17644:17697" placeholder="INSERT INTO Subscribers... " />
+                <marker date="1465312600289" expanded="true" signature="17885:17937" placeholder="SELECT id FR... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="18038:18125" placeholder="INSERT INTO GroupsSubscribers... " />
               </folding>
             </state>
           </provider>
@@ -172,7 +150,6 @@
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/AnkieterApi.js" />
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/widget/SelectableCollection.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CSVController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/parts/footer_small.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/auth/login.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sendFormToUsers.twig" />
@@ -191,8 +168,10 @@
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Command/MyCommand.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/mails/newForm.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/mails/reminderForm.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
       </list>
     </option>
   </component>
@@ -802,32 +781,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -863,17 +816,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ankieter\web\bundles\tmp\images" />
-      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\layout" />
-      <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ankieter2\app\Resources\views\mails" />
       <recent name="C:\xampp\htdocs\ankieter2\app\Resources\views\pages" />
       <recent name="C:\xampp\htdocs\ankieter\web\bundles\images" />
       <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\group" />
       <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
-      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\auth" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ankieter\web\bundles\tmp\images" />
+      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\layout" />
+      <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.GroupsController">
@@ -925,12 +878,6 @@
       <created>1457995149641</created>
       <option name="number" value="Default" />
       <updated>1457995149641</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Działający kontroler, widok grup">
-      <created>1459691225441</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1459691225441</updated>
     </task>
     <task id="LOCAL-00006" summary="Inny widok grup, routing grup, usuwanie poprzez link">
       <created>1459709933807</created>
@@ -1220,32 +1167,38 @@
       <option name="project" value="LOCAL" />
       <updated>1465305987118</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="myCommand">
+      <created>1465306106897</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1465306106897</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21811362" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21811362" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01912261" sideWeight="0.5085745" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01912261" sideWeight="0.4914255" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22983257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2664509" sideWeight="0.50479615" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3160855" sideWeight="0.49464095" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1526,14 +1479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="11" selection-start-line="111" selection-start-column="6" selection-end-line="115" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.7096774">
@@ -1611,6 +1556,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26221693">
           <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1633,7 +1579,7 @@
         <state vertical-scroll-proportion="0.7549505">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#35#100#0#PHP" expanded="true" />
+            <element signature="e#35#100#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1647,44 +1593,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/mails/newForm.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-4.2580647">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
-          <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1464710645836" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
-            <marker date="1464710645836" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
-            <marker date="1464710645836" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
-            <marker date="1464710645836" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
-            <marker date="1464710645836" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
-            <marker date="1464710645836" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
-            <marker date="1464710645836" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
-            <marker date="1464710645836" expanded="true" signature="5502:5589" placeholder="UPDATE Forms... " />
-            <marker date="1464710645836" expanded="true" signature="10060:10131" placeholder="UPDATE `Form... " />
-            <marker date="1464710645836" expanded="true" signature="10344:10494" placeholder="SELECT * , F... FormOutputs" />
-            <marker date="1464710645836" expanded="true" signature="10668:10707" placeholder="SELECT * FRO... Templates" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CSVController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-29.096775">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
             <marker date="1461705778802" expanded="true" signature="1677:1889" placeholder="SELECT Subsc... Subscribers" />
@@ -1692,13 +1609,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/mails/reminderForm.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4193548">
+          <caret line="2" column="84" selection-start-line="2" selection-start-column="84" selection-end-line="2" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.625">
-          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
+        <state vertical-scroll-proportion="-9.225806">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="117" selection-end-column="30" />
+          <folding>
+            <element signature="e#2820#2850#0#PHP" expanded="true" />
+            <element signature="e#3540#3565#1#PHP" expanded="true" />
+            <marker date="1465310144944" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3183" placeholder="UPDATE FormO... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3184" placeholder="UPDATE FormO... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3185" placeholder="UPDATE FormO... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3186" placeholder="UPDATE FormO... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3192" placeholder="UPDATE FormO... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.490099">
+          <caret line="145" column="12" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="12" />
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1464715230148" expanded="true" signature="1164:1631" placeholder="SELECT Subsc... " />
+            <marker date="1465311794634" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
+            <marker date="1465311794634" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
+            <marker date="1465311794634" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
+            <marker date="1465311794634" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
+            <marker date="1465311794634" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
+            <marker date="1465311794634" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1465311794634" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
+            <marker date="1465311794634" expanded="true" signature="5309:5386" placeholder="UPDATE FormO... " />
+            <marker date="1465311794634" expanded="true" signature="5672:5759" placeholder="UPDATE Forms... " />
+            <marker date="1465311794634" expanded="true" signature="10230:10301" placeholder="UPDATE `Form... " />
+            <marker date="1465311794634" expanded="true" signature="10514:10664" placeholder="SELECT * , F... FormOutputs" />
+            <marker date="1465311794634" expanded="true" signature="10838:10877" placeholder="SELECT * FRO... Templates" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26221693">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8638614">
+          <caret line="418" column="46" selection-start-line="418" selection-start-column="46" selection-end-line="418" selection-end-column="46" />
+          <folding>
+            <marker date="1465312600289" expanded="true" signature="1124:1156" placeholder="SELECT COUNT... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="1312:1390" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="3771:3791" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="4139:4159" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="4567:4587" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="4911:4931" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="5326:5360" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="5403:5423" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="6164:6393" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="6472:6509" placeholder="SELECT * FRO... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="7541:7581" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="7611:7667" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="8420:8502" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="9085:9119" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="9745:9804" placeholder="SELECT idSub... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="9899:9925" placeholder="SELECT id FR... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="10076:10110" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="10199:10412" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="11322:11378" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="12006:12072" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="14199:14260" placeholder="SELECT * FRO... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="14327:14386" placeholder="INSERT INTO Subscribers... " />
+            <marker date="1465312600289" expanded="true" signature="14438:14497" placeholder="SELECT * FRO... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="14671:14768" placeholder="SELECT * FRO... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="15194:15285" placeholder="INSERT INTO GroupsSubscribers... " />
+            <marker date="1465312600289" expanded="true" signature="16012:16033" placeholder="SELECT id FR... Groups" />
+            <marker date="1465312600289" expanded="true" signature="16154:16186" placeholder="SELECT COUNT... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="16361:16424" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="17237:17266" placeholder="SELECT email... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="17644:17697" placeholder="INSERT INTO Subscribers... " />
+            <marker date="1465312600289" expanded="true" signature="17885:17937" placeholder="SELECT id FR... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="18038:18125" placeholder="INSERT INTO GroupsSubscribers... " />
           </folding>
         </state>
       </provider>
