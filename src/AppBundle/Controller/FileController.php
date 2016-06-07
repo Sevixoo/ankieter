@@ -41,8 +41,7 @@ class FileController extends BasicController
     /**
      * @Route("/file/get_results/{form_id}", name="get_results")
      */
-    public function generateCsvAction($form_id)
-    {
+    public function generateCsvAction($form_id){
         $this->form_id = $form_id;
 
         $response = new StreamedResponse();
@@ -58,25 +57,85 @@ class FileController extends BasicController
                 WHERE Forms.id = ".$form_id;
             $form = $conn->fetchAssoc($sql);
 
-            $titles = $this->getTitles( $form['json_shema'] );
-            $headers = $this->getHeaders( $form['json_shema'] );
-            $names = $this->getIdsShema( $form['json_shema'] );
+            $shema = json_decode( $form['json_shema'] , true );
 
-            // Add the header of the CSV file
+
+            $results = array();
+            $results_tmp = $conn->fetchAll("SELECT `output` FROM `FormOutputs` WHERE `form_id` = $form_id AND `output` IS NOT NULL");
+            foreach($results_tmp as $r ){
+                $results[]=  json_decode( $r['output'] , true );
+            }
+
+            $titles = array();
+            $headers = array();
+            $names = array();
+            $sums = array();
+            $sumsSorted = array();
+
+                foreach ($shema as $k => $v) {
+                    $options = $v['options'];
+                    $type = $v['type'];
+                    $name = $v['name'];
+                    $title = $v['title'];
+                    if (count($options) > 0) {
+                        foreach ($options as $opt) {
+                            $opt_name = $opt["name"];
+                            $opt_value = $opt["value"];
+                            $out_name = $name . $opt_name;
+                            $titles[] = $title;
+                            $headers[] = $opt_name;
+                            $names[] = $out_name;
+                            foreach ($results as $res) {
+                                foreach ($res as $r_key => $r_val) {
+                                    if (array_key_exists($name , $r_val )) {
+                                        $res_val = $r_val[$name];
+                                        if ($type == "RadioGroup") {
+                                            if ($res_val == $opt_value) {
+                                                if (array_key_exists( $out_name, $sums)) {
+                                                    $sums[$out_name]++;
+                                                } else {
+                                                    $sums[$out_name] = 1;
+                                                }
+                                            }
+                                        } else if ($type == "ListView") {
+                                            foreach ($res_val as $res_val_i) {
+                                                if ($res_val_i == $opt_value) {
+                                                    if (array_key_exists( $out_name, $sums)) {
+                                                        $sums[$out_name]++;
+                                                    } else {
+                                                        $sums[$out_name] = 1;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        $titles[] = $title;
+                        $headers[] = $title;
+                        $names[] = $name;
+                        $sums[$name] = 0;
+                    }
+                }
+
+
+                foreach ($names as $n) {
+                    if( array_key_exists( $n, $sums) ){
+                        $sumsSorted[] = $sums[$n];
+                    }else {
+                        $sumsSorted[] = "";
+                    }
+                }
+
+
+
             fputcsv($handle, $titles ,';');
             fputcsv($handle, $headers ,';');
+            fputcsv($handle, $sumsSorted ,';');
 
-            $results = $conn->fetchAll("SELECT * FROM `FormOutputs` WHERE `form_id` = $form_id AND `output` IS NOT NULL");
-
-
-            // Add the data queried from database
-            /*while($row = $results->fetch()) {
-                fputcsv(
-                    $handle, // The file pointer
-                    array($row['name'], $row['surname'], $row['age'], $row['sex']), // The fields
-                    ';' // The delimiter
-                );
-            }*/
 
             fclose($handle);
         });

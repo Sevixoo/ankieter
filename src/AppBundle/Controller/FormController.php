@@ -165,9 +165,6 @@ class FormController extends BasicController
 
         return $this->redirectToRoute('forms');
     }
-
-
-
     /**
      * @Route("/forms/send/error/{message}", name="form_error")
      */

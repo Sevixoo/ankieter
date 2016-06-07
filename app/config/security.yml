@@ -34,6 +34,18 @@ security:
             pattern:   ^/forms/send*
             anonymous: ~
 
+        output:
+            pattern:   ^/forms/output*
+            anonymous: ~
+
+        success:
+            pattern:   ^/forms/success*
+            anonymous: ~
+
+        error:
+            pattern:   ^/forms/error*
+            anonymous: ~
+
         main:
             pattern:    ^/
             provider: our_db_provider
