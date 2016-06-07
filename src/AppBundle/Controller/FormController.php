@@ -136,22 +136,22 @@ class FormController extends BasicController
                 ->setContentType("text/html");
             $this->get('mailer')->send($message);
 
-            $message = \Swift_Message::newInstance()
-                ->setSubject('Ankieta')
-                ->setFrom('ankieter@radasp34.ayz.pl')
-                ->setTo('zychu312@gmail.com')
-                ->setBody(
-
-                    $this->renderView(
-                        'mails/newForm.html.twig',
-                        array('link' => $link)
-                    ),
-                    'text/html'
-                )
-                ->setContentType("text/html");
-
-
-            $this->get('mailer')->send($message);
+//            $message = \Swift_Message::newInstance()
+//                ->setSubject('Ankieta')
+//                ->setFrom('ankieter@radasp34.ayz.pl')
+//                ->setTo('zychu312@gmail.com')
+//                ->setBody(
+//
+//                    $this->renderView(
+//                        'mails/newForm.html.twig',
+//                        array('link' => $link)
+//                    ),
+//                    'text/html'
+//                )
+//                ->setContentType("text/html");
+//
+//
+//            $this->get('mailer')->send($message);
 
             $token = $UUID;
 
