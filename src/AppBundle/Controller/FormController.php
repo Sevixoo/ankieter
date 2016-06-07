@@ -146,7 +146,7 @@ class FormController extends BasicController
 
             $this->get('mailer')->send($message);
 
-            $token = $u['token'];
+            $token = $UUID;
 
             $sql = "UPDATE FormOutputs SET last_mail_send_time = CURDATE() WHERE token = '$token'";
 

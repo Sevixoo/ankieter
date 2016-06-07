@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Ankieter.iml" afterPath="$PROJECT_DIR$/.idea/Ankieter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" />
+    <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="myCommand">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
     </list>
     <list id="7c12036a-d440-411a-8473-1248aee2ea4a" name="New changelist" comment="New changelist" />
@@ -41,49 +39,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <file leaf-file-name="GroupController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            <state vertical-scroll-proportion="-57.29032">
+              <caret line="405" column="39" selection-start-line="405" selection-start-column="39" selection-end-line="405" selection-end-column="39" />
+              <folding>
+                <marker date="1465312600289" expanded="true" signature="1124:1156" placeholder="SELECT COUNT... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="1312:1390" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="3771:3791" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="4139:4159" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="4567:4587" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="4911:4931" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="5326:5360" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="5403:5423" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="6164:6393" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="6472:6509" placeholder="SELECT * FRO... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="7541:7581" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="7611:7667" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="8420:8502" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="9085:9119" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="9745:9804" placeholder="SELECT idSub... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="9899:9925" placeholder="SELECT id FR... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="10076:10110" placeholder="DELETE FROM " />
+                <marker date="1465312600289" expanded="true" signature="10199:10412" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="11322:11378" placeholder="SELECT * FRO... Groups" />
+                <marker date="1465312600289" expanded="true" signature="12006:12072" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="14199:14260" placeholder="SELECT * FRO... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="14327:14386" placeholder="INSERT INTO Subscribers... " />
+                <marker date="1465312600289" expanded="true" signature="14438:14497" placeholder="SELECT * FRO... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="14671:14768" placeholder="SELECT * FRO... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="15194:15285" placeholder="INSERT INTO GroupsSubscribers... " />
+                <marker date="1465312600289" expanded="true" signature="16012:16033" placeholder="SELECT id FR... Groups" />
+                <marker date="1465312600289" expanded="true" signature="16154:16186" placeholder="SELECT COUNT... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="16361:16424" placeholder="SELECT COUNT... GroupsSubscribers" />
+                <marker date="1465312600289" expanded="true" signature="17237:17266" placeholder="SELECT email... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="17644:17697" placeholder="INSERT INTO Subscribers... " />
+                <marker date="1465312600289" expanded="true" signature="17885:17937" placeholder="SELECT id FR... Subscribers" />
+                <marker date="1465312600289" expanded="true" signature="18038:18125" placeholder="INSERT INTO GroupsSubscribers... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4468912">
+              <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
+              <folding>
+                <element signature="e#40#97#0#PHP" expanded="true" />
+                <marker date="1465318080919" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
+                <marker date="1465318080919" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
+                <marker date="1465318080919" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
+                <marker date="1465318080919" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
+                <marker date="1465318080919" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
+                <marker date="1465318080919" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1465318080919" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
+                <marker date="1465318080919" expanded="true" signature="5303:5380" placeholder="UPDATE FormO... " />
+                <marker date="1465318080919" expanded="true" signature="5666:5753" placeholder="UPDATE Forms... " />
+                <marker date="1465318080919" expanded="true" signature="10221:10292" placeholder="UPDATE `Form... " />
+                <marker date="1465318080919" expanded="true" signature="10505:10655" placeholder="SELECT * , F... FormOutputs" />
+                <marker date="1465318080919" expanded="true" signature="10829:10868" placeholder="SELECT * FRO... Templates" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_form.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/create_form.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.806452">
+              <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.967742">
+              <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
+      <file leaf-file-name="reminderForm.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/mails/reminderForm.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="92.96154">
-              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-              <folding>
-                <element signature="e#40#97#0#PHP" expanded="true" />
-                <marker date="1465306394128" expanded="true" signature="550:979" placeholder="SELECT Forms..Forms..." />
-                <marker date="1465306394128" expanded="true" signature="1343:1710" placeholder="SELECT * , F..FormOutputs..." />
-                <marker date="1465306394128" expanded="true" signature="2104:2163" placeholder="SELECT * FRO..Templates..." />
-                <marker date="1465306394128" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`..." />
-                <marker date="1465306394128" expanded="true" signature="3595:3783" placeholder="SELECT DISTI..GroupsSubscribers..." />
-                <marker date="1465306394128" expanded="true" signature="3821:3881" placeholder="SELECT Subsc..Subscribers..." />
-                <marker date="1465306394128" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`..." />
-                <marker date="1465306394128" expanded="true" signature="5502:5589" placeholder="UPDATE Forms..." />
-                <marker date="1465306394128" expanded="true" signature="10057:10128" placeholder="UPDATE `Form..." />
-                <marker date="1465306394128" expanded="true" signature="10341:10491" placeholder="SELECT * , F..FormOutputs..." />
-                <marker date="1465306394128" expanded="true" signature="10665:10704" placeholder="SELECT * FRO..Templates..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FileController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57347673">
-              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-              <folding>
-                <marker date="1465313695549" expanded="true" signature="1646:1832" placeholder="SELECT * , F..Forms..." />
-                <marker date="1465313695549" expanded="true" signature="2032:2118" placeholder="SELECT `outp..FormOutputs..." />
-                <marker date="1465313695549" expanded="true" signature="5504:5648" placeholder="SELECT Templ..Forms..." />
-              </folding>
+            <state vertical-scroll-proportion="-1.4193548">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="85" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,6 +194,7 @@
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/App.js" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/Basic/UploadHandler.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout/base.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/widget/ListView.js" />
@@ -152,7 +203,6 @@
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/AnkieterApi.js" />
         <option value="$PROJECT_DIR$/web/bundles/ankieter_api/widget/SelectableCollection.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/CSVController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/parts/footer_small.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/auth/login.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/pages/sendFormToUsers.twig" />
@@ -168,12 +218,13 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Command/FlushCommand.php" />
         <option value="$PROJECT_DIR$/batch/cron_example.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Command/MyCommand.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/mails/newForm.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/mails/reminderForm.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FileController.php" />
       </list>
     </option>
   </component>
@@ -226,9 +277,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="754" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -255,112 +307,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AppBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ankieter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Changed Files">
@@ -726,6 +672,200 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppDataBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Command" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ankieter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankieter2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -755,18 +895,131 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ankieter2\app\Resources\views\mails" />
+      <recent name="C:\xampp\htdocs\ankieter2\app\Resources\views\pages" />
+      <recent name="C:\xampp\htdocs\ankieter\web\bundles\images" />
+      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\group" />
+      <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ankieter\web\bundles\tmp\images" />
       <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\layout" />
       <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ankieter2\app\Resources\views\pages" />
-      <recent name="C:\xampp\htdocs\ankieter\web\bundles\images" />
-      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\group" />
-      <recent name="C:\xampp\htdocs\Ankieter\web\bundles" />
-      <recent name="C:\xampp\htdocs\Ankieter\app\Resources\views\auth" />
-    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/config/security.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Controller/FileController.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/AppBundle/Controller/FormController.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="PHPUnit.GroupsController">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -817,18 +1070,6 @@
       <created>1457995149641</created>
       <option name="number" value="Default" />
       <updated>1457995149641</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Działający kontroler, widok grup">
-      <created>1459691225441</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1459691225441</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Inny widok grup, routing grup, usuwanie poprzez link">
-      <created>1459709933807</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1459709933807</updated>
     </task>
     <task id="LOCAL-00007" summary="Inny widok grup, routing grup, usuwanie poprzez link">
       <created>1459712832184</created>
@@ -1112,32 +1353,44 @@
       <option name="project" value="LOCAL" />
       <updated>1465305987118</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="myCommand">
+      <created>1465306106897</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1465306106897</updated>
+    </task>
+    <task id="LOCAL-00055" summary="myCommand">
+      <created>1465313927578</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1465313927578</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="754" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2215478" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21811362" sideWeight="0.49520382" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.017656501" sideWeight="0.51138085" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01912261" sideWeight="0.5085745" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.017656501" sideWeight="0.48861912" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01912261" sideWeight="0.4914255" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22983257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2664509" sideWeight="0.50479615" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3160855" sideWeight="0.49464095" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1212,32 +1465,6 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1465306264959" expanded="true" signature="1164:1631" placeholder="SELECT Subsc..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CSVController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppDataBundle/Entity/Subscribers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7984791">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6692015">
@@ -1416,6 +1643,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33127317">
+          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1427,21 +1661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="115" column="11" selection-start-line="111" selection-start-column="6" selection-end-line="115" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7096774">
-          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1515,6 +1734,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26221693">
           <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1529,81 +1756,147 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7549505">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2437276">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1465306264959" expanded="true" signature="1164:1631" placeholder="SELECT Subsc..." />
+            <element signature="e#35#100#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CSVController.php">
+    <entry file="file://$PROJECT_DIR$/app/spool/default/2EVAR7EEyJ.message">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03046595">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.7378882">
+          <caret line="0" column="3018" selection-start-line="0" selection-start-column="3018" selection-end-line="0" selection-end-column="3018" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/mails/newForm.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1827957">
+        <state vertical-scroll-proportion="-4.2580647">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CSVController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="92.96154">
-          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+        <state vertical-scroll-proportion="-29.096775">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1465306394128" expanded="true" signature="550:979" placeholder="SELECT Forms..Forms..." />
-            <marker date="1465306394128" expanded="true" signature="1343:1710" placeholder="SELECT * , F..FormOutputs..." />
-            <marker date="1465306394128" expanded="true" signature="2104:2163" placeholder="SELECT * FRO..Templates..." />
-            <marker date="1465306394128" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`..." />
-            <marker date="1465306394128" expanded="true" signature="3595:3783" placeholder="SELECT DISTI..GroupsSubscribers..." />
-            <marker date="1465306394128" expanded="true" signature="3821:3881" placeholder="SELECT Subsc..Subscribers..." />
-            <marker date="1465306394128" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`..." />
-            <marker date="1465306394128" expanded="true" signature="5502:5589" placeholder="UPDATE Forms..." />
-            <marker date="1465306394128" expanded="true" signature="10057:10128" placeholder="UPDATE `Form..." />
-            <marker date="1465306394128" expanded="true" signature="10341:10491" placeholder="SELECT * , F..FormOutputs..." />
-            <marker date="1465306394128" expanded="true" signature="10665:10704" placeholder="SELECT * FRO..Templates..." />
+            <marker date="1461705778802" expanded="true" signature="1677:1889" placeholder="SELECT Subsc... Subscribers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.225806">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="117" selection-end-column="30" />
+          <folding>
+            <element signature="e#2820#2850#0#PHP" expanded="true" />
+            <element signature="e#3540#3565#1#PHP" expanded="true" />
+            <marker date="1465310144944" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3183" placeholder="UPDATE FormO... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3184" placeholder="UPDATE FormO... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3185" placeholder="UPDATE FormO... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3186" placeholder="UPDATE FormO... " />
+            <marker date="1465310144944" expanded="true" signature="3115:3192" placeholder="UPDATE FormO... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.26221693">
           <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56335616">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state vertical-scroll-proportion="-57.29032">
+          <caret line="405" column="39" selection-start-line="405" selection-start-column="39" selection-end-line="405" selection-end-column="39" />
+          <folding>
+            <marker date="1465312600289" expanded="true" signature="1124:1156" placeholder="SELECT COUNT... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="1312:1390" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="3771:3791" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="4139:4159" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="4567:4587" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="4911:4931" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="5326:5360" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="5403:5423" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="6164:6393" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="6472:6509" placeholder="SELECT * FRO... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="7541:7581" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="7611:7667" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="8420:8502" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="9085:9119" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="9745:9804" placeholder="SELECT idSub... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="9899:9925" placeholder="SELECT id FR... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="10076:10110" placeholder="DELETE FROM " />
+            <marker date="1465312600289" expanded="true" signature="10199:10412" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="11322:11378" placeholder="SELECT * FRO... Groups" />
+            <marker date="1465312600289" expanded="true" signature="12006:12072" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="14199:14260" placeholder="SELECT * FRO... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="14327:14386" placeholder="INSERT INTO Subscribers... " />
+            <marker date="1465312600289" expanded="true" signature="14438:14497" placeholder="SELECT * FRO... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="14671:14768" placeholder="SELECT * FRO... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="15194:15285" placeholder="INSERT INTO GroupsSubscribers... " />
+            <marker date="1465312600289" expanded="true" signature="16012:16033" placeholder="SELECT id FR... Groups" />
+            <marker date="1465312600289" expanded="true" signature="16154:16186" placeholder="SELECT COUNT... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="16361:16424" placeholder="SELECT COUNT... GroupsSubscribers" />
+            <marker date="1465312600289" expanded="true" signature="17237:17266" placeholder="SELECT email... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="17644:17697" placeholder="INSERT INTO Subscribers... " />
+            <marker date="1465312600289" expanded="true" signature="17885:17937" placeholder="SELECT id FR... Subscribers" />
+            <marker date="1465312600289" expanded="true" signature="18038:18125" placeholder="INSERT INTO GroupsSubscribers... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.967742">
+          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FileController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/mails/reminderForm.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57347673">
-          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.4193548">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/create_form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.806452">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding>
-            <marker date="1465313695549" expanded="true" signature="1646:1832" placeholder="SELECT * , F..Forms..." />
-            <marker date="1465313695549" expanded="true" signature="2032:2118" placeholder="SELECT `outp..FormOutputs..." />
-            <marker date="1465313695549" expanded="true" signature="5504:5648" placeholder="SELECT Templ..Forms..." />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#ul#0;n#div#0;n#div#3;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4468912">
+          <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#97#0#PHP" expanded="true" />
+            <marker date="1465318080919" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
+            <marker date="1465318080919" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
+            <marker date="1465318080919" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
+            <marker date="1465318080919" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
+            <marker date="1465318080919" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
+            <marker date="1465318080919" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1465318080919" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
+            <marker date="1465318080919" expanded="true" signature="5303:5380" placeholder="UPDATE FormO... " />
+            <marker date="1465318080919" expanded="true" signature="5666:5753" placeholder="UPDATE Forms... " />
+            <marker date="1465318080919" expanded="true" signature="10221:10292" placeholder="UPDATE `Form... " />
+            <marker date="1465318080919" expanded="true" signature="10505:10655" placeholder="SELECT * , F... FormOutputs" />
+            <marker date="1465318080919" expanded="true" signature="10829:10868" placeholder="SELECT * FRO... Templates" />
           </folding>
         </state>
       </provider>
