@@ -416,7 +416,7 @@ class GroupController extends BasicController
         }else{
             $data = array(
                 "success" => 0,
-                "error" => "COULD_NOT_ADD_GROUP"
+                "error" => print_r($csvOutput)
             );
         }
         return $this->getJSONResponse($data);
@@ -481,6 +481,16 @@ class GroupController extends BasicController
         SELECT * FROM GroupsSubscribers WHERE idGroup = '$group_id' AND idSubscriber = '$existingEmailID'
         ");
 
+        if (!filter_var($existingEmail, FILTER_VALIDATE_EMAIL))
+        {
+                $data = array(
+                    "success" => 0,
+                    "error" => "Podany adres: " . $existingEmail ." jest niepoprawny",
+                );
+
+                return $this->getJSONResponse($data);
+        }
+
         if (empty($existingConnection)) {
             if ($group_id !=-1)
             $conn->exec("INSERT INTO GroupsSubscribers(idGroup,idSubscriber) VALUE ('$group_id', '$existingEmailID')");
@@ -539,14 +549,15 @@ class GroupController extends BasicController
         $tempElement = null;
         $newEmails = array();
 
+        $warnings = [];
+
         while (!feof($file)) {
             $tempElement = fgetcsv($file)[0];
-//                Sprawdzenie poprawności emaili
-//                if (filter_var($tempElement, FILTER_VALIDATE_EMAIL)) {
-//                    array_push($warnings, "Blędny adres e-mail: " + $tempElement + "adres nie zostanie dodany do bazy");
-//                }
-//                elseif (!empty($tempElement))
-            array_push($newEmails, $tempElement);
+
+                if (filter_var($tempElement, FILTER_VALIDATE_EMAIL)) {
+                    array_push($warnings, "Blędny adres e-mail: " + $tempElement + "adres nie zostanie dodany do bazy");
+                }
+               else array_push($newEmails, $tempElement);
         }
 
         fclose($file);
@@ -585,5 +596,7 @@ class GroupController extends BasicController
         {
             $conn->exec("INSERT INTO GroupsSubscribers (idGroup,idSubscriber) VALUE ('$groupID','$subscriberId')");
         }
+
+        return $warnings;
     }
 }
