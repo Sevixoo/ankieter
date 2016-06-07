@@ -125,7 +125,14 @@ class FormController extends BasicController
                 ->setSubject('Ankieta')
                 ->setFrom('ankieter@radasp34.ayz.pl')
                 ->setTo($u['email'])
-                ->setBody('<a href="' . $link . '"LINK</a>')
+                ->setBody(
+
+                    $this->renderView(
+                        'mails/newForm.html.twig',
+                        array('link' => $link)
+                    ),
+                    'text/html'
+                )
                 ->setContentType("text/html");
             $this->get('mailer')->send($message);
 
