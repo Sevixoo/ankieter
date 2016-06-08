@@ -85,22 +85,22 @@
       <file leaf-file-name="FormController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25647667">
-              <caret line="122" column="13" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.42746115">
+              <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
               <folding>
                 <element signature="e#40#97#0#PHP" expanded="true" />
-                <marker date="1465416667730" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
-                <marker date="1465416667730" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
-                <marker date="1465416667730" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
-                <marker date="1465416667730" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
-                <marker date="1465416667730" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
-                <marker date="1465416667730" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
-                <marker date="1465416667730" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
-                <marker date="1465416667730" expanded="true" signature="5693:5770" placeholder="UPDATE FormO... " />
-                <marker date="1465416667730" expanded="true" signature="6056:6143" placeholder="UPDATE Forms... " />
-                <marker date="1465416667730" expanded="true" signature="10611:10682" placeholder="UPDATE `Form... " />
-                <marker date="1465416667730" expanded="true" signature="10895:11045" placeholder="SELECT * , F... FormOutputs" />
-                <marker date="1465416667730" expanded="true" signature="11219:11258" placeholder="SELECT * FRO... Templates" />
+                <marker date="1465416817457" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
+                <marker date="1465416817457" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
+                <marker date="1465416817457" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
+                <marker date="1465416817457" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
+                <marker date="1465416817457" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
+                <marker date="1465416817457" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1465416817457" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
+                <marker date="1465416817457" expanded="true" signature="5698:5775" placeholder="UPDATE FormO... " />
+                <marker date="1465416817457" expanded="true" signature="6061:6148" placeholder="UPDATE Forms... " />
+                <marker date="1465416817457" expanded="true" signature="10616:10687" placeholder="UPDATE `Form... " />
+                <marker date="1465416817457" expanded="true" signature="10900:11050" placeholder="SELECT * , F... FormOutputs" />
+                <marker date="1465416817457" expanded="true" signature="11224:11263" placeholder="SELECT * FRO... Templates" />
               </folding>
             </state>
           </provider>
@@ -973,12 +973,6 @@
       <option name="number" value="Default" />
       <updated>1457995149641</updated>
     </task>
-    <task id="LOCAL-00015" summary="Deployment 0.1">
-      <created>1461017472147</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1461017472147</updated>
-    </task>
     <task id="LOCAL-00016" summary="Liczba subskrybentów w grupie">
       <created>1461109650057</created>
       <option name="number" value="00016" />
@@ -1267,7 +1261,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465415690584</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="link">
+      <created>1465416673930</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1465416673930</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1770,22 +1770,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25647667">
-          <caret line="122" column="13" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.42746115">
+          <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1465416667730" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
-            <marker date="1465416667730" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
-            <marker date="1465416667730" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
-            <marker date="1465416667730" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
-            <marker date="1465416667730" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
-            <marker date="1465416667730" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
-            <marker date="1465416667730" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
-            <marker date="1465416667730" expanded="true" signature="5693:5770" placeholder="UPDATE FormO... " />
-            <marker date="1465416667730" expanded="true" signature="6056:6143" placeholder="UPDATE Forms... " />
-            <marker date="1465416667730" expanded="true" signature="10611:10682" placeholder="UPDATE `Form... " />
-            <marker date="1465416667730" expanded="true" signature="10895:11045" placeholder="SELECT * , F... FormOutputs" />
-            <marker date="1465416667730" expanded="true" signature="11219:11258" placeholder="SELECT * FRO... Templates" />
+            <marker date="1465416817457" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
+            <marker date="1465416817457" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
+            <marker date="1465416817457" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
+            <marker date="1465416817457" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
+            <marker date="1465416817457" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
+            <marker date="1465416817457" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1465416817457" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
+            <marker date="1465416817457" expanded="true" signature="5698:5775" placeholder="UPDATE FormO... " />
+            <marker date="1465416817457" expanded="true" signature="6061:6148" placeholder="UPDATE Forms... " />
+            <marker date="1465416817457" expanded="true" signature="10616:10687" placeholder="UPDATE `Form... " />
+            <marker date="1465416817457" expanded="true" signature="10900:11050" placeholder="SELECT * , F... FormOutputs" />
+            <marker date="1465416817457" expanded="true" signature="11224:11263" placeholder="SELECT * FRO... Templates" />
           </folding>
         </state>
       </provider>
