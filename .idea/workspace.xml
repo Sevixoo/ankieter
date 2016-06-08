@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="">
+    <list default="true" id="9608ce92-4a98-4b49-aa99-766111daf45f" name="Default" comment="link">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" />
     </list>
     <list id="7c12036a-d440-411a-8473-1248aee2ea4a" name="New changelist" comment="New changelist" />
     <list id="71194f9c-039f-4157-b543-f4f93489d785" name="Test2" comment="Test2" />
@@ -82,25 +83,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FormController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42746115">
-              <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
+            <state vertical-scroll-proportion="-2.6268656">
+              <caret line="121" column="12" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="84" />
               <folding>
                 <element signature="e#40#97#0#PHP" expanded="true" />
-                <marker date="1465416817457" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
-                <marker date="1465416817457" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
-                <marker date="1465416817457" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
-                <marker date="1465416817457" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
-                <marker date="1465416817457" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
-                <marker date="1465416817457" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
-                <marker date="1465416817457" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
-                <marker date="1465416817457" expanded="true" signature="5698:5775" placeholder="UPDATE FormO... " />
-                <marker date="1465416817457" expanded="true" signature="6061:6148" placeholder="UPDATE Forms... " />
-                <marker date="1465416817457" expanded="true" signature="10616:10687" placeholder="UPDATE `Form... " />
-                <marker date="1465416817457" expanded="true" signature="10900:11050" placeholder="SELECT * , F... FormOutputs" />
-                <marker date="1465416817457" expanded="true" signature="11224:11263" placeholder="SELECT * FRO... Templates" />
+                <marker date="1465417009447" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
+                <marker date="1465417009447" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
+                <marker date="1465417009447" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
+                <marker date="1465417009447" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
+                <marker date="1465417009447" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
+                <marker date="1465417009447" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
+                <marker date="1465417009447" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
+                <marker date="1465417009447" expanded="true" signature="5529:5606" placeholder="UPDATE FormO... " />
+                <marker date="1465417009447" expanded="true" signature="5892:5979" placeholder="UPDATE Forms... " />
+                <marker date="1465417009447" expanded="true" signature="10447:10518" placeholder="UPDATE `Form... " />
+                <marker date="1465417009447" expanded="true" signature="10731:10881" placeholder="SELECT * , F... FormOutputs" />
+                <marker date="1465417009447" expanded="true" signature="11055:11094" placeholder="SELECT * FRO... Templates" />
               </folding>
             </state>
           </provider>
@@ -116,18 +117,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MailController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.483871">
-              <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.18316832">
+              <caret line="96" column="88" selection-start-line="96" selection-start-column="88" selection-end-line="96" selection-end-column="88" />
               <folding>
-                <marker date="1465325296095" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
-                <marker date="1465325296095" expanded="true" signature="3162:3230" placeholder="UPDATE FormO... " />
-                <marker date="1465325296095" expanded="true" signature="3162:3231" placeholder="UPDATE FormO... " />
-                <marker date="1465325296095" expanded="true" signature="3162:3232" placeholder="UPDATE FormO... " />
-                <marker date="1465325296095" expanded="true" signature="3162:3233" placeholder="UPDATE FormO... " />
-                <marker date="1465325296095" expanded="true" signature="3162:3239" placeholder="UPDATE FormO... " />
+                <element signature="e#2851#2881#0#PHP" expanded="true" />
+                <marker date="1465417489155" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
+                <marker date="1465417489155" expanded="true" signature="1164:1732" placeholder="SELECT Subsc... " />
+                <marker date="1465417489155" expanded="true" signature="3146:3214" placeholder="UPDATE FormO... " />
+                <marker date="1465417489155" expanded="true" signature="3146:3215" placeholder="UPDATE FormO... " />
+                <marker date="1465417489155" expanded="true" signature="3146:3216" placeholder="UPDATE FormO... " />
+                <marker date="1465417489155" expanded="true" signature="3146:3217" placeholder="UPDATE FormO... " />
+                <marker date="1465417489155" expanded="true" signature="3146:3223" placeholder="UPDATE FormO... " />
               </folding>
             </state>
           </provider>
@@ -238,8 +241,8 @@
         <option value="$PROJECT_DIR$/app/Resources/views/mails/newForm.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/mails/reminderForm.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/GroupController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/FormController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/MailController.php" />
       </list>
     </option>
   </component>
@@ -973,12 +976,6 @@
       <option name="number" value="Default" />
       <updated>1457995149641</updated>
     </task>
-    <task id="LOCAL-00016" summary="Liczba subskrybentów w grupie">
-      <created>1461109650057</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1461109650057</updated>
-    </task>
     <task id="LOCAL-00017" summary="Subskrybencie w grupie API">
       <created>1461149101180</created>
       <option name="number" value="00017" />
@@ -1267,7 +1264,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465416673930</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="link">
+      <created>1465416827196</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1465416827196</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1280,19 +1283,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01912261" sideWeight="0.5128617" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01912261" sideWeight="0.48713827" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22983257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2664509" sideWeight="0.50479615" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3160855" sideWeight="0.49464095" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1737,21 +1740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.483871">
-          <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
-          <folding>
-            <marker date="1465325296095" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
-            <marker date="1465325296095" expanded="true" signature="3162:3230" placeholder="UPDATE FormO... " />
-            <marker date="1465325296095" expanded="true" signature="3162:3231" placeholder="UPDATE FormO... " />
-            <marker date="1465325296095" expanded="true" signature="3162:3232" placeholder="UPDATE FormO... " />
-            <marker date="1465325296095" expanded="true" signature="3162:3233" placeholder="UPDATE FormO... " />
-            <marker date="1465325296095" expanded="true" signature="3162:3239" placeholder="UPDATE FormO... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/forms/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1770,22 +1758,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FormController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42746115">
-          <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
+        <state vertical-scroll-proportion="-2.6268656">
+          <caret line="121" column="12" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="84" />
           <folding>
             <element signature="e#40#97#0#PHP" expanded="true" />
-            <marker date="1465416817457" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
-            <marker date="1465416817457" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
-            <marker date="1465416817457" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
-            <marker date="1465416817457" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
-            <marker date="1465416817457" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
-            <marker date="1465416817457" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
-            <marker date="1465416817457" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
-            <marker date="1465416817457" expanded="true" signature="5698:5775" placeholder="UPDATE FormO... " />
-            <marker date="1465416817457" expanded="true" signature="6061:6148" placeholder="UPDATE Forms... " />
-            <marker date="1465416817457" expanded="true" signature="10616:10687" placeholder="UPDATE `Form... " />
-            <marker date="1465416817457" expanded="true" signature="10900:11050" placeholder="SELECT * , F... FormOutputs" />
-            <marker date="1465416817457" expanded="true" signature="11224:11263" placeholder="SELECT * FRO... Templates" />
+            <marker date="1465417009447" expanded="true" signature="550:979" placeholder="SELECT Forms... Forms" />
+            <marker date="1465417009447" expanded="true" signature="1343:1710" placeholder="SELECT * , F... FormOutputs" />
+            <marker date="1465417009447" expanded="true" signature="2104:2163" placeholder="SELECT * FRO... Templates" />
+            <marker date="1465417009447" expanded="true" signature="2995:3255" placeholder="INSERT INTO `Forms`... " />
+            <marker date="1465417009447" expanded="true" signature="3595:3783" placeholder="SELECT DISTI... GroupsSubscribers" />
+            <marker date="1465417009447" expanded="true" signature="3821:3881" placeholder="SELECT Subsc... Subscribers" />
+            <marker date="1465417009447" expanded="true" signature="4053:4242" placeholder="INSERT INTO `FormOutputs`... " />
+            <marker date="1465417009447" expanded="true" signature="5529:5606" placeholder="UPDATE FormO... " />
+            <marker date="1465417009447" expanded="true" signature="5892:5979" placeholder="UPDATE Forms... " />
+            <marker date="1465417009447" expanded="true" signature="10447:10518" placeholder="UPDATE `Form... " />
+            <marker date="1465417009447" expanded="true" signature="10731:10881" placeholder="SELECT * , F... FormOutputs" />
+            <marker date="1465417009447" expanded="true" signature="11055:11094" placeholder="SELECT * FRO... Templates" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MailController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18316832">
+          <caret line="96" column="88" selection-start-line="96" selection-start-column="88" selection-end-line="96" selection-end-column="88" />
+          <folding>
+            <element signature="e#2851#2881#0#PHP" expanded="true" />
+            <marker date="1465417489155" expanded="true" signature="1164:1704" placeholder="SELECT Subsc... " />
+            <marker date="1465417489155" expanded="true" signature="1164:1732" placeholder="SELECT Subsc... " />
+            <marker date="1465417489155" expanded="true" signature="3146:3214" placeholder="UPDATE FormO... " />
+            <marker date="1465417489155" expanded="true" signature="3146:3215" placeholder="UPDATE FormO... " />
+            <marker date="1465417489155" expanded="true" signature="3146:3216" placeholder="UPDATE FormO... " />
+            <marker date="1465417489155" expanded="true" signature="3146:3217" placeholder="UPDATE FormO... " />
+            <marker date="1465417489155" expanded="true" signature="3146:3223" placeholder="UPDATE FormO... " />
           </folding>
         </state>
       </provider>
