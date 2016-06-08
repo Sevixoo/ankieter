@@ -5,7 +5,6 @@
 
 {% block stylesheets %}
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style type="text/css" media="screen">
 
@@ -37,7 +36,7 @@
 
 <div class="row" style="clear:both;">
 
-    <div class="row" style="clear:both;">
+    <div class="row" style="clear:both; margin-top: 20px;">
 
         <div class="col s6" >
             <ul id="groupList" class="row collection" style="margin-bottom: 0px;" >
@@ -48,7 +47,7 @@
                     <button id="btn_modal_delete_group" data-target="modal_delete_group" style="float: right;padding-left: 10px;padding-right: 10px;" class="modal-trigger waves-effect waves-teal btn-flat"  ><i class="material-icons">delete</i></button>
                      <div style="clear: both" />
                 </li>
-                <div id="groupList_container" style="overflow: auto;height: 300px" >
+                <div id="groupList_container" style="overflow: auto; height: 70vh" >
                 {% for group in groups %}
                     <a class="collection-item" data-id="{{ group.id }}" data-name="{{ group.name }}" style="padding: 5px;cursor: pointer;" >
                         <span >{{ group.name }}</span>
@@ -70,7 +69,7 @@
                         <button id="btn_modal_delete_subscribers" data-target="modal_delete_subscribers" style="float: right;padding-left: 10px;padding-right: 10px;" class="waves-effect waves-teal btn-flat"  ><i class="material-icons">delete</i></button>
                         <div style="clear: both" />
                     </li>
-                    <div id="groupList_container" style="overflow: auto;height: 300px" >
+                    <div id="groupList_container" style="overflow: auto; height: 70vh" >
                         <% _.each( rc.listItems, function( listItem ){ %>
                             <% if ( listItem.viewType == "item") { %>
                             <a class="collection-item" data-id="<%- listItem.id %>" data-name="<%- listItem.data %>" style="padding: 5px;cursor: pointer;" >

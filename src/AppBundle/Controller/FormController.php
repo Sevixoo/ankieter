@@ -25,7 +25,7 @@ class FormController extends BasicController
                                   Templates.name AS templateName, Templates.id AS templateId
                                   FROM Forms
                                   LEFT JOIN Templates ON Forms.template_id = Templates.id
-                                  ORDER BY Forms.is_active DESC, Forms.create_date
+                                  ORDER BY Forms.is_active DESC, Forms.create_date DESC
                                   ");
        // print_r($forms);
 
@@ -118,7 +118,7 @@ class FormController extends BasicController
 
             ///$UUID
             $conn->exec($sql);
-            
+
             $link = $this->generateUrl('form_output', array('token' => $UUID),true);
 
             $message = \Swift_Message::newInstance()
