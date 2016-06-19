@@ -205,7 +205,7 @@ class FormController extends BasicController
         $conn = $this->get('database_connection');
         $userOutput = $this->_getUserByToken($conn,$token);
         if( $userOutput == null ){
-            return $this->redirectToRoute( "form_error" , array('message'=>"Nie znaleziono użytkownika") );
+            return $this->redirectToRoute( "form_error" , array('message'=>"Ankieta zakończona lub nie odnaleziono użytkownika") );
         }
         $template = $this->_getTemplateById($conn,$userOutput['template_id']);
         if( $template == null ){
@@ -219,6 +219,7 @@ class FormController extends BasicController
             "data" => $userOutput['output'],
             "token" => $token,
             "title" => $template['name'],
+            "desc" => $template['form_desc'],
             "template_id" => $template_id,
             "template_html" => $template['fields_schema']
         );
@@ -236,7 +237,7 @@ class FormController extends BasicController
         $isEdit = isset($_POST['isEdit']);
 
         if( $userOutput == null ){
-            return $this->redirectToRoute( "form_error" , array('message'=>"Nie znaleziono użytkownika") );
+            return $this->redirectToRoute( "form_error" , array('message'=>"Ankieta zakończona lub nie odnaleziono użytkownika") );
         }
         if( $userOutput['output'] != null && !$isEdit ){
             return $this->redirectToRoute( "form_error" , array('message'=>"Formularz został już wypełniony") );
@@ -253,6 +254,7 @@ class FormController extends BasicController
             "isEdit" => false,
             "token" => $token,
             "title" => $template['name'],
+            "desc" => $template['form_desc'],
             "template_id" => $template_id,
             "template_html" => $template['fields_schema']
         );
@@ -320,7 +322,7 @@ class FormController extends BasicController
     private function _getUserByToken( $conn, $token ){
         $sql = "SELECT * , FormOutputs.id as output_id FROM `FormOutputs`
                 JOIN Forms ON Forms.id = form_id
-                WHERE `token` =  \"$token\"";
+                WHERE `token` =  \"$token\" AND `is_active` = 1  ";
         $user = $conn->fetchAssoc($sql);
         return $user;
     }

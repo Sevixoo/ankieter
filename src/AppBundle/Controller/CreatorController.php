@@ -23,8 +23,6 @@ class CreatorController extends BasicController{
      * @Route("/templates/creator", name="tmpl_creator")
      */
     public function creatorAction(){
-
-
         return $this->render(':pages:creator.html.twig', array(
 
         ));

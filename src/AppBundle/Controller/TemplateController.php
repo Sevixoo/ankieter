@@ -36,6 +36,7 @@ class TemplateController extends Controller
             "token" => false,
             "isEdit" => false,
             "title" => $template['name'],
+            "desc" => $template['form_desc'],
             "template_id" => $template_id,
             "template_html" => $template['fields_schema']
         ));

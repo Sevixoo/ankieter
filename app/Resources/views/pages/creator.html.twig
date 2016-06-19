@@ -24,7 +24,7 @@
             margin: 0px !important;
         }
         #myForm{
-            background-color: rgba(0, 0, 0, 0.02);
+            background-color: whitesmoke;
         }
 
         #myForm > .active{
@@ -74,9 +74,9 @@
 
 <div class="row" style="clear:both;">
 
-    <div style="margin-top: 25px; position: fixed;top: 60px;left: 15px;"  >
+    <div class="z-depth-2" style="margin-top: 25px; position: fixed;top: 60px;left: 15px;"  >
         <ul style="color: #03a9f4" class="tabs">
-            <li style="width: 160px;font-size: 10pt;" class="tab col s3"><a class="active"  href="#test1">Dodaj pole</a></li>
+            <li style="width: 160px;font-size: 10pt;" class="tab col s3"><a id="btn_editor" class="active"  href="#test1">Dodaj pole</a></li>
             <li style="width: 160px;font-size: 10pt;" class="tab col s3"><a id="btn_settings" href="#tab_settings">Właściwości</a></li>
         </ul>
 
@@ -99,22 +99,27 @@
     </div>
     <div class="col s8" style="margin-top: 25px;max-width: 860px;" >
 
-        <div class="row" >
-            <div class="input-field col s10">
-                <input placeholder="Nazwa ankiety" id="form_name" name="form_name" type="text" class="validate">
-                <label for="form_name">Nazwa ankiety</label>
+        <div style="background-color: whitesmoke;margin: 0px;margin-bottom: 40px;"  class=" col z-depth-1 s10"  >
+            <div class="row " style="margin: 0px;"  >
+                <div  class=" input-field col s10">
+                    <input placeholder="Nazwa ankiety" id="form_name" name="form_name" type="text" class="validate">
+                    <label for="form_name">Nazwa ankiety</label>
+                </div>
             </div>
-        </div>
-        <div class="row" >
-            <div class="input-field col s10">
-                <textarea id="form_desc" name="form_desc" class="materialize-textarea"></textarea>
-                <label for="form_desc">Opis ankiety</label>
+            <div class="row " style="margin: 0px;" >
+                <div  class="input-field col  s10"  >
+                    <textarea id="form_desc" name="form_desc" class="materialize-textarea"></textarea>
+                    <label for="form_desc">Opis ankiety</label>
+                </div>
+                <div class="col s2" >
+
+                </div>
             </div>
         </div>
 
         <div class="row" style="clear:both;" >
 
-            <form id="myForm" class="col s10" >
+            <form id="myForm"  class="z-depth-1 col s10 " >
 
             </form>
 
@@ -194,6 +199,9 @@
         <div data-type="BasicFieldSetting"  >
             <div class="row">
                 <p>ID:<span class="label_fieldID" >[id]</span></p>
+
+                <a id="btn_delete" class="waves-effect red waves-light btn"><i class="material-icons left">clear</i>DELETE</a>
+
                 <div class="input-field ">
                     <input id="fieldName_input" type="text" class="validate">
                     <label for="fieldName_input" >Nazwa pola</label>
@@ -206,6 +214,7 @@
                     <input type="checkbox" id="isRequired_input" />
                     <label for="isRequired_input">pole wymagane</label>
                 </p>
+
             </div>
         </div>
         <div data-type="TextFieldSetting" >
@@ -335,6 +344,15 @@
                         var text = $(this).val();
                         var id = $(this).attr("data-id");
                         $("#"+id+" .title").html(text);
+                    });
+
+                    $('#btn_delete').click(function() {
+                        var id = $(this).attr("data-id");
+                        $("#"+id+"").remove();
+
+                        var tabView = $("#tab_settings");
+                        tabView.html("");
+                        $("#btn_editor").click();
                     });
 
                     $('#fieldDesc_input').on('input',function(e){
@@ -479,6 +497,8 @@
 
                     view.find( "#fieldName_input").attr("data-id",id);
                     view.find( "#fieldName_input").val( fieldView.find(".title").html()  );
+
+                    view.find( "#btn_delete").attr("data-id",id);
 
                     view.find( ".label_fieldID").html( id );
 

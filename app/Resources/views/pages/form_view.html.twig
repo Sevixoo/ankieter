@@ -28,7 +28,6 @@
             margin: 0px !important;
         }
         #myForm{
-            background-color: rgba(0, 0, 0, 0.02);
         }
 
         .FormField{
@@ -71,11 +70,25 @@
 
 {% block content%}
 
+
+<div class="row blue darken-4 z-depth-1" style="clear:both;padding-bottom: 130px;" >
+    <div class="col s6 offset-s3" >
+        {% if title != false %}
+            <h3 style="color: whitesmoke" >{{ title }}</h3>
+        {% endif %}
+        {% if desc != false %}
+            <p style="color: whitesmoke" >
+                {{ desc }}
+            </p>
+        {% endif %}
+    </div>
+</div>
+
 <div class="row" style="clear:both;">
 
     <div class="col s8 offset-s3" >
         <div style="clear:both;margin-top: 25px" >
-            <form id="myForm" class="col s10" method="post" style="padding: 25px;"
+            <form id="myForm" class="col s10 card" method="post" style="position: relative;top: -155px; padding: 25px;"
                     {% if token != false  %}
                         action="{{ path( 'form_output' , {'token' : token } ) }}"
                     {% endif  %}
